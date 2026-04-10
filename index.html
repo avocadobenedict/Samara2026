@@ -1,17 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#1B4F8A">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Самара · 29 апр — 4 мая 2026</title>
+
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#4DB6E5">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Самара 2026">
-<meta name="mobile-web-app-capable" content="yes">
-<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="САМАРА 26">
 <link rel="apple-touch-icon" href="icon-192.png">
-<title>Самара · 29 апр — 4 мая 2026</title>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
@@ -258,26 +258,6 @@ a:hover{text-decoration:underline}
 .vs-line{height:2px;flex:1;background:linear-gradient(90deg,var(--navy) 0%,transparent 100%)}
 .vs-text{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
 
-
-
-/* ── APP ENHANCEMENTS ── */
-html{scroll-behavior:smooth}
-body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
-.app-toolbar{position:sticky;top:49px;z-index:95;background:rgba(250,248,243,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);margin:0 -24px;padding:10px 24px}
-.app-toolbar-row{display:flex;gap:8px;flex-wrap:wrap}
-.app-chip{appearance:none;border:1px solid #C8DDEE;background:var(--white);color:var(--navy);border-radius:999px;padding:8px 12px;font-size:12px;font-weight:500;cursor:pointer;font-family:'IBM Plex Sans',sans-serif}
-.app-chip.danger{border-color:#F1C3B2;color:var(--brick)}
-.app-chip:active{transform:translateY(1px)}
-.swipe-hint{font-size:11px;color:var(--muted);margin-top:7px}
-.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(20px);background:rgba(27,79,138,.95);color:#fff;padding:10px 14px;border-radius:999px;font-size:12px;font-weight:500;opacity:0;pointer-events:none;transition:all .2s;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,.18)}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-.ybtn{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:500;padding:5px 9px;border-radius:999px;border:1px solid #C8DDEE;background:#fff;color:var(--navy);text-decoration:none;margin-top:6px}
-.ybtn:hover{text-decoration:none;background:#EEF4FB}
-@supports (padding:max(0px)){
-  .page-header{padding-top:max(32px, calc(18px + env(safe-area-inset-top)))}
-  .app-toolbar{top:49px}
-}
-
 @media(max-width:600px){
   .weather-grid{grid-template-columns:repeat(3,1fr)}
   .clothing-grid{grid-template-columns:1fr 1fr}
@@ -290,6 +270,75 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
   .day-nav{display:none}
   .day-section{break-inside:avoid}
 }
+
+/* ── APP ENHANCEMENTS ── */
+body{padding-bottom:84px}
+.icon-chip-btn,.ghost-btn,.solid-btn,.mini-btn{
+  border:none;border-radius:999px;padding:8px 12px;font-family:'IBM Plex Sans',sans-serif;
+  font-size:12px;font-weight:500;cursor:pointer;transition:transform .12s,opacity .12s,background .12s;
+}
+.icon-chip-btn:hover,.ghost-btn:hover,.solid-btn:hover,.mini-btn:hover{transform:translateY(-1px)}
+.quick-toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.ghost-btn{background:rgba(255,255,255,.14);color:#fff;border:0.5px solid rgba(255,255,255,.24)}
+.solid-btn{background:#fff;color:var(--navy)}
+.mini-btn{background:#EEF4FB;color:var(--navy);padding:6px 10px;font-size:11px}
+.today-hub{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px 16px;margin:18px 0 14px;box-shadow:0 10px 24px rgba(27,79,138,.05)}
+.today-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:12px}
+.today-card{background:var(--cream);border:0.5px solid var(--border);border-radius:12px;padding:14px}
+.today-card h3{font-size:12px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.today-title{font-family:'Playfair Display',serif;font-size:24px;line-height:1.2;color:var(--text);margin-bottom:6px}
+.today-sub{font-size:12px;color:var(--muted);line-height:1.55}
+.today-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.info-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.info-pill{font-size:11px;background:#EEF4FB;color:var(--navy);border-radius:999px;padding:5px 10px}
+.weather-tools{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap;margin-bottom:12px}
+.weather-meta-live{display:flex;gap:8px;flex-wrap:wrap}
+.weather-badge-live{background:#EEF4FB;border:1px solid #C8DDEE;border-radius:999px;padding:6px 10px;font-size:11px;color:var(--navy)}
+.weather-status{font-size:12px;color:var(--muted);margin-top:8px}
+.weather-status strong{color:var(--navy)}
+.weather-loading{opacity:.7}
+.day-route-tools{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.floating-nav{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:1001;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border:1px solid var(--border);box-shadow:0 14px 35px rgba(0,0,0,.08);border-radius:999px;padding:8px 10px;display:flex;gap:6px}
+.floating-nav button{border:none;background:transparent;padding:8px 10px;border-radius:999px;font-size:12px;font-weight:500;color:var(--muted);cursor:pointer}
+.floating-nav button.active,.floating-nav button:hover{background:#EEF4FB;color:var(--navy)}
+.fav-strip{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.fav-chip{display:inline-flex;align-items:center;gap:6px;background:#FFF6D8;border:1px solid #F6D98F;color:#8A6500;border-radius:999px;padding:6px 10px;font-size:11px;cursor:pointer}
+.utility-section{padding:24px 0;border-top:1px solid var(--border)}
+.utility-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.utility-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:14px}
+.utility-card textarea{width:100%;min-height:150px;border:1px solid var(--border);border-radius:10px;padding:10px 12px;font:inherit;resize:vertical;background:var(--cream)}
+.inline-muted{font-size:11px;color:var(--muted);line-height:1.5}
+.place-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px}
+.favorite-toggle{border:none;background:#fff3d3;color:#8A6500;border:1px solid #E5CA7A;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:600;cursor:pointer}
+.favorite-toggle.is-on{background:#F7D46C}
+.status-select{border:1px solid var(--border);border-radius:999px;padding:4px 8px;background:#fff;font-size:11px;color:var(--text)}
+.status-dot{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;border-radius:50%;font-size:12px;background:#EEF4FB;color:var(--navy);font-weight:700}
+.status-none{background:#EEF4FB;color:var(--navy)}
+.status-plan{background:#E6F1FB;color:var(--navy)}
+.status-booked{background:#FFF3CD;color:#7D5700}
+.status-visited{background:#E1F5EE;color:var(--green)}
+.status-skip{background:#FAECE7;color:var(--brick)}
+.status-booked-outline{border-color:#F5CF7B}
+.status-visited-outline{border-color:#9FE1CB}
+.status-skip-outline{border-color:#E2B5A6}
+.card-booked,.item-booked{box-shadow:inset 0 0 0 1px #F5CF7B}
+.card-visited,.item-visited{box-shadow:inset 0 0 0 1px #9FE1CB}
+.card-skip,.item-skip{opacity:.72}
+.jump-list{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.jump-item{display:flex;justify-content:space-between;gap:10px;background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+.jump-item-title{font-size:12px;font-weight:500;color:var(--text)}
+.jump-item-sub{font-size:11px;color:var(--muted)}
+.today-bullets{display:flex;flex-direction:column;gap:8px}
+.today-bullet{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text)}
+.today-bullet span{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#EEF4FB;color:var(--navy);font-size:11px;flex-shrink:0}
+.route-actions-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.hidden{display:none!important}
+@media(max-width:700px){
+  .today-grid,.utility-grid{grid-template-columns:1fr}
+  .floating-nav{width:calc(100% - 18px);justify-content:space-between;border-radius:18px}
+  .floating-nav button{flex:1;padding:10px 6px;font-size:11px}
+}
+
 </style>
 </head>
 <body>
@@ -333,22 +382,50 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
   <button class="nav-btn" onclick="navTo('rental',this)">🚲 Прокат</button>
 </div>
 
-<div class="main">
-<div class="app-toolbar">
-  <div class="app-toolbar-row">
-    <button class="app-chip" onclick="navTo('day1',null)">🏠 Сегодняшний план</button>
-    <button class="app-chip" onclick="navTo('planner',null)">🗓 Планер</button>
-    <button class="app-chip" onclick="navTo('checklist',null)">📋 Чек-лист</button>
-    <button class="app-chip danger" onclick="resetAllChecks()">♻️ Сбросить отметки</button>
-  </div>
-  <div class="swipe-hint">Свайп влево/вправо по экрану — переход между днями 29 апр → 4 мая.</div>
-</div>
 
-<div id="appToast" class="toast" aria-live="polite"></div>
+<div class="main" style="max-width:860px;margin:0 auto;padding:0 24px">
+  <section id="todayHub" class="today-hub">
+    <div class="today-grid">
+      <div class="today-card">
+        <h3>Сегодня</h3>
+        <div class="today-title" id="todayTitle">Самара 26</div>
+        <div class="today-sub" id="todaySubtitle">Загружаю статус поездки и полезные подсказки…</div>
+        <div class="info-pills" id="todayPills"></div>
+        <div class="today-actions">
+          <button class="mini-btn" onclick="navTo('day1', null)">Открыть маршрут</button>
+          <button class="mini-btn" onclick="navTo('planner', null)">Планер</button>
+          <button class="mini-btn" onclick="navTo('favoritesSection', null)">Избранное</button>
+          <button class="mini-btn" onclick="refreshWeather(true)">Обновить погоду</button>
+        </div>
+      </div>
+      <div class="today-card">
+        <h3>Фокус и ближайшее</h3>
+        <div class="today-bullets" id="focusBullets">
+          <div class="today-bullet"><span>•</span><div>Подготавливаю список задач…</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="main">
+
 
 <!-- WEATHER -->
-<div class="weather-section" style="margin:0 -24px;padding:16px 24px 14px">
+<div class="weather-section" id="weatherSection" style="margin:0 -24px;padding:16px 24px 14px">
   <div class="section-label">Погода · прогноз по климатической норме</div>
+  <div class="weather-tools">
+    <div>
+      <div class="weather-meta-live" id="weatherLiveMeta">
+        <span class="weather-badge-live" id="weatherUpdatedBadge">Статичная версия</span>
+        <span class="weather-badge-live" id="weatherRangeBadge">Самара · 29 апр — 4 мая</span>
+      </div>
+      <div class="weather-status" id="weatherStatus">Можно обновить прогноз прямо из приложения.</div>
+    </div>
+    <div class="route-actions-row">
+      <button class="mini-btn" onclick="refreshWeather(true)">Обновить погоду</button>
+      <a class="mini-btn" href="https://yandex.ru/pogoda/samara" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center">Открыть Яндекс Погоду ↗</a>
+    </div>
+  </div>
   <div class="weather-grid">
     <div class="wday fly-d">
       <div class="wd-date">29 апр · Ср</div>
@@ -394,15 +471,15 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
 <div class="clothing-section" style="margin:0 -24px;padding:14px 24px">
   <div class="section-label">Что надеть</div>
   <div class="clothing-grid">
-    <div class="ccloth">
+    <div class="ccloth" data-clothing-card="1">
       <div class="cc-day">👕 Базовый комплект</div>
       <div class="cc-text">Футболка + лёгкий свитер/худи. Поверх — ветровка или лёгкая куртка. По набережной ветер с Волги — даже +16°C ощущается прохладно. Удобные кроссовки.</div>
     </div>
-    <div class="ccloth">
+    <div class="ccloth" data-clothing-card="2">
       <div class="cc-day">⚽ День матча (2 мая)</div>
       <div class="cc-text">Спортивный или casual стиль. Атрибутика Крыльев или нейтральная одежда. Куртка — стадион ночью холодает. Удобная обувь.</div>
     </div>
-    <div class="ccloth">
+    <div class="ccloth" data-clothing-card="3">
       <div class="cc-day">🚢 Теплоход (3 мая)</div>
       <div class="cc-text">Ветровка обязательна — на воде минус 3–5°C к ощущению. Слои: футболка + флис + ветровка. Закрытая обувь. Рюкзак с водой.</div>
     </div>
@@ -426,7 +503,7 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
     <div class="day-circle dc-fly">1</div>
     <div class="day-title-wrap">
       <div class="day-num-label">Среда · 29 апреля · Рабочий день</div>
-      <div class="day-title">Прилёт, первое знакомство и концерт Басты</div>
+      <div class="day-title">Прилёт, первое знакомство и вечер в городе</div>
       <span class="day-badge db-fly">✈ День прилёта</span>
       
     </div>
@@ -436,17 +513,6 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
     <div><div class="fp-label">Вылет</div><div class="fp-time">11:50</div><div class="fp-city">Аэропорт вылета</div></div>
     <div class="fp-line"></div>
     <div style="text-align:right"><div class="fp-label">Прилёт · KUF</div><div class="fp-time">12:30</div><div class="fp-city">Курумоч, Самара</div></div>
-  </div>
-
-  <div class="concert-banner">
-    <div class="cb-row">
-      <div class="cb-icon">🎤</div>
-      <div>
-        <div class="cb-title">Концерт Басты — 29 апреля, 20:00</div>
-        <div class="cb-sub">СКК «Дворец спорта им. В.С. Высоцкого» · ул. Молодогвардейская, 222<br>Билеты от 2 000 ₽ · Длительность 2+ часа · 18+</div>
-        <span class="cb-pill">🎫 Купить: bastatickets.ru · kassir.ru · afisha.ru</span>
-      </div>
-    </div>
   </div>
 
   <div class="timeline">
@@ -495,7 +561,7 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
     <div class="tl-item">
       <div class="tl-dot td-amber"></div>
       <div class="tl-time">19:00</div>
-      <span class="tl-tag tt-coffee">☕ Кофе перед концертом</span>
+      <span class="tl-tag tt-coffee">☕ Вечерний кофе</span>
       <div class="tl-title">Кофе · White Cup</div>
       <div class="tl-desc">Specialty-ростерия. Ростер стоит прямо на баре. ул. Красноармейская, 15 (двор музея Модерна). Работает до 23:00.</div>
       <details class="alt-block">
@@ -517,24 +583,53 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
       </details>
     </div>
     <div class="tl-item">
-      <div class="tl-dot td-concert"></div>
+      <div class="tl-dot td-brick"></div>
       <div class="tl-time">20:00</div>
-      <span class="tl-tag tt-concert">🎤 Концерт</span>
-      <div class="tl-title">Концерт Басты · СКК «Дворец спорта»</div>
-      <div class="tl-desc">ул. Молодогвардейская, 222. Более 2 часов хитов. Один из главных концертов Самары этой весны. <em>Завтра второй день!</em></div>
+      <span class="tl-tag tt-evening">🌆 Вечер в городе</span>
+      <div class="tl-title">Первый вечер — выбери своё</div>
+      <div class="tl-desc">29 апреля — среда, рабочий день: город живёт в обычном ритме, заведения не переполнены. Хороший вечер для знакомства с Самарой.</div>
+      <details class="alt-block" open>
+        <summary>Варианты проведения вечера 29 апреля</summary>
+        <div class="alt-list">
+          <div class="alt-item is-rec">
+            <div class="ai-head"><span class="ai-name">🎸 Бар «ХВАТ» — главная площадка</span><div class="ai-badges"><span class="aib aib-rec">Живая музыка</span></div></div>
+            <div class="ai-addr">ул. Галактионовская, 40 · vk.com/hvat_bar</div>
+            <div class="ai-desc">Главная независимая площадка Самары. Инди, рок, альтернатива. По средам нередко открытые вечеринки или живые выступления. Летник + зал внутри. Проверить афишу в ВКонтакте за пару дней до приезда.</div>
+            <div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">вход ~300–700 ₽ или бесплатно</span><span class="ai-cq">★★★★★</span></div>
+          </div>
+          <div class="alt-item">
+            <div class="ai-head"><span class="ai-name">🎬 Киномакс IMAX · ТЦ МегаСити</span></div>
+            <div class="ai-addr">Дыбенко, 30 · единственный IMAX в Самаре</div>
+            <div class="ai-desc">Расслабленный первый вечер в кино. 30 апреля выходит «Дьявол носит Prada 2» — взять билеты на IMAX-премьеру заранее. VIP-зал с подножками и обслуживанием по меню. Также зал D-BOX (динамические кресла).</div>
+            <div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">стандарт ~400 ₽ · VIP ~900–1 200 ₽</span><span class="ai-cq">★★★★★</span></div>
+          </div>
+          <div class="alt-item">
+            <div class="ai-head"><span class="ai-name">🎬 Кинотеатр в ТЦ «Вертикаль»</span></div>
+            <div class="ai-addr">Московское шоссе, 17 · тот же ТЦ, где Volga Mama</div>
+            <div class="ai-desc">Расслабленный первый вечер в кино — хорошо после перелёта. Заодно можно разведать ТЦ перед шопингом 2 мая: Volga Mama, магазин единоборств. Билеты онлайн: afisha.yandex.ru/samara.</div>
+            <div class="ai-meta"><span class="aipl aipl-low">Низкая–средняя</span><span class="ai-rub">~300–500 ₽</span><span class="ai-cq">★★★★☆</span></div>
+          </div>
+          <div class="alt-item">
+            <div class="ai-head"><span class="ai-name">🍺 Вечерняя набережная + ужин</span></div>
+            <div class="ai-addr">Набережная Волги → Рыбалтика, просп. Ленина, 3</div>
+            <div class="ai-desc">Спокойный вариант для первого вечера: прогулка по ночной набережной (красиво освещена), потом ужин в Рыбалтике — волжская рыба, раки, морепродукты у воды. Идеальный старт поездки.</div>
+            <div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~1 200–1 500 ₽/чел</span><span class="ai-cq">★★★★★</span></div>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 
   <div class="map-wrap">
     <div class="map-label">
-      <span>📍 Маршрут дня 1 · Набережная → White Cup → СКК</span>
+      <span>📍 Маршрут дня 1 · Набережная → White Cup → Вечер в городе</span>
       <a href="javascript:void(0)" onclick="openMapWithGPS('https://yandex.ru/maps/?rtext=~50.0978,53.1884~50.1040,53.1910~50.1485,53.1978~50.1430,53.2012&rtt=pd')" style="color:var(--navy)">🧭 Построить маршрут с GPS ↗</a>
     </div>
     <div id="mapDay1" class="leaflet-map-container"></div>
     <div class="map-legend">
       <div class="ml-item"><div class="ml-dot" style="background:#e63939"></div><a href="https://yandex.ru/maps/51/samara/search/Волжский%20проспект%2C%2045/" target="_blank">Пряный Барашек (обед) ↗</a></div>
       <div class="ml-item"><div class="ml-dot" style="background:#27ae60"></div><a href="https://yandex.ru/maps/51/samara/search/Красноармейская%2C%2015/" target="_blank">White Cup (кофе) ↗</a></div>
-      <div class="ml-item"><div class="ml-dot" style="background:#2980b9"></div><a href="https://yandex.ru/maps/51/samara/search/Молодогвардейская%2C%20222/" target="_blank">White Cup (кофе) ↗</a></div>
+      <div class="ml-item"><div class="ml-dot" style="background:#2980b9"></div><a href="https://yandex.ru/maps/51/samara/search/бар%20ХВАТ%20Самара/" target="_blank">Бар «ХВАТ» (вечер) ↗</a></div>
     </div>
   </div>
 </div>
@@ -873,14 +968,16 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
       <div class="tl-dot td-navy"></div>
       <div class="tl-time">09:00</div>
       <div class="tl-title">Завтрак в отеле + неспешное утро</div>
-      <div class="tl-desc">Hampton by Hilton. Выспаться после концерта.</div>
+      <div class="tl-desc">Hampton by Hilton. Включённый завтрак-буфет.</div>
     </div>
     <div class="tl-item">
       <div class="tl-dot td-green"></div>
       <div class="tl-time">10:30 – 12:30</div>
       <div class="tl-title">Ленинградская + сувениры + шопинг</div>
       <div class="tl-desc">Volga Mama в ТЦ «Вертикаль» (Московское ш., 17). smr.local на маркете Станкозавода. Шоколад «Россия» и Жигулёвское в подарок.<br><br>
-      <strong>🎒 Thule Weekend Store</strong> — официальный дилер Thule тоже в ТЦ «Вертикаль» (Московское ш., 17, на пересечении с ул. Пролетарской). Рюкзаки, дорожные сумки, органайзеры — всё в наличии. Удобно совмещать с шопингом у Volga Mama. Тел: <a href="tel:+73463240900">twstore.ru</a></div>
+      <strong>🎒 Thule Weekend Store</strong> — официальный дилер Thule тоже в ТЦ «Вертикаль» (Московское ш., 17, на пересечении с ул. Пролетарской). Рюкзаки, дорожные сумки, органайзеры — всё в наличии. Удобно совмещать с шопингом у Volga Mama. Тел: <a href="tel:+73463240900">twstore.ru</a><br><br>
+      <strong>🥊 Магазин единоборств</strong> — в ТЦ «Вертикаль» также есть магазин товаров для единоборств и боевых искусств. Перчатки, экипировка, одежда для тренировок. Удобно заглянуть, пока уже будете в ТЦ.<br><br>
+      <strong>🎬 Кинотеатр в ТЦ «Вертикаль»</strong> — прямо в том же торговом центре, где Volga Mama. Пока будете в ТЦ — можно проверить расписание и билеты на вечер. Удобно: шопинг + кино в одном месте, не нужно никуда ехать отдельно. Хороший запасной вариант на вечер после матча, если не хочется в бар.</div>
       <details class="alt-block">
         <summary>Дополнительные бренды для шопинга</summary>
         <div class="alt-list">
@@ -911,17 +1008,11 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
       <div class="tl-dot td-brick"></div>
       <div class="tl-time">13:00</div>
       <span class="tl-tag tt-lunch">🍽 Обед</span>
-      <div class="tl-title">Обед · <span style="text-decoration:line-through;opacity:0.5">Red Rak</span> <span style="background:#FAECE7;color:#B5451B;font-size:10px;font-weight:600;padding:2px 7px;border-radius:6px;margin-left:4px">⛔ ЗАКРЫТ</span></div>
-      <div class="tl-desc" style="color:#B5451B;font-weight:500;margin-bottom:6px">Red Rak на Куйбышева, 91 — закрыт. Используйте одну из альтернатив ниже.</div>
-      <details class="alt-block" open>
+      <div class="tl-title">Обед · Рыбалтика</div>
+      <div class="tl-desc">Волжская рыба, раки, морепродукты — лучший обед перед матчем. просп. Ленина, 3. <strong>Бронировать заранее</strong> — в праздничный день переполнена. <span class="price-chip">~1 200–1 500 ₽</span></div>
+      <details class="alt-block">
         <summary>Альтернативы для обеда в матчевый день</summary>
         <div class="alt-list">
-          <div class="alt-item is-rec">
-            <div class="ai-head"><span class="ai-name">🦐 Рыбалтика</span><div class="ai-badges"><span class="aib aib-rec">Лучшая замена Red Rak</span></div></div>
-            <div class="ai-addr">просп. Ленина, 3 · открыт с 11:00</div>
-            <div class="ai-desc">Волжская рыба, раки, морепродукты. Та же концепция что и Red Rak. Бронировать заранее — в праздники переполнен.</div>
-            <div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~1 200–1 500 ₽</span><span class="ai-cq">★★★★★</span></div>
-          </div>
           <div class="alt-item">
             <div class="ai-head"><span class="ai-name">Хокку (паназиатский)</span></div>
             <div class="ai-addr">Коммунистическая 90/1 · Ново-Садовая 160М (ТРЦ МегаСити)</div>
@@ -977,7 +1068,7 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
     <div id="mapDay4" class="leaflet-map-container"></div>
     <div class="map-legend">
       <div class="ml-item"><div class="ml-dot" style="background:#e63939"></div><a href="https://yandex.ru/maps/51/samara/search/Ленинградская/" target="_blank">Центр / шопинг ↗</a></div>
-      <div class="ml-item"><div class="ml-dot" style="background:#f5a623"></div> Red Rak (обед)</div>
+      <div class="ml-item"><div class="ml-dot" style="background:#f5a623"></div><a href="https://yandex.ru/maps/51/samara/search/просп.%20Ленина%2C%203/" target="_blank">Рыбалтика (обед) ↗</a></div>
       <div class="ml-item"><div class="ml-dot" style="background:#27ae60"></div><a href="https://yandex.ru/maps/51/samara/search/Самара%20Арена/" target="_blank">Самара Арена ⚽ ↗</a></div>
     </div>
   </div>
@@ -1356,6 +1447,13 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
   <div class="guide-grid">
 
     <div class="guide-card gc-must">
+      <div class="gc-top"><span class="gc-name">🎬 Кинотеатр ТЦ «Вертикаль»</span><div class="gc-tags"><span class="gc-tag gct-must">В ТЦ с Volga Mama</span></div></div>
+      <div class="gc-addr">Московское шоссе, 17 · тот же ТЦ, где Volga Mama и магазин единоборств</div>
+      <div class="gc-desc">Кинотеатр прямо в ТЦ «Вертикаль» — удобно совместить с шопингом 2 мая: зашли к Volga Mama, заглянули в магазин единоборств, и тут же купили билеты на вечер. Хороший запасной вариант после матча, если не хочется в бар.</div>
+      <div class="gc-meta"><span class="gc-pl gcpl-low">Низкая–средняя</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+    </div>
+
+    <div class="guide-card">
       <div class="gc-top"><span class="gc-name">★ Киномакс</span><div class="gc-tags"><span class="gc-tag gct-must">IMAX · VIP</span><span class="gc-tag gct-roast">Лучший звук</span></div></div>
       <div class="gc-addr">ТЦ МегаСити, Дыбенко 30 · kinomax.ru/samara</div>
       <div class="gc-desc">Единственный в Самаре IMAX-зал. 9 комфортабельных залов на 1535 мест. Акустические системы последнего поколения — лучший звук в городе. VIP-зал: кресла с регулировкой спинки, подножки и сидения, индивидуальное обслуживание по меню. Зал D-BOX — динамические кресла, синхронизированные с экраном. Для романтики или серьёзного фильма — сюда.</div>
@@ -1365,7 +1463,7 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
     <div class="guide-card">
       <div class="gc-top"><span class="gc-name">Синема Парк</span><div class="gc-tags"><span class="gc-tag gct-city">Ближе к центру</span></div></div>
       <div class="gc-addr">ТЦ Парк Хаус, Московское шоссе 81Б · spbkino.ru</div>
-      <div class="gc-desc">8 залов, 949 мест. Dolby Digital 3D. Удобнее по расположению — рядом с Volga Mama и центром. Хороший выбор для стандартного вечера в кино. Нет IMAX, но качество проекции достойное.</div>
+      <div class="gc-desc">8 залов, 949 мест. Dolby Digital 3D. Хороший выбор для стандартного вечера в кино. Нет IMAX, но качество проекции достойное.</div>
       <div class="gc-meta"><span class="gc-pl gcpl-low">Низкая–средняя</span><span class="gc-rub">~300–500 ₽</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
     </div>
 
@@ -1653,11 +1751,6 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
   <div class="section-title">Полезные ссылки</div>
   <div class="links-grid" style="margin-top:14px">
     <div class="link-card">
-      <span class="lc-icon">🎤</span>
-      <div class="lc-title">Билеты на Басту</div>
-      <div class="lc-url"><a href="https://bastatickets.ru" target="_blank">bastatickets.ru</a></div>
-    </div>
-    <div class="link-card">
       <span class="lc-icon">⚽</span>
       <div class="lc-title">Билеты на матч</div>
       <div class="lc-url"><a href="https://pfcks.ru/tickets/" target="_blank">pfcks.ru/tickets</a></div>
@@ -1823,10 +1916,6 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
   <div class="planner-group">
     <div class="pg-header">🔴 СРОЧНО — до 15 апреля (если ещё не сделано)</div>
     <div class="pg-items">
-      <div class="pi-item pi-urgent" id="pi1">
-        <input type="checkbox" id="cb1" onchange="document.getElementById('pi1').classList.toggle('pi-done',this.checked)">
-        <label for="cb1"><strong>🎤 Билеты на концерт Басты (29 апр, 20:00)</strong> — расходятся быстро!<span class="pi-link">→ bastatickets.ru · kassir.ru · afisha.ru</span></label>
-      </div>
       <div class="pi-item pi-urgent" id="pi2">
         <input type="checkbox" id="cb2" onchange="document.getElementById('pi2').classList.toggle('pi-done',this.checked)">
         <label for="cb2"><strong>⚽ Билеты на матч Крылья Советов — Спартак (2 мая)</strong> — дерби, популярный матч<span class="pi-link">→ pfcks.ru/tickets</span></label>
@@ -1869,11 +1958,15 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
       </div>
       <div class="pi-item" id="pi9">
         <input type="checkbox" id="cb9" onchange="document.getElementById('pi9').classList.toggle('pi-done',this.checked)">
-        <label for="cb9"><strong>🐟 Забронировать Рыбалтику</strong> — замена Red Rak (2 мая, обед, 13:00)<span class="pi-link">→ +7 (927) 262-63-48 · просп. Ленина, 3</span></label>
+        <label for="cb9"><strong>🐟 Забронировать Рыбалтику</strong> (2 мая, обед, 13:00)<span class="pi-link">→ +7 (927) 262-63-48 · просп. Ленина, 3</span></label>
       </div>
       <div class="pi-item" id="pi10">
         <input type="checkbox" id="cb10" onchange="document.getElementById('pi10').classList.toggle('pi-done',this.checked)">
         <label for="cb10"><strong>🎬 Проверить расписание кинотеатра «Филин»</strong> — открытие сезона 1 мая<span class="pi-link">→ filinkino.ru или 2ГИС «Кинотеатр Филин Самара»</span></label>
+      </div>
+      <div class="pi-item" id="pi10b">
+        <input type="checkbox" id="cb10b" onchange="document.getElementById('pi10b').classList.toggle('pi-done',this.checked)">
+        <label for="cb10b"><strong>🎬 Кинотеатр в ТЦ «Вертикаль» (2 мая)</strong> — проверить расписание на вечер, если захочется кино после матча или вместо бара<span class="pi-link">→ ТЦ «Вертикаль», Московское шоссе, 17</span></label>
       </div>
       <div class="pi-item" id="pi11">
         <input type="checkbox" id="cb11" onchange="document.getElementById('pi11').classList.toggle('pi-done',this.checked)">
@@ -1931,14 +2024,13 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
       <div class="cl-item" id="cl1"><input type="checkbox" id="cc1" onchange="document.getElementById('cl1').classList.toggle('cl-done',this.checked)"><label for="cc1">Футболки (3–4 шт.)</label></div>
       <div class="cl-item" id="cl2"><input type="checkbox" id="cc2" onchange="document.getElementById('cl2').classList.toggle('cl-done',this.checked)"><label for="cc2">Лёгкий свитер / худи</label></div>
       <div class="cl-item" id="cl3"><input type="checkbox" id="cc3" onchange="document.getElementById('cl3').classList.toggle('cl-done',this.checked)"><label for="cc3">Ветровка / лёгкая куртка ⚠️ обязательно</label></div>
-      <div class="cl-item" id="cl4"><input type="checkbox" id="cc4" onchange="document.getElementById('cl4').classList.toggle('cl-done',this.checked)"><label for="cc4">Джинсы / брюки (2 пары)</label></div>
+      <div class="cl-item" id="cl4"><input type="checkbox" id="cc4" onchange="document.getElementById('cl4').classList.toggle('cl-done',this.checked)"><label for="cc4">Джинсы, брюки, спортивные штаны (Кракатау или Lonsdale)</label></div>
       <div class="cl-item" id="cl5"><input type="checkbox" id="cc5" onchange="document.getElementById('cl5').classList.toggle('cl-done',this.checked)"><label for="cc5">Шорты (на тёплые дни)</label></div>
       <div class="cl-item" id="cl6"><input type="checkbox" id="cc6" onchange="document.getElementById('cl6').classList.toggle('cl-done',this.checked)"><label for="cc6">Носки (5–6 пар)</label></div>
       <div class="cl-item" id="cl7"><input type="checkbox" id="cc7" onchange="document.getElementById('cl7').classList.toggle('cl-done',this.checked)"><label for="cc7">Нижнее бельё</label></div>
       <div class="cl-item" id="cl8"><input type="checkbox" id="cc8" onchange="document.getElementById('cl8').classList.toggle('cl-done',this.checked)"><label for="cc8">Пижама</label></div>
       <div class="cl-item" id="cl9"><input type="checkbox" id="cc9" onchange="document.getElementById('cl9').classList.toggle('cl-done',this.checked)"><label for="cc9">Рубашка / одежда на вечер</label></div>
       <div class="cl-item" id="cl10"><input type="checkbox" id="cc10" onchange="document.getElementById('cl10').classList.toggle('cl-done',this.checked)"><label for="cc10">Флисовая кофта (для теплохода)</label></div>
-      <div class="cl-item" id="cl11"><input type="checkbox" id="cc11" onchange="document.getElementById('cl11').classList.toggle('cl-done',this.checked)"><label for="cc11">Атрибутика Крыльев или нейтральная одежда (матч)</label></div>
       <div class="cl-item" id="cl12"><input type="checkbox" id="cc12" onchange="document.getElementById('cl12').classList.toggle('cl-done',this.checked)"><label for="cc12">Кепка / лёгкая шапка</label></div>
     </div>
   </div>
@@ -1948,8 +2040,6 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
     <div class="cl-header">👟 Обувь</div>
     <div class="cl-items">
       <div class="cl-item" id="cl13"><input type="checkbox" id="cc13" onchange="document.getElementById('cl13').classList.toggle('cl-done',this.checked)"><label for="cc13">Удобные кроссовки (основные)</label></div>
-      <div class="cl-item" id="cl14"><input type="checkbox" id="cc14" onchange="document.getElementById('cl14').classList.toggle('cl-done',this.checked)"><label for="cc14">Вечерняя / нарядная обувь</label></div>
-      <div class="cl-item" id="cl15"><input type="checkbox" id="cc15" onchange="document.getElementById('cl15').classList.toggle('cl-done',this.checked)"><label for="cc15">Шлёпанцы / сандалии</label></div>
     </div>
   </div>
 
@@ -1964,7 +2054,6 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
       <div class="cl-item" id="cl20"><input type="checkbox" id="cc20" onchange="document.getElementById('cl20').classList.toggle('cl-done',this.checked)"><label for="cc20">Зарядник для телефона</label></div>
       <div class="cl-item" id="cl21"><input type="checkbox" id="cc21" onchange="document.getElementById('cl21').classList.toggle('cl-done',this.checked)"><label for="cc21">Сумка / рюкзак для прогулок</label></div>
       <div class="cl-item" id="cl22"><input type="checkbox" id="cc22" onchange="document.getElementById('cl22').classList.toggle('cl-done',this.checked)"><label for="cc22">Бутылка для воды</label></div>
-      <div class="cl-item" id="cl23"><input type="checkbox" id="cc23" onchange="document.getElementById('cl23').classList.toggle('cl-done',this.checked)"><label for="cc23">Фотоаппарат / доп. карта памяти</label></div>
     </div>
   </div>
 
@@ -1989,10 +2078,9 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
     <div class="cl-items">
       <div class="cl-item" id="cl32"><input type="checkbox" id="cc32" onchange="document.getElementById('cl32').classList.toggle('cl-done',this.checked)"><label for="cc32">Паспорт 🪪</label></div>
       <div class="cl-item" id="cl33"><input type="checkbox" id="cc33" onchange="document.getElementById('cl33').classList.toggle('cl-done',this.checked)"><label for="cc33">Авиабилеты (распечатать или сохранить в телефоне)</label></div>
-      <div class="cl-item" id="cl34"><input type="checkbox" id="cc34" onchange="document.getElementById('cl34').classList.toggle('cl-done',this.checked)"><label for="cc34">Страховка (если есть)</label></div>
       <div class="cl-item" id="cl35"><input type="checkbox" id="cc35" onchange="document.getElementById('cl35').classList.toggle('cl-done',this.checked)"><label for="cc35">Банковские карты (2 шт. минимум)</label></div>
       <div class="cl-item" id="cl36"><input type="checkbox" id="cc36" onchange="document.getElementById('cl36').classList.toggle('cl-done',this.checked)"><label for="cc36">Наличные рубли (для рынков, прокатов)</label></div>
-      <div class="cl-item" id="cl37"><input type="checkbox" id="cc37" onchange="document.getElementById('cl37').classList.toggle('cl-done',this.checked)"><label for="cc37">Электронные билеты (Баста, матч) — скрин на телефоне</label></div>
+      <div class="cl-item" id="cl37"><input type="checkbox" id="cc37" onchange="document.getElementById('cl37').classList.toggle('cl-done',this.checked)"><label for="cc37">Электронные билеты (матч) — скрин на телефоне</label></div>
     </div>
   </div>
 
@@ -2018,150 +2106,56 @@ body{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))}
 </div>
 </div>
 
+
+<div class="main" style="max-width:860px;margin:0 auto;padding:0 24px 32px">
+  <section id="favoritesSection" class="utility-section">
+    <div class="utility-grid">
+      <div class="utility-card">
+        <div class="section-title" style="font-size:18px">⭐ Избранное</div>
+        <div class="section-sub" style="margin-bottom:10px">Сюда попадают места и пункты, которые ты отметил звездой.</div>
+        <div id="favoritesList" class="jump-list">
+          <div class="inline-muted">Пока ничего не добавлено.</div>
+        </div>
+      </div>
+      <div class="utility-card" id="notesSection">
+        <div class="section-title" style="font-size:18px">📝 Личные заметки</div>
+        <div class="section-sub" style="margin-bottom:10px">Идеи, переносы по дням, свои адреса, брони и телефоны.</div>
+        <textarea id="personalNotes" placeholder="Например: забронировать стол на 2 мая, проверить время теплохода, взять ветровку."></textarea>
+        <div class="route-actions-row">
+          <button class="mini-btn" id="copyNotesBtn">Скопировать заметки</button>
+          <button class="mini-btn" id="downloadStateBtn">Экспорт состояния</button>
+          <button class="mini-btn" id="resetStateBtn">Сбросить отметки</button>
+        </div>
+        <div class="inline-muted" style="margin-top:8px">Заметки и отметки сохраняются локально на телефоне даже после закрытия приложения.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="floating-nav" id="floatingNav">
+  <button onclick="navTo('todayHub', this)" data-fnav="todayHub">Сегодня</button>
+  <button onclick="navTo('weatherSection', this)" data-fnav="weatherSection">Погода</button>
+  <button onclick="navTo('day1', this)" data-fnav="day1">Маршрут</button>
+  <button onclick="navTo('favoritesSection', this)" data-fnav="favoritesSection">Избранное</button>
+  <button onclick="navTo('notesSection', this)" data-fnav="notesSection">Заметки</button>
+</div>
+
 <div class="page-footer">
-  Самара · 29 апреля — 4 мая 2026 &nbsp;·&nbsp; 2 человека &nbsp;·&nbsp; Hampton by Hilton &nbsp;·&nbsp; составлено с помощью Claude · апрель 2026
+  Самара · 29 апреля — 4 мая 2026 &nbsp;·&nbsp; 2 человека &nbsp;·&nbsp; Hampton by Hilton &nbsp;·&nbsp; обновлённое travel-приложение · апрель 2026
 </div>
 
 <script>
 /* navTo: scroll to section by ID and mark active nav button */
-var DAY_IDS = ['day1','day2','day3','day4','day5','day6'];
-var APP_STORAGE_KEY = 'samara-2026-checks-v1';
-
-function getStickyOffset(){
-  var nav = document.getElementById('dayNav');
-  var toolbar = document.querySelector('.app-toolbar');
-  return (nav ? nav.offsetHeight : 50) + (toolbar ? toolbar.offsetHeight : 0) + 8;
-}
-
-function setActiveNavById(id){
-  document.querySelectorAll('.nav-btn').forEach(function(b){
-    var attr = b.getAttribute('onclick') || '';
-    b.classList.toggle('active', attr.indexOf("'" + id + "'") !== -1);
-  });
-}
-
 function navTo(id, btn){
   var el = document.getElementById(id);
   if(!el) return;
-  var y = el.getBoundingClientRect().top + window.pageYOffset - getStickyOffset();
+  // offset for sticky nav bar (~48px)
+  var y = el.getBoundingClientRect().top + window.pageYOffset - 50;
   window.scrollTo({top: y, behavior: 'smooth'});
+  // highlight active nav btn if triggered from nav
   if(btn){
     document.querySelectorAll('.nav-btn').forEach(function(b){b.classList.remove('active');});
     btn.classList.add('active');
-  } else if (DAY_IDS.indexOf(id) !== -1) {
-    setActiveNavById(id);
-  }
-}
-
-function showToast(text){
-  var toast = document.getElementById('appToast');
-  if(!toast) return;
-  toast.textContent = text;
-  toast.classList.add('show');
-  clearTimeout(showToast._timer);
-  showToast._timer = setTimeout(function(){ toast.classList.remove('show'); }, 1700);
-}
-
-function saveChecks(){
-  var state = {};
-  document.querySelectorAll('input[type="checkbox"]').forEach(function(cb){ state[cb.id] = cb.checked; });
-  localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(state));
-}
-
-function restoreChecks(){
-  var raw = localStorage.getItem(APP_STORAGE_KEY);
-  if(!raw) return;
-  try {
-    var state = JSON.parse(raw);
-    Object.keys(state).forEach(function(id){
-      var cb = document.getElementById(id);
-      if(!cb) return;
-      cb.checked = !!state[id];
-      cb.dispatchEvent(new Event('change', {bubbles:true}));
-    });
-  } catch(e) {}
-}
-
-function resetAllChecks(){
-  document.querySelectorAll('input[type="checkbox"]').forEach(function(cb){
-    cb.checked = false;
-    cb.dispatchEvent(new Event('change', {bubbles:true}));
-  });
-  saveChecks();
-  showToast('Отметки сброшены');
-}
-
-function bindCheckPersistence(){
-  document.querySelectorAll('input[type="checkbox"]').forEach(function(cb){
-    cb.addEventListener('change', function(){
-      saveChecks();
-      var label = cb.closest('.pi-item, .cl-item');
-      if(label && cb.checked){ label.classList.add(label.classList.contains('pi-item') ? 'pi-done' : 'cl-done'); }
-      if(label && !cb.checked){ label.classList.remove('pi-done'); label.classList.remove('cl-done'); }
-    });
-  });
-}
-
-function currentDayIndex(){
-  var bestIdx = 0;
-  var bestDist = Infinity;
-  DAY_IDS.forEach(function(id, idx){
-    var el = document.getElementById(id);
-    if(!el) return;
-    var dist = Math.abs(el.getBoundingClientRect().top - getStickyOffset());
-    if(dist < bestDist){ bestDist = dist; bestIdx = idx; }
-  });
-  return bestIdx;
-}
-
-function goToAdjacentDay(step){
-  var idx = currentDayIndex();
-  var next = Math.max(0, Math.min(DAY_IDS.length - 1, idx + step));
-  if(next !== idx){
-    navTo(DAY_IDS[next], null);
-    showToast(step > 0 ? 'Следующий день' : 'Предыдущий день');
-  }
-}
-
-function bindSwipeNavigation(){
-  var startX = 0, startY = 0, startTarget = null;
-  document.addEventListener('touchstart', function(e){
-    if(!e.touches || e.touches.length !== 1) return;
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-    startTarget = e.target;
-  }, {passive:true});
-
-  document.addEventListener('touchend', function(e){
-    if(!startTarget || !e.changedTouches || !e.changedTouches.length) return;
-    if(startTarget.closest('.leaflet-container, input, textarea, a, button, summary, details')) return;
-    var endX = e.changedTouches[0].clientX;
-    var endY = e.changedTouches[0].clientY;
-    var dx = endX - startX;
-    var dy = endY - startY;
-    if(Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.2) return;
-    if(dx < 0) goToAdjacentDay(1);
-    if(dx > 0) goToAdjacentDay(-1);
-  }, {passive:true});
-}
-
-function bindActiveDayObserver(){
-  var observer = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting && DAY_IDS.indexOf(entry.target.id) !== -1){
-        setActiveNavById(entry.target.id);
-      }
-    });
-  }, {rootMargin:'-35% 0px -55% 0px', threshold:0.01});
-  DAY_IDS.forEach(function(id){
-    var el = document.getElementById(id);
-    if(el) observer.observe(el);
-  });
-}
-
-function registerServiceWorker(){
-  if('serviceWorker' in navigator && location.protocol.indexOf('http') === 0){
-    navigator.serviceWorker.register('./sw.js').catch(function(){});
   }
 }
 
@@ -2181,13 +2175,438 @@ function openMapWithGPS(url){
     window.open(url, '_blank');
   }
 }
+</script>
 
-window.addEventListener('DOMContentLoaded', function(){
-  bindCheckPersistence();
-  restoreChecks();
-  bindSwipeNavigation();
-  bindActiveDayObserver();
-  registerServiceWorker();
+
+<script>
+const APP_STORAGE_KEY = 'samara26_v2_state';
+const TRIP_DATES = ['2026-04-29','2026-04-30','2026-05-01','2026-05-02','2026-05-03','2026-05-04'];
+const DAY_IDS = ['day1','day2','day3','day4','day5','day6'];
+const DAY_ROUTE_URLS = {
+  day1:'https://yandex.ru/maps/?rtext=~53.1884,50.0978~53.1910,50.1040~53.1998,50.1458~53.2095,50.1433&rtt=pd',
+  day2:'https://yandex.ru/maps/?rtext=~53.1938,50.1502~53.1924,50.1067~53.1896,50.1541~53.1957,50.1482~53.1975,50.1484&rtt=pd',
+  day3:'https://yandex.ru/maps/?rtext=~53.1998,50.1458~53.1876,50.0952~53.1884,50.0978~53.1910,50.1040~53.1918,50.1075&rtt=pd',
+  day4:'https://yandex.ru/maps/?rtext=~53.1924,50.1067~53.1938,50.1107~53.2053,50.2090&rtt=pd',
+  day5:'https://yandex.ru/maps/?rtext=~53.1876,50.0960~53.2125,50.1700~53.1908,50.1038~53.1905,50.1040&rtt=pd'
+};
+let appState = {checks:{}, favorites:{}, statuses:{}, notes:'', weatherCache:null};
+
+function loadState(){
+  try{
+    const raw = localStorage.getItem(APP_STORAGE_KEY);
+    if(raw){ appState = Object.assign(appState, JSON.parse(raw)); }
+  }catch(e){}
+}
+function saveState(){
+  localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(appState));
+}
+function slugify(text){
+  return (text || '').toLowerCase().replace(/<[^>]*>/g,'').replace(/[^a-zа-яё0-9]+/gi,'-').replace(/^-+|-+$/g,'').slice(0,60) || 'item';
+}
+function statusLabel(status){
+  return ({none:'Статус',plan:'План',booked:'Бронь',visited:'Посетили',skip:'Пропуск'})[status||'none'];
+}
+function statusSymbol(status){
+  return ({none:'•',plan:'🗓',booked:'🎟',visited:'✓',skip:'—'})[status||'none'];
+}
+function statusClass(status){
+  return 'status-' + (status || 'none');
+}
+function applyCheckboxPersistence(){
+  document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    const key = cb.id || cb.name;
+    if(!key) return;
+    if(Object.prototype.hasOwnProperty.call(appState.checks, key)){
+      cb.checked = !!appState.checks[key];
+      cb.dispatchEvent(new Event('change'));
+    }
+    cb.addEventListener('change', () => {
+      appState.checks[key] = cb.checked;
+      saveState();
+      updateTodayHub();
+    });
+  });
+}
+function decoratePlaces(){
+  const selectors = [
+    {sel:'.guide-card', title:'.gc-name', kind:'card'},
+    {sel:'.also-card', title:'.ac-title', kind:'card'},
+    {sel:'.alt-item', title:'.ai-name', kind:'item'},
+    {sel:'.timeline .tl-item', title:'.tl-title', kind:'item'}
+  ];
+  selectors.forEach(group => {
+    document.querySelectorAll(group.sel).forEach((el, index) => {
+      if(el.dataset.enhancedPlace === '1') return;
+      const titleEl = el.querySelector(group.title);
+      if(!titleEl) return;
+      const title = titleEl.textContent.trim();
+      const section = el.closest('[id]')?.id || el.closest('.guide-section,[class*="section"]')?.id || group.sel.replace(/[^a-z]+/g,'');
+      const key = `${section}__${slugify(title)}__${index}`;
+      el.dataset.placeKey = key;
+      if(!el.id){ el.id = 'place-' + key; }
+      const tools = document.createElement('div');
+      tools.className = 'place-tools';
+      tools.innerHTML = `
+        <button class="favorite-toggle" type="button">☆ В избранное</button>
+        <span class="status-dot status-none">•</span>
+        <select class="status-select" aria-label="Статус">
+          <option value="none">Без статуса</option>
+          <option value="plan">Запланировано</option>
+          <option value="booked">Забронировано</option>
+          <option value="visited">Посетили</option>
+          <option value="skip">Пропустить</option>
+        </select>
+      `;
+      el.appendChild(tools);
+      const favBtn = tools.querySelector('.favorite-toggle');
+      const statusDot = tools.querySelector('.status-dot');
+      const select = tools.querySelector('.status-select');
+
+      function paint(){
+        const isFav = !!appState.favorites[key];
+        const status = appState.statuses[key] || 'none';
+        favBtn.classList.toggle('is-on', isFav);
+        favBtn.textContent = isFav ? '★ В избранном' : '☆ В избранное';
+        statusDot.className = 'status-dot ' + statusClass(status);
+        statusDot.textContent = statusSymbol(status);
+        select.value = status;
+        el.classList.remove('card-booked','card-visited','card-skip','item-booked','item-visited','item-skip');
+        if(status === 'booked') el.classList.add(group.kind === 'card' ? 'card-booked' : 'item-booked');
+        if(status === 'visited') el.classList.add(group.kind === 'card' ? 'card-visited' : 'item-visited');
+        if(status === 'skip') el.classList.add(group.kind === 'card' ? 'card-skip' : 'item-skip');
+      }
+      favBtn.addEventListener('click', () => {
+        appState.favorites[key] = !appState.favorites[key];
+        if(!appState.favorites[key]) delete appState.favorites[key];
+        saveState(); paint(); renderFavorites(); updateTodayHub();
+      });
+      select.addEventListener('change', () => {
+        if(select.value === 'none') delete appState.statuses[key];
+        else appState.statuses[key] = select.value;
+        saveState(); paint(); renderFavorites(); updateTodayHub();
+      });
+      el.dataset.placeTitle = title;
+      el.dataset.placeSection = section;
+      paint();
+      el.dataset.enhancedPlace = '1';
+    });
+  });
+}
+function renderFavorites(){
+  const holder = document.getElementById('favoritesList');
+  const strip = document.getElementById('todayPills');
+  if(!holder || !strip) return;
+  const favEls = [...document.querySelectorAll('[data-place-key]')].filter(el => appState.favorites[el.dataset.placeKey]);
+  holder.innerHTML = '';
+  strip.innerHTML = '';
+  if(!favEls.length){
+    holder.innerHTML = '<div class="inline-muted">Пока ничего не добавлено.</div>';
+    return;
+  }
+  favEls.forEach(el => {
+    const title = el.dataset.placeTitle || 'Избранное';
+    const status = appState.statuses[el.dataset.placeKey] || 'none';
+    const row = document.createElement('div');
+    row.className = 'jump-item';
+    row.innerHTML = `
+      <div>
+        <div class="jump-item-title">${title}</div>
+        <div class="jump-item-sub">${statusLabel(status)}</div>
+      </div>
+      <button class="mini-btn" type="button">Открыть</button>
+    `;
+    row.querySelector('button').addEventListener('click', () => navTo(el.id, null));
+    holder.appendChild(row);
+
+    const chip = document.createElement('button');
+    chip.className = 'fav-chip';
+    chip.type = 'button';
+    chip.textContent = '★ ' + title;
+    chip.addEventListener('click', () => navTo(el.id, null));
+    strip.appendChild(chip);
+  });
+}
+function addRouteButtons(){
+  document.querySelectorAll('.map-wrap').forEach(wrap => {
+    const map = wrap.querySelector('.leaflet-map-container');
+    const label = wrap.querySelector('.map-label');
+    if(!map || !label || label.dataset.routeEnhanced === '1') return;
+    const dayId = map.id.replace('map','').replace('Day','day').toLowerCase();
+    const routeUrl = DAY_ROUTE_URLS[dayId];
+    if(routeUrl){
+      const box = document.createElement('div');
+      box.className = 'day-route-tools';
+      box.innerHTML = `
+        <button type="button" class="mini-btn">Открыть точки дня</button>
+        <button type="button" class="mini-btn">Маршрут без GPS</button>
+      `;
+      const [btn1, btn2] = box.querySelectorAll('button');
+      btn1.addEventListener('click', () => openMapWithGPS(routeUrl));
+      btn2.addEventListener('click', () => window.open(routeUrl.replace('rtext=~','rtext='), '_blank'));
+      label.appendChild(box);
+    }
+    label.dataset.routeEnhanced = '1';
+  });
+}
+function setupNotes(){
+  const notes = document.getElementById('personalNotes');
+  if(!notes) return;
+  notes.value = appState.notes || '';
+  notes.addEventListener('input', () => { appState.notes = notes.value; saveState(); });
+  document.getElementById('copyNotesBtn').addEventListener('click', async () => {
+    try{ await navigator.clipboard.writeText(notes.value || ''); }catch(e){}
+  });
+  document.getElementById('downloadStateBtn').addEventListener('click', exportAppState);
+  document.getElementById('resetStateBtn').addEventListener('click', resetAppState);
+}
+function exportAppState(){
+  const exportPayload = {
+    exportedAt: new Date().toISOString(),
+    checks: appState.checks,
+    favorites: Object.keys(appState.favorites).filter(k => appState.favorites[k]).map(k => {
+      const el = document.querySelector(`[data-place-key="${k}"]`);
+      return {key:k, title: el?.dataset.placeTitle || k, status: appState.statuses[k] || 'none'};
+    }),
+    statuses: appState.statuses,
+    notes: appState.notes || ''
+  };
+  const blob = new Blob([JSON.stringify(exportPayload, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'samara26-state.json'; a.click();
+  URL.revokeObjectURL(url);
+}
+function resetAppState(){
+  if(!confirm('Сбросить все галочки, избранное, статусы и заметки?')) return;
+  appState = {checks:{}, favorites:{}, statuses:{}, notes:'', weatherCache:appState.weatherCache || null};
+  saveState();
+  localStorage.removeItem(APP_STORAGE_KEY + '_weather');
+  window.location.reload();
+}
+function updateTodayHub(){
+  const title = document.getElementById('todayTitle');
+  const sub = document.getElementById('todaySubtitle');
+  const focus = document.getElementById('focusBullets');
+  if(!title || !sub || !focus) return;
+  const today = new Date();
+  const tripStart = new Date('2026-04-29T00:00:00+04:00');
+  const tripEnd = new Date('2026-05-04T23:59:59+04:00');
+  const daysToGo = Math.ceil((tripStart - today)/(1000*60*60*24));
+  if(today < tripStart){
+    title.textContent = `До поездки ${Math.max(daysToGo,0)} дн.`;
+    sub.textContent = 'Приложение готово к поездке: можно обновлять погоду, отмечать места и собирать избранное.';
+  }else if(today > tripEnd){
+    title.textContent = 'Поездка завершена';
+    sub.textContent = 'Маршрут, заметки и отметки сохранены локально — можно использовать как архив.';
+  }else{
+    const idx = Math.max(0, Math.min(5, Math.floor((today - tripStart)/(1000*60*60*24))));
+    title.textContent = `Сегодня · День ${idx+1}`;
+    sub.textContent = 'Открой маршрут дня, проверь погоду и ближайшие забронированные точки.';
+  }
+
+  const uncheckedPlanner = [...document.querySelectorAll('#planner input[type="checkbox"]')].filter(cb => !cb.checked);
+  const packedCount = [...document.querySelectorAll('#checklist input[type="checkbox"]')].filter(cb => cb.checked).length;
+  const favCount = Object.keys(appState.favorites).filter(k => appState.favorites[k]).length;
+  const bookedCount = Object.values(appState.statuses).filter(v => v === 'booked').length;
+  const visitedCount = Object.values(appState.statuses).filter(v => v === 'visited').length;
+  focus.innerHTML = '';
+  const bullets = [
+    uncheckedPlanner[0] ? uncheckedPlanner[0].nextElementSibling?.textContent || 'Есть незавершённые задачи в планере' : 'Все задачи в планере отмечены.',
+    `Собрано вещей: ${packedCount} пунктов`,
+    `Избранное: ${favCount} · броней: ${bookedCount} · посещено: ${visitedCount}`
+  ];
+  bullets.forEach((text, i) => {
+    const item = document.createElement('div');
+    item.className = 'today-bullet';
+    item.innerHTML = `<span>${i+1}</span><div>${text}</div>`;
+    focus.appendChild(item);
+  });
+}
+function setupFloatingNavObserver(){
+  const ids = ['todayHub','weatherSection','day1','favoritesSection','notesSection'];
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        document.querySelectorAll('#floatingNav button').forEach(btn => btn.classList.toggle('active', btn.dataset.fnav === entry.target.id));
+      }
+    });
+  }, {rootMargin:'-30% 0px -55% 0px', threshold:0.05});
+  ids.forEach(id => { const el = document.getElementById(id); if(el) observer.observe(el); });
+}
+function setupSwipeDays(){
+  let startX = null;
+  let startY = null;
+  document.addEventListener('touchstart', (e) => {
+    if(e.touches.length !== 1) return;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  }, {passive:true});
+  document.addEventListener('touchend', (e) => {
+    if(startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if(Math.abs(dx) > 80 && Math.abs(dy) < 50){
+      const currentIdx = getCurrentVisibleDayIndex();
+      if(dx < 0 && currentIdx < DAY_IDS.length - 1) navTo(DAY_IDS[currentIdx + 1], null);
+      if(dx > 0 && currentIdx > 0) navTo(DAY_IDS[currentIdx - 1], null);
+    }
+    startX = null; startY = null;
+  }, {passive:true});
+}
+function getCurrentVisibleDayIndex(){
+  let bestIdx = 0, bestDist = Infinity;
+  DAY_IDS.forEach((id, idx) => {
+    const el = document.getElementById(id); if(!el) return;
+    const dist = Math.abs(el.getBoundingClientRect().top - 110);
+    if(dist < bestDist){ bestDist = dist; bestIdx = idx; }
+  });
+  return bestIdx;
+}
+function weatherCodeToEmoji(code){
+  if([0].includes(code)) return '☀️';
+  if([1,2].includes(code)) return '🌤';
+  if([3].includes(code)) return '☁️';
+  if([45,48].includes(code)) return '🌫';
+  if([51,53,55,56,57].includes(code)) return '🌦';
+  if([61,63,65,66,67,80,81,82].includes(code)) return '🌧';
+  if([71,73,75,77,85,86].includes(code)) return '🌨';
+  if([95,96,99].includes(code)) return '⛈';
+  return '⛅';
+}
+function weatherCodeToText(code){
+  if(code === 0) return 'ясно';
+  if([1,2].includes(code)) return 'переменная облачность';
+  if(code === 3) return 'пасмурно';
+  if([45,48].includes(code)) return 'туман';
+  if([51,53,55,56,57].includes(code)) return 'морось';
+  if([61,63,65,66,67,80,81,82].includes(code)) return 'дождь';
+  if([71,73,75,77,85,86].includes(code)) return 'снег';
+  if([95,96,99].includes(code)) return 'гроза';
+  return 'облачно';
+}
+function applyWeatherData(data, metaText){
+  const cards = [...document.querySelectorAll('.weather-grid .wday')];
+  const status = document.getElementById('weatherStatus');
+  const updatedBadge = document.getElementById('weatherUpdatedBadge');
+  const currentBadge = document.getElementById('weatherRangeBadge');
+  const byDate = {};
+  if(data?.daily?.time){
+    data.daily.time.forEach((dt, i) => {
+      byDate[dt] = {
+        hi: Math.round(data.daily.temperature_2m_max[i]),
+        lo: Math.round(data.daily.temperature_2m_min[i]),
+        code: data.daily.weather_code[i],
+        rain: data.daily.precipitation_probability_max ? data.daily.precipitation_probability_max[i] : null,
+        wind: data.daily.windspeed_10m_max ? Math.round(data.daily.windspeed_10m_max[i]) : null
+      };
+    });
+  }
+  cards.forEach((card, i) => {
+    const tripDate = TRIP_DATES[i];
+    const daily = byDate[tripDate];
+    if(daily){
+      const icon = card.querySelector('.wd-icon');
+      const hi = card.querySelector('.wd-hi');
+      const lo = card.querySelector('.wd-lo');
+      const note = card.querySelector('.wd-note');
+      if(icon) icon.textContent = weatherCodeToEmoji(daily.code);
+      if(hi) hi.textContent = (daily.hi > 0 ? '+' : '') + daily.hi + '°C';
+      if(lo) lo.textContent = (daily.lo > 0 ? '+' : '') + daily.lo + '°C';
+      if(note){
+        let txt = weatherCodeToText(daily.code);
+        if(daily.rain !== null) txt += ` · осадки ${daily.rain}%`;
+        if(daily.wind !== null) txt += ` · ветер ${daily.wind} км/ч`;
+        note.textContent = txt;
+      }
+      card.dataset.live = '1';
+    }
+  });
+  const inRangeCount = cards.filter(c => c.dataset.live === '1').length;
+  if(updatedBadge) updatedBadge.textContent = 'Обновлено: ' + new Date().toLocaleString('ru-RU', {day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit'});
+  if(currentBadge && data?.current) currentBadge.textContent = `Сейчас в Самаре ${Math.round(data.current.temperature_2m)}°C · ${weatherCodeToText(data.current.weather_code)}`;
+  if(status){
+    if(inRangeCount === TRIP_DATES.length){
+      status.innerHTML = `<strong>Живой прогноз обновлён.</strong> ${metaText || 'Показываю актуальные данные по дням поездки.'}`;
+    }else{
+      status.innerHTML = `<strong>Пока слишком рано для точного прогноза на все дни поездки.</strong> Показал текущую погоду по Самаре и обновил доступные даты.`;
+    }
+  }
+  updateClothingTips(data);
+}
+function updateClothingTips(data){
+  const cards = document.querySelectorAll('[data-clothing-card] .cc-text');
+  if(!cards.length || !data?.daily) return;
+  const highs = data.daily.temperature_2m_max || [];
+  const winds = data.daily.windspeed_10m_max || [];
+  const rains = data.daily.precipitation_probability_max || [];
+  if(cards[0]){
+    const avgHi = highs.length ? Math.round(highs.slice(0, Math.min(3, highs.length)).reduce((a,b)=>a+b,0)/Math.min(3, highs.length)) : 15;
+    cards[0].textContent = avgHi >= 18
+      ? 'Футболка + лёгкая overshirt или худи на вечер. Днём может быть тепло, но на Волге всё равно держи лёгкую куртку под рукой.'
+      : 'Футболка + лёгкий свитер/худи. Поверх — ветровка или лёгкая куртка. На набережной ветер делает погоду прохладнее, чем кажется.';
+  }
+  if(cards[1]){
+    const windy = winds.some(v => v >= 18);
+    cards[1].textContent = windy
+      ? 'Casual или спортивный стиль. Для матча лучше закрытая обувь и лёгкая куртка — вечером и на ветру у стадиона будет прохладнее.'
+      : 'Спортивный или casual стиль. Атрибутика Крыльев или нейтральная одежда. На вечер всё равно возьми лёгкий верхний слой.';
+  }
+  if(cards[2]){
+    const rain = rains.some(v => v >= 40);
+    cards[2].textContent = rain
+      ? 'На воду обязательно ветровка, закрытая обувь и компактный дождевик или зонт. На теплоходе ощущается холоднее, чем в городе.'
+      : 'Ветровка обязательна — на воде ощущение температуры на несколько градусов ниже. Идеально: футболка + флис/худи + ветровка.';
+  }
+}
+async function refreshWeather(force){
+  const status = document.getElementById('weatherStatus');
+  const cacheKey = APP_STORAGE_KEY + '_weather';
+  const now = Date.now();
+  if(!force){
+    try{
+      const cached = JSON.parse(localStorage.getItem(cacheKey) || 'null');
+      if(cached && now - cached.savedAt < 1000*60*60){
+        applyWeatherData(cached.data, 'Данные взяты из локального кеша.');
+        return;
+      }
+    }catch(e){}
+  }
+  if(status) status.textContent = 'Обновляю погоду…';
+  try{
+    const url = 'https://api.open-meteo.com/v1/forecast?latitude=53.1959&longitude=50.1008&current=temperature_2m,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,windspeed_10m_max&timezone=Europe/Samara&forecast_days=16';
+    const res = await fetch(url, {cache:'no-store'});
+    const data = await res.json();
+    localStorage.setItem(cacheKey, JSON.stringify({savedAt: now, data}));
+    applyWeatherData(data, 'Данные Open-Meteo обновлены прямо в приложении.');
+  }catch(err){
+    try{
+      const cached = JSON.parse(localStorage.getItem(cacheKey) || 'null');
+      if(cached?.data){
+        applyWeatherData(cached.data, 'Сеть недоступна, показал последнюю сохранённую версию.');
+        return;
+      }
+    }catch(e){}
+    if(status) status.textContent = 'Не удалось обновить погоду. Проверь интернет или открой Яндекс Погоду.';
+  }
+}
+function setupWeatherAutoRefresh(){ refreshWeather(false); }
+function setupServiceWorker(){
+  if('serviceWorker' in navigator){
+    window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+  }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  loadState();
+  applyCheckboxPersistence();
+  decoratePlaces();
+  addRouteButtons();
+  setupNotes();
+  renderFavorites();
+  updateTodayHub();
+  setupFloatingNavObserver();
+  setupSwipeDays();
+  setupWeatherAutoRefresh();
+  setupServiceWorker();
 });
 </script>
 
@@ -2211,10 +2630,6 @@ window.addEventListener('DOMContentLoaded', function(){
   }
 
   /* ─── Build one day map ─── */
-  function yandexPlaceUrl(lat, lon, label){
-    return 'https://yandex.ru/maps/?ll=' + lon + ',' + lat + '&z=17&text=' + encodeURIComponent(label || (lat + ',' + lon));
-  }
-
   function dayMap(id, center, zoom, pts){
     var el = document.getElementById(id);
     if(!el) return;
@@ -2228,10 +2643,7 @@ window.addEventListener('DOMContentLoaded', function(){
     /* numbered markers */
     pts.forEach(function(p,i){
       var m = L.marker([p[0],p[1]],{icon:pin(i+1)}).addTo(map);
-      var popup = '' +
-        '<div style="font-size:12px;font-weight:500;margin-bottom:6px">' + p[2] + '</div>' +
-        '<a class="ybtn" target="_blank" rel="noopener" href="' + yandexPlaceUrl(p[0], p[1], p[2]) + '">🗺 Открыть в Яндекс Картах</a>';
-      m.bindPopup(popup);
+      m.bindPopup('<div style="font-size:12px;font-weight:500">'+p[2]+'</div>');
     });
   }
 
@@ -2240,7 +2652,7 @@ window.addEventListener('DOMContentLoaded', function(){
   dayMap('mapDay1',[53.196,50.123],13,[
     [53.1884,50.0978,'1 · Пряный Барашек — первый обед'],
     [53.1910,50.1040,'2 · Набережная / Струковский сад'],
-    [53.1998,50.1458,'3 · White Cup (кофе перед концертом)'],
+    [53.1998,50.1458,'3 · White Cup (вечерний кофе)'],
     [53.2095,50.1433,'4 · Вечер · бар ХВАТ или кино']
   ]);
 
@@ -2268,7 +2680,7 @@ window.addEventListener('DOMContentLoaded', function(){
      Центр / шопинг → обед → Самара Арена */
   dayMap('mapDay4',[53.196,50.152],12,[
     [53.1924,50.1067,'1 · Ленинградская — шопинг, сувениры'],
-    [53.1938,50.1107,'2 · Red Rak (обед перед матчем)'],
+    [53.1938,50.1107,'2 · Рыбалтика (обед перед матчем)'],
     [53.2053,50.2090,'3 · Самара Арена ⚽ Крылья — Спартак']
   ]);
 
