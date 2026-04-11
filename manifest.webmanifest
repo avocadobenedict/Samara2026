@@ -1,21 +1,23 @@
 {
   "name": "САМАРА 26",
   "short_name": "САМАРА 26",
-  "description": "Личное travel-приложение по поездке в Самару: маршрут, погода, избранное, заметки.",
-  "start_url": "./index.html",
+  "description": "Путешествие в Самару 29 апреля — 4 мая 2026",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#FAF8F3",
-  "theme_color": "#4DB6E5",
+  "theme_color": "#1B4F8A",
+  "lang": "ru",
   "icons": [
     {
-      "src": "./icon-192.png",
+      "src": "icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "./icon-512.png",
+      "src": "icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
