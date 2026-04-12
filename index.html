@@ -1,83 +1,162 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+
+<html lang="ru">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299.4">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
-</head>
-<body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="ru"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="utf-8"/&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;</p>
-<p class="p1">&lt;title&gt;Самара · 29 апр — 4 мая 2026&lt;/title&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;link rel="manifest" href="manifest.webmanifest"&gt;</p>
-<p class="p1">&lt;meta name="theme-color" content="#1B4F8A"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1">body{font-family:Arial,sans-serif;background:#FAF8F3;margin:0}</p>
-<p class="p1">.main{padding:20px;max-width:900px;margin:auto}</p>
-<p class="p1">.day{border-bottom:1px solid #ddd;padding:15px 0}</p>
-<p class="p1">.btn{padding:6px 10px;margin:4px;border-radius:6px;border:1px solid #ccc;cursor:pointer}</p>
-<p class="p1">.primary{background:#1B4F8A;color:white}</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div class="main"&gt;</p>
-<p class="p1">&lt;h1&gt;Самара 2026&lt;/h1&gt;&lt;script&gt;</p>
-<p class="p1">function addToDay(name, dayId){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const day = document.getElementById(dayId);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>const el = document.createElement('div');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>el.innerHTML = `</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="margin-top:8px;padding:8px;border:1px solid #ddd;border-radius:6px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;b&gt;${name}&lt;/b&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn primary" onclick="makeMain(this)"&gt;Сделать основным&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>`;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>day.appendChild(el);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// сразу делаем основным</p>
-<p class="p1"><span class="Apple-converted-space">  </span>makeMain(el.querySelector('button'));</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">function makeMain(btn){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const parent = btn.closest('.day');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>parent.querySelectorAll('.primary').forEach(b=&gt;{</p>
-<p class="p1"><span class="Apple-converted-space">    </span>b.classList.remove('primary');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>btn.classList.add('primary');</p>
-<p class="p1">}</p>
-<p class="p1">&lt;/script&gt;&lt;div id="day3" class="day"&gt;</p>
-<p class="p1">&lt;h2&gt;1 мая&lt;/h2&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;button class="btn" onclick="addToDay('Бункер Сталина', 'day3')"&gt;+ Бункер Сталина&lt;/button&gt;</p>
-<p class="p1">&lt;button class="btn" onclick="addToDay('Жигулёвский завод', 'day3')"&gt;+ Пивзавод&lt;/button&gt;</p>
-<p class="p1">&lt;button class="btn" onclick="addToDay('Вертолётка', 'day3')"&gt;+ Вертолётка&lt;/button&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div id="day4" class="day"&gt;</p>
-<p class="p1">&lt;h2&gt;2 мая&lt;/h2&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;button class="btn" onclick="addToDay('Бар HopHead', 'day4')"&gt;+ Бар&lt;/button&gt;</p>
-<p class="p1">&lt;button class="btn" onclick="addToDay('Ресторан Lotte', 'day4')"&gt;+ Ресторан&lt;/button&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
-</body>
-</html>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Самара · 29 апр — 4 мая 2026</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&amp;family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&amp;display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#FAF8F3;--white:#FFFFFF;--navy:#1B4F8A;--navy-light:#2E6BB5;
+  --brick:#B5451B;--text:#1A1613;--muted:#6B6459;--border:#E4DFD5;
+  --green:#0F6E56;--amber:#9B6A10;--tag-h:28px;
+  --radius:10px;--r-sm:6px;
+}
+body{font-family:'IBM Plex Sans',sans-serif;background:var(--cream);color:var(--text);font-size:14px;line-height:1.6}
+a{color:var(--navy);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── HEADER ── */
+.page-header{background:var(--navy);color:#fff;padding:32px 24px 28px;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;right:-40px;top:-40px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.page-header::after{content:'';position:absolute;right:60px;bottom:-60px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,0.03)}
+.header-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.6;margin-bottom:6px}
+.header-title{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;line-height:1.2;margin-bottom:10px}
+.header-sub{font-size:13px;opacity:.7;margin-bottom:18px}
+.header-pills{display:flex;flex-wrap:wrap;gap:8px}
+.hpill{background:rgba(255,255,255,0.12);border:0.5px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500}
+.hpill-link{cursor:pointer;transition:background .15s,transform .1s}
+.hpill-link:hover{background:rgba(255,255,255,0.25);transform:translateY(-1px)}
+.hpill-link:active{transform:translateY(0)}
+
+/* ── NAV ── */
+.day-nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 24px;display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;position:sticky;top:0;z-index:100}
+.day-nav::-webkit-scrollbar{display:none}
+.nav-btn{padding:12px 16px;font-size:13px;font-weight:400;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;font-family:'IBM Plex Sans',sans-serif;transition:all .15s}
+.nav-btn:hover{color:var(--text)}
+.nav-btn.active{color:var(--navy);border-bottom-color:var(--navy);font-weight:500}
+
+/* ── WEATHER ── */
+.weather-section{padding:20px 24px;background:var(--white);border-bottom:1px solid var(--border)}
+.section-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;font-weight:400}
+.weather-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.wday{background:var(--cream);border-radius:var(--r-sm);padding:10px 8px;text-align:center;border:0.5px solid var(--border)}
+.wday.match-d{border-color:#1D9E75;background:#F0FBF6}
+.wday.fly-d{border-color:var(--navy-light);background:#EEF4FB}
+.wday.holiday-d{border-color:#EF9F27;background:#FAEEDA}
+.wd-date{font-size:10px;color:var(--muted);margin-bottom:4px}
+.wd-icon{font-size:20px;margin-bottom:4px;display:block}
+.wd-hi{font-size:14px;font-weight:500;color:var(--text)}
+.wd-lo{font-size:11px;color:var(--muted)}
+.wd-note{font-size:10px;color:var(--muted);margin-top:3px;line-height:1.3}
+.weather-note{margin-top:10px;font-size:11px;color:var(--muted);font-style:italic}
+
+/* ── CLOTHING BAR ── */
+.clothing-section{padding:16px 24px;background:#EEF4FB;border-bottom:1px solid var(--border)}
+.clothing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ccloth{background:var(--white);border-radius:var(--r-sm);padding:10px 12px;border:0.5px solid #C8DDEE}
+.cc-day{font-size:10px;color:var(--navy);font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px}
+.cc-text{font-size:12px;color:var(--text);line-height:1.5}
+
+/* ── RATING LEGEND ── */
+.rating-legend{background:#EEF4FB;border:0.5px solid #C8DDEE;border-radius:var(--radius);padding:12px 16px;margin:16px 0}
+.rl-title{font-size:11px;font-weight:500;color:var(--navy);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px}
+.rl-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.rl-item{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.rl-pill{font-size:9px;font-weight:500;border-radius:6px;padding:2px 8px;white-space:nowrap}
+.rlp-low{background:#E1F5EE;color:var(--green)}
+.rlp-mid{background:#FAEEDA;color:#9B6A10}
+.rlp-high{background:#FAECE7;color:var(--brick)}
+
+/* ── MAIN ── */
+.main{padding:0 24px;max-width:860px;margin:0 auto}
+
+/* ── DAY SECTION ── */
+.day-section{padding:24px 0;border-bottom:1px solid var(--border)}
+.day-section:last-of-type{border-bottom:none}
+.day-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
+.day-circle{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0}
+.dc-def{background:#E6F1FB;color:var(--navy)}.dc-fly{background:#dce8f8;color:var(--navy)}.dc-match{background:#E1F5EE;color:var(--green)}.dc-holiday{background:#FAEEDA;color:#854F0B}
+.day-title-wrap{flex:1}
+.day-num-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:3px}
+.day-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:var(--text)}
+.day-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;margin-top:4px;font-weight:500;margin-right:4px}
+.db-fly{background:#E6F1FB;color:var(--navy)}.db-match{background:#E1F5EE;color:var(--green)}.db-holiday{background:#FAEEDA;color:#854F0B}.db-concert{background:#1B4F8A;color:white}
+
+/* flight pill */
+.flight-pill{display:flex;align-items:center;gap:12px;background:#EEF4FB;border:1px solid #C8DDEE;border-radius:var(--radius);padding:12px 16px;margin-bottom:16px}
+.fp-city{font-size:13px;font-weight:500;color:var(--navy)}.fp-time{font-size:18px;font-weight:500;color:var(--navy)}.fp-label{font-size:10px;color:var(--muted)}
+.fp-line{flex:1;height:1px;background:#C8DDEE;position:relative}.fp-line::after{content:'✈';position:absolute;top:-8px;left:50%;transform:translateX(-50%);font-size:14px;color:var(--navy-light)}
+
+/* concert banner */
+.concert-banner{background:linear-gradient(135deg,#1a2744 0%,#2E6BB5 100%);border-radius:var(--radius);padding:14px 16px;margin-bottom:14px;border:0.5px solid #3a7fd5}
+.cb-row{display:flex;align-items:flex-start;gap:12px}
+.cb-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.cb-title{font-size:14px;font-weight:500;color:white;margin-bottom:2px}
+.cb-sub{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.5}
+.cb-pill{background:rgba(255,255,255,0.15);border:0.5px solid rgba(255,255,255,0.3);border-radius:20px;padding:3px 10px;font-size:10px;font-weight:500;color:white;margin-top:6px;display:inline-block}
+.cb-link{font-size:11px;color:rgba(255,255,255,0.6);margin-top:4px;display:block}
+
+/* holiday note */
+.holiday-note{background:#FAEEDA;border:0.5px solid #EF9F27;border-radius:var(--r-sm);padding:8px 12px;margin-bottom:12px;font-size:11px;color:#7D5700;line-height:1.5}
+
+/* opening badge */
+.opening-banner{background:#E1F5EE;border:0.5px solid #9FE1CB;border-radius:var(--radius);padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.ob-icon{font-size:20px}
+.ob-text{font-size:13px;font-weight:500;color:var(--green)}
+.ob-sub{font-size:11px;color:#085041;margin-top:2px}
+
+/* timeline */
+.timeline{position:relative;padding-left:26px;margin-bottom:18px}
+.timeline::before{content:'';position:absolute;left:6px;top:4px;bottom:4px;width:1.5px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:16px}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-23px;top:4px;width:9px;height:9px;border-radius:50%;border:2px solid;flex-shrink:0}
+.td-navy{background:#dce8f8;border-color:var(--navy)}.td-green{background:#E1F5EE;border-color:var(--green)}
+.td-amber{background:#FAEEDA;border-color:#EF9F27}.td-brick{background:#FAECE7;border-color:var(--brick)}
+.td-pink{background:#FBEAF0;border-color:#D4537E}.td-gray{background:var(--border);border-color:var(--muted)}
+.td-concert{background:#C8DDEE;border-color:var(--navy)}
+.tl-time{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:2px}
+.tl-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px}
+.tl-desc{font-size:12px;color:var(--muted);line-height:1.55}
+.tl-tag{display:inline-flex;align-items:center;gap:3px;font-size:10px;padding:2px 7px;border-radius:8px;font-weight:500;margin-bottom:4px}
+.tt-lunch{background:#FAEEDA;color:#854F0B}.tt-coffee{background:#FEF3D9;color:#7D5700}
+.tt-shop{background:#EEEDFE;color:#3C3489}.tt-match{background:#E1F5EE;color:var(--green)}
+.tt-flight{background:#E6F1FB;color:var(--navy)}.tt-concert{background:#1B4F8A;color:white}
+.tt-cinema{background:#E1F5EE;color:var(--green)}.tt-evening{background:#FAECE7;color:var(--brick)}
+.price-chip{display:inline-block;font-size:10px;background:#E1F5EE;color:var(--green);padding:2px 7px;border-radius:8px;font-weight:500;margin-left:4px}
+
+/* alternative accordion */
+.alt-block{margin-top:10px}
+.alt-block summary{font-size:11px;color:var(--navy);cursor:pointer;display:inline-flex;align-items:center;gap:4px;user-select:none;list-style:none;padding:3px 0;font-weight:500}
+.alt-block summary::-webkit-details-marker{display:none}
+.alt-block[open] summary::before{content:'▾ '}
+.alt-block:not([open]) summary::before{content:'▸ '}
+.alt-block summary:hover{color:var(--navy-light)}
+.alt-list{margin-top:10px;display:flex;flex-direction:column;gap:8px;padding-left:2px}
+.alt-item{background:var(--cream);border-radius:var(--r-sm);padding:10px 12px;border:0.5px solid var(--border)}
+.alt-item.is-rec{border-color:#9FE1CB;background:#F0FBF6}
+.alt-item.is-lux{border-color:#AFA9EC;background:#F3F2FE}
+.ai-head{display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:3px}
+.ai-name{font-size:12px;font-weight:500;color:var(--text)}
+.ai-badges{display:flex;gap:4px;flex-wrap:wrap;flex-shrink:0}
+.aib{font-size:9px;font-weight:500;border-radius:8px;padding:1px 6px}
+.aib-rec{background:#E1F5EE;color:var(--green)}
+.aib-alt{background:#E6F1FB;color:var(--navy)}
+.aib-lux{background:#EEEDFE;color:#3C3489}
+.aib-new{background:#FAEEDA;color:#854F0B}
+.aib-closed{background:#FAECE7;color:var(--brick)}
+.ai-addr{font-size:10px;color:var(--muted);margin-bottom:3px}
+.ai-desc{font-size:11px;color:var(--muted);line-height:1.5}
+.ai-meta{display:flex;gap:6px;margin-top:5px;flex-wrap:wrap;align-items:center}
+.aipl{font-size:9px;font-weight:500;border-radius:6px;padding:1px 6px}
+.aipl-low{background:#E1F5EE;color:var(--green)}
+.aipl-mid{background:#FAEEDA;color:#9B6A10}
+.aipl-high{background:#FAECE7;color:var(--brick)}
+.ai-rub{font-size:10px;color:var(--muted)}
+.ai-cq{font-size:10px;color:#9B6A10}
+.ai-cq-label{font-size:9px;color:var(--muted)}
+/* truncated for brevity in canvas? */
