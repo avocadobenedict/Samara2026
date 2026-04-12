@@ -159,4 +159,935 @@ a:hover{text-decoration:underline}
 .ai-rub{font-size:10px;color:var(--muted)}
 .ai-cq{font-size:10px;color:#9B6A10}
 .ai-cq-label{font-size:9px;color:var(--muted)}
-/* truncated for brevity in canvas? */
+.alt-actions{margin-top:8px;display:flex;justify-content:flex-end}
+.alt-choose-btn{display:inline-flex;align-items:center;gap:5px;background:#EEF4FB;color:var(--navy);border:1px solid #C8DDEE;border-radius:16px;padding:6px 10px;font-size:10px;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif}
+.alt-choose-btn:hover{background:#E6F1FB}
+.alt-item.is-selected{border-color:#2E6BB5;background:#EEF4FB}
+.main-choice-pill{display:inline-flex;align-items:center;gap:5px;margin-top:6px;padding:3px 9px;border-radius:10px;background:#EEF4FB;color:var(--navy);font-size:10px;font-weight:600}
+
+/* match banner */
+.match-banner{background:#F0FBF6;border:1px solid #9FE1CB;border-radius:var(--radius);padding:12px 14px;margin-bottom:14px}
+.mb-title{font-size:14px;font-weight:500;color:var(--green);margin-bottom:3px}
+.mb-info{font-size:12px;color:#085041;line-height:1.5}
+.mb-chip{display:inline-block;background:var(--green);color:#E1F5EE;font-size:10px;padding:2px 8px;border-radius:8px;margin-top:4px;font-weight:500}
+
+/* map */
+.map-wrap{border-radius:var(--radius);overflow:hidden;border:0.5px solid var(--border);margin-top:16px}
+.map-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px;padding:6px 10px;background:var(--white);border-bottom:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.map-wrap img{cursor:pointer}
+/* ── LEAFLET MAPS ── */
+.leaflet-map-container{height:270px;width:100%;border-radius:0;position:relative;z-index:1}
+.leaflet-container{background:#e8e4dc;font-family:'IBM Plex Sans',sans-serif}
+.leaflet-popup-content-wrapper{border-radius:8px;font-family:'IBM Plex Sans',sans-serif;font-size:12px;padding:2px 4px}
+.leaflet-control-attribution{font-size:8px}
+
+.map-wrap img:hover{opacity:0.9}
+.map-label a{font-size:10px;color:var(--navy)}
+.map-wrap img{width:100%;display:block;height:220px;object-fit:cover}
+.map-legend{display:flex;flex-wrap:wrap;gap:10px;padding:8px 10px;background:var(--white);border-top:0.5px solid var(--border)}
+.ml-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted)}
+.ml-item a{color:var(--navy);font-size:11px}
+.ml-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+/* ── GUIDE SECTIONS ── */
+.guide-section{padding:20px 0;border-top:1px solid var(--border)}
+.section-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;margin-bottom:6px;color:var(--text)}
+.section-sub{font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.6}
+.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.guide-card{background:var(--white);border:0.5px solid var(--border);border-radius:var(--radius);padding:13px 14px}
+.guide-card.gc-must{border-color:var(--navy-light)}
+.guide-card.gc-closed{opacity:0.65;border-style:dashed}
+.gc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin-bottom:3px}
+.gc-name{font-size:13px;font-weight:500;color:var(--text)}
+.gc-tags{display:flex;gap:4px;flex-wrap:wrap;flex-shrink:0}
+.gc-tag{font-size:9px;font-weight:500;border-radius:8px;padding:2px 6px}
+.gct-must{background:var(--navy);color:white}
+.gct-roast{background:#EEEDFE;color:#3C3489}
+.gct-city{background:#E6F1FB;color:var(--navy)}
+.gct-closed{background:#FAECE7;color:var(--brick)}
+.gct-new{background:#E1F5EE;color:var(--green)}
+.gc-addr{font-size:10px;color:var(--muted);margin-bottom:4px}
+.gc-desc{font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:6px}
+.gc-meta{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.gc-pl{font-size:9px;font-weight:500;border-radius:6px;padding:1px 6px}
+.gcpl-low{background:#E1F5EE;color:var(--green)}
+.gcpl-mid{background:#FAEEDA;color:#9B6A10}
+.gcpl-high{background:#FAECE7;color:var(--brick)}
+.gc-rub{font-size:10px;color:var(--muted)}
+.gc-cq{font-size:10px;color:#9B6A10}
+
+.card-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.card-btn{display:inline-flex;align-items:center;gap:4px;background:#EEF4FB;color:var(--navy);border:1px solid #C8DDEE;border-radius:16px;padding:6px 10px;font-size:10px;font-weight:600;text-decoration:none;cursor:pointer}
+.card-btn:hover{text-decoration:none;background:#E6F1FB}
+.day-picker{display:none;flex-wrap:wrap;gap:6px;margin-top:8px}
+.day-picker.open{display:flex}
+.day-chip{display:inline-flex;align-items:center;gap:4px;background:#FFF3CD;color:#7D5700;border:1px solid #F0D98B;border-radius:16px;padding:5px 9px;font-size:10px;font-weight:600;cursor:pointer}
+.day-chip:hover{background:#FBE9A9}
+.added-badge{display:inline-block;margin-top:6px;font-size:10px;padding:2px 8px;border-radius:8px;background:#E6F1FB;color:var(--navy);font-weight:500}
+.day-custom-note{margin-top:10px;background:#F8FBFF;border-left:3px solid var(--navy-light);border-radius:8px;padding:10px 12px;font-size:11px;color:var(--muted)}
+.tl-item.user-added{border:1px dashed #C8DDEE;border-radius:10px;padding:12px 12px 12px 16px;background:#FBFDFF}
+.tl-item.user-added .tl-dot{top:12px}
+.user-added-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.user-added-btn{display:inline-flex;align-items:center;gap:4px;background:#EEF4FB;color:var(--navy);border:1px solid #C8DDEE;border-radius:16px;padding:5px 9px;font-size:10px;font-weight:600;cursor:pointer}
+.user-added-btn:hover{background:#E6F1FB}
+.day-main-card{border:1px solid #9FE1CB;background:#F0FBF6;border-radius:10px;padding:12px 12px 12px 16px}
+.day-main-pill{display:inline-flex;align-items:center;gap:4px;background:#E1F5EE;color:var(--green);border:1px solid #9FE1CB;border-radius:14px;padding:3px 8px;font-size:10px;font-weight:700;margin-bottom:6px}
+
+/* ── ALSO VISIT ── */
+.also-section{padding:24px 0}
+.also-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.also-card{background:var(--white);border:0.5px solid var(--border);border-radius:var(--radius);padding:14px 16px}
+.ac-icon{font-size:22px;margin-bottom:6px;display:block}
+.ac-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px}
+.ac-desc{font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:8px}
+.ac-meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.ac-tag{font-size:10px;padding:2px 7px;border-radius:8px;font-weight:500}
+.act-navy{background:#E6F1FB;color:var(--navy)}.act-green{background:#E1F5EE;color:var(--green)}
+.act-amber{background:#FAEEDA;color:#854F0B}.act-brick{background:#FAECE7;color:var(--brick)}
+.act-purple{background:#EEEDFE;color:#3C3489}
+.book-chip{display:inline-flex;align-items:center;gap:4px;font-size:10px;padding:2px 8px;border-radius:8px;background:#FFF3CD;color:#7D5700;font-weight:500}
+
+/* ── BOOKING TABLE ── */
+.booking-section{padding:24px 0;border-top:1px solid var(--border)}
+.booking-table{width:100%;border-collapse:collapse;font-size:12px}
+.booking-table th{text-align:left;padding:8px 10px;background:var(--navy);color:#fff;font-weight:500;font-size:11px;letter-spacing:0.5px}
+.booking-table td{padding:8px 10px;border-bottom:0.5px solid var(--border);vertical-align:top;line-height:1.5}
+.booking-table tr:hover td{background:#F5F2EC}
+.bt-name{font-weight:500;color:var(--text)}
+.bt-when{color:var(--brick);font-weight:500}
+.bt-done{color:var(--green);font-weight:500}
+
+/* ── LINKS ── */
+.links-section{padding:20px 0 32px;border-top:1px solid var(--border)}
+.links-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.link-card{background:var(--white);border:0.5px solid var(--border);border-radius:var(--r-sm);padding:12px;text-align:center}
+.lc-icon{font-size:18px;display:block;margin-bottom:4px}
+.lc-title{font-size:11px;font-weight:500;color:var(--text);margin-bottom:2px}
+.lc-url{font-size:10px;color:var(--navy)}
+
+/* ── FOOTER ── */
+.page-footer{background:var(--navy);color:rgba(255,255,255,0.6);text-align:center;padding:16px 24px;font-size:11px}
+
+/* ── UTIL ── */
+.volga-stripe{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.vs-line{height:2px;flex:1;background:linear-gradient(90deg,var(--navy) 0%,transparent 100%)}
+.vs-text{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
+
+@media(max-width:600px){
+  .weather-grid{grid-template-columns:repeat(3,1fr)}
+  .clothing-grid{grid-template-columns:1fr 1fr}
+  .also-grid,.guide-grid{grid-template-columns:1fr}
+  .links-grid{grid-template-columns:1fr 1fr}
+  .header-title{font-size:24px}
+  .rl-grid{grid-template-columns:1fr}
+}
+@media print{
+  .day-nav{display:none}
+  .day-section{break-inside:avoid}
+}
+
+/* ── TODAY BAR ── */
+.today-bar{margin:16px 0 8px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.today-title{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.today-main{font-size:15px;font-weight:500;color:var(--text)}
+.today-sub{font-size:12px;color:var(--muted);margin-top:3px}
+.today-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.tbtn{display:inline-flex;align-items:center;gap:5px;background:#EEF4FB;color:var(--navy);border:1px solid #C8DDEE;border-radius:18px;padding:7px 12px;font-size:11px;font-weight:500;text-decoration:none;cursor:pointer}
+.tbtn:hover{text-decoration:none;background:#E6F1FB}
+.weather-tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.weather-status{font-size:11px;color:var(--muted)}
+.route-btn{display:inline-flex;align-items:center;gap:4px;background:#FFF3CD;color:#7D5700;border:1px solid #F0D98B;border-radius:16px;padding:5px 10px;font-size:10px;font-weight:600;text-decoration:none}
+.route-btn:hover{text-decoration:none;background:#FBE9A9}
+.info-note{margin-top:12px;background:#EEF4FB;border-left:3px solid var(--navy-light);border-radius:8px;padding:10px 14px;font-size:11px;color:var(--muted)}
+.mobile-bottom-nav{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--border);display:flex;justify-content:space-around;padding:8px 4px calc(8px + env(safe-area-inset-bottom));z-index:999}
+.mbn-link{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--muted);text-decoration:none;font-size:10px;font-weight:500;min-width:56px}
+.mbn-link:hover{text-decoration:none;color:var(--navy)}
+.mbn-ico{font-size:18px;line-height:1}
+body.has-mobile-nav{padding-bottom:82px}
+@media(max-width:700px){.today-bar{flex-direction:column}.today-actions{justify-content:flex-start}}
+</style>
+
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1B4F8A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="САМАРА 26">
+<link rel="apple-touch-icon" href="icon-512.png">
+</head>
+<body class="has-mobile-nav">
+<!-- HEADER -->
+<div class="page-header">
+<div class="header-label">Маршрут · 2 человека</div>
+<div class="header-title">Самара 2026</div>
+<div class="header-sub">29 апреля — 4 мая  ·  Hampton by Hilton  ·  5 ночей</div>
+<div class="header-pills">
+<span class="hpill hpill-link" onclick="navTo('day1',this)">✈ 29 апр · Прилёт</span>
+<span class="hpill hpill-link" onclick="navTo('day3',this)">🎉 1 мая · Первомай</span>
+<span class="hpill hpill-link" onclick="navTo('day3',this)">⚽ Матч Спартак</span>
+<span class="hpill hpill-link" onclick="navTo('day3',this)">🎬 Кинотеатр</span>
+<span class="hpill hpill-link" onclick="navTo('day3',this)">🍺 Жигулёвский завод</span>
+<span class="hpill hpill-link" onclick="navTo('day4',this)">🎸 ХОРУС инди · 2 мая</span>
+<span class="hpill hpill-link" onclick="navTo('day5',this)">🚢 Теплоход Ширяево · 3 мая</span>
+<span class="hpill hpill-link" onclick="navTo('day6',this)">✈ 4 мая · Вылет 13:55</span>
+<span class="hpill hpill-link" onclick="navTo('rental',this)">🚲 Прокат велос. и самокатов</span>
+<span class="hpill hpill-link" onclick="navTo('planner',this)">🗓 Планер задач</span>
+<span class="hpill hpill-link" onclick="navTo('checklist',this)">📋 Чек-лист вещей</span>
+</div>
+</div>
+<!-- NAV -->
+<div class="day-nav" id="dayNav">
+<button class="nav-btn active" onclick="navTo('day1',this)">✈ 29 апр</button>
+<button class="nav-btn" onclick="navTo('day2',this)">☕ 30 апр</button>
+<button class="nav-btn" onclick="navTo('day3',this)">🎉 1 мая</button>
+<button class="nav-btn" onclick="navTo('day4',this)">🏙 2 мая</button>
+<button class="nav-btn" onclick="navTo('day5',this)">🚢 3 мая</button>
+<button class="nav-btn" onclick="navTo('day6',this)">✈ 4 мая</button>
+<button class="nav-btn" onclick="navTo('coffee',this)">☕ Кофе</button>
+<button class="nav-btn" onclick="navTo('brands',this)">🧵 Бренды</button>
+<button class="nav-btn" onclick="navTo('restaurants',this)">🍽 Рестораны</button>
+<button class="nav-btn" onclick="navTo('evening',this)">🏙 Вечером</button>
+<button class="nav-btn" onclick="navTo('excursions',this)">🧭 Экскурсии</button>
+<button class="nav-btn" onclick="navTo('also',this)">✨ Ещё</button>
+<button class="nav-btn" onclick="navTo('booking',this)">📌 Брони</button>
+<button class="nav-btn" onclick="navTo('planner',this)">🗓 Планер</button>
+<button class="nav-btn" onclick="navTo('checklist',this)">📋 Список</button>
+<button class="nav-btn" onclick="navTo('rental',this)">🚲 Прокат</button>
+</div>
+<div class="main"><div class="today-bar" id="todayBar">
+<div>
+<div class="today-title">Сегодня</div>
+<div class="today-main" id="todayMain">До поездки — …</div>
+<div class="today-sub" id="todaySub">Самара · даты поездки 29 апреля — 4 мая 2026</div>
+</div>
+<div class="today-actions">
+<a class="tbtn" href="https://yandex.ru/pogoda/samara" target="_blank">🌤 Погода</a>
+<a class="tbtn" href="https://yandex.ru/maps/51/samara" target="_blank">🗺 Яндекс Карты</a>
+<button class="tbtn" onclick="refreshWeather(true)" type="button">↻ Обновить</button>
+</div>
+</div>
+<!-- WEATHER -->
+<div class="weather-section" style="margin:0 -24px;padding:16px 24px 14px">
+<div class="section-label">Погода · прогноз по климатической норме</div><div class="weather-tools"><button class="tbtn" onclick="refreshWeather(true)" type="button">↻ Обновить погоду</button><span class="weather-status" id="weatherStatus">Пока показан базовый плановый прогноз по поездке.</span></div>
+<div class="weather-grid">
+<div class="wday fly-d">
+<div class="wd-date">29 апр · Ср</div>
+<span class="wd-icon">⛅</span>
+<div class="wd-hi">+14°C</div><div class="wd-lo">+5°C</div>
+<div class="wd-note">Прилёт. Переменная облачность</div>
+</div>
+<div class="wday">
+<div class="wd-date">30 апр · Чт</div>
+<span class="wd-icon">☀️</span>
+<div class="wd-hi">+16°C</div><div class="wd-lo">+6°C</div>
+<div class="wd-note">Солнечно. Хорошо для прогулок</div>
+</div>
+<div class="wday holiday-d">
+<div class="wd-date">1 мая · Пт</div>
+<span class="wd-icon">🌤</span>
+<div class="wd-hi">+15°C</div><div class="wd-lo">+7°C</div>
+<div class="wd-note">Первомай. Возможен дождь вечером</div>
+</div>
+<div class="wday match-d">
+<div class="wd-date">2 мая · Сб</div>
+<span class="wd-icon">☀️</span>
+<div class="wd-hi">+17°C</div><div class="wd-lo">+8°C</div>
+<div class="wd-note">Городской день и вечерняя программа</div>
+</div>
+<div class="wday">
+<div class="wd-date">3 мая · Вс</div>
+<span class="wd-icon">⛅</span>
+<div class="wd-hi">+15°C</div><div class="wd-lo">+7°C</div>
+<div class="wd-note">Речная прогулка. Ветер на воде</div>
+</div>
+<div class="wday fly-d">
+<div class="wd-date">4 мая · Пн</div>
+<span class="wd-icon">🌤</span>
+<div class="wd-hi">+13°C</div><div class="wd-lo">+5°C</div>
+<div class="wd-note">Вылет. Утром прохладно</div>
+</div>
+</div>
+<div class="weather-note">* Прогноз по климатической норме для Самары в конце апреля — начале мая. <strong>Обновлено апрель 2026.</strong> Уточняйте за 3–5 дней до поездки: <a href="https://yandex.ru/pogoda/samara" target="_blank">yandex.ru/pogoda/samara</a></div>
+</div>
+<!-- CLOTHING -->
+<div class="clothing-section" style="margin:0 -24px;padding:14px 24px">
+<div class="section-label">Что надеть</div>
+<div class="clothing-grid">
+<div class="ccloth">
+<div class="cc-day">29–30 апреля</div>
+<div class="cc-text">Лёгкая куртка, футболка/лонгслив, джинсы. На вечер — дополнительный слой.</div>
+</div>
+<div class="ccloth">
+<div class="cc-day">1 мая</div>
+<div class="cc-text">Удобные кроссовки, ветровка, слой на вечер. На матч — выезд заранее.</div>
+</div>
+<div class="ccloth">
+<div class="cc-day">2–4 мая</div>
+<div class="cc-text">Городской casual, ветровка для Волги и теплохода. Солнцезащита и очки.</div>
+</div>
+</div>
+</div>
+
+<section class="day-section" id="day1">
+<div class="day-header">
+<div class="day-circle dc-fly">29</div>
+<div class="day-title-wrap">
+<div class="day-num-label">Среда</div>
+<div class="day-title">Прилёт и мягкий старт</div>
+<span class="day-badge db-fly">✈ Перелёт</span>
+</div>
+</div>
+
+<div class="flight-pill">
+<div>
+<div class="fp-label">Вылет</div>
+<div class="fp-time">08:40</div>
+<div class="fp-city">Москва</div>
+</div>
+<div class="fp-line"></div>
+<div>
+<div class="fp-label">Прилёт</div>
+<div class="fp-time">11:15</div>
+<div class="fp-city">Самара</div>
+</div>
+</div>
+
+<div class="timeline">
+<div class="tl-item">
+<div class="tl-dot td-navy"></div>
+<div class="tl-time">12:30</div>
+<div class="tl-title">Заселение / оставить вещи</div>
+<div class="tl-desc">Hampton by Hilton. Спокойный старт, без плотной программы.</div>
+</div>
+
+<div class="tl-item">
+<div class="tl-dot td-amber"></div>
+<div class="tl-time">14:00</div>
+<div class="tl-title">Поздний обед</div>
+<div class="tl-desc">Ориентир — центр / набережная. Выбери что-то без длинной посадки.</div>
+</div>
+
+<div class="tl-item">
+<div class="tl-dot td-green"></div>
+<div class="tl-time">16:00–18:30</div>
+<div class="tl-title">Набережная Волги и первый обзор города</div>
+<div class="tl-desc">Прогулка без жёсткого маршрута, можно взять кофе и просто пройтись вдоль Волги.</div>
+</div>
+
+<div class="tl-item">
+<div class="tl-dot td-brick"></div>
+<div class="tl-time">20:00</div>
+<div class="tl-title">Спокойный ужин</div>
+<div class="tl-desc">Первый вечер лучше оставить без перегруза — адаптация после дороги.</div>
+</div>
+</div>
+
+<div class="map-wrap">
+<div class="map-label"><span>Ключевые точки дня</span><a href="https://yandex.ru/maps/51/samara" target="_blank">Открыть карту</a></div>
+<div id="map-day1" class="leaflet-map-container"></div>
+</div>
+</section>
+
+<section class="day-section" id="day2">
+<div class="day-header">
+<div class="day-circle dc-def">30</div>
+<div class="day-title-wrap">
+<div class="day-num-label">Четверг</div>
+<div class="day-title">Центр, кофе, бренды и город</div>
+</div>
+</div>
+
+<div class="timeline">
+<div class="tl-item">
+<div class="tl-dot td-amber"></div>
+<div class="tl-time">10:30</div>
+<div class="tl-title">Кофе и старт по центру</div>
+<div class="tl-desc">Лучший день для мягкого шопинга, кофеен и архитектурного центра.</div>
+</div>
+
+<div class="tl-item">
+<div class="tl-dot td-navy"></div>
+<div class="tl-time">12:30–16:30</div>
+<div class="tl-title">Прогулка по центру + бренды / магазины</div>
+<div class="tl-desc">Собери маршрут вокруг удобных улиц и не перегружай логистику.</div>
+</div>
+
+<div class="tl-item">
+<div class="tl-dot td-brick"></div>
+<div class="tl-time">19:30</div>
+<div class="tl-title">Ужин / вечер в городе</div>
+<div class="tl-desc">Можно выбрать гастро-вечер или просто оставить день расслабленным.</div>
+</div>
+</div>
+
+<div class="day-custom-note" id="custom-day2">Здесь будут появляться добавленные вручную события.</div>
+</section>
+
+<section class="day-section" id="day3">
+<div class="day-header">
+<div class="day-circle dc-holiday">1</div>
+<div class="day-title-wrap">
+<div class="day-num-label">Пятница</div>
+<div class="day-title">Первомай + матч Спартак</div>
+<span class="day-badge db-holiday">🎉 Праздник</span>
+<span class="day-badge db-match">⚽ Матч</span>
+</div>
+</div>
+
+<div class="holiday-note">Главное изменение: прогулка сокращена, чтобы успеть спокойно выехать на стадион, пройти вход и не срезать время впритык.</div>
+
+<div class="match-banner">
+<div class="mb-title">Матч Спартак — начало в 18:00</div>
+<div class="mb-info">В день матча заложен буфер на дорогу и вход. Основная логика дня теперь построена вокруг стадиона, а не наоборот.</div>
+<div class="mb-chip">Выезд заранее</div>
+</div>
+
+<div class="timeline" id="timeline-day3">
+<div class="tl-item">
+<div class="tl-dot td-green"></div>
+<div class="tl-time">15:00–16:10</div>
+<div class="tl-title">Набережная: первомайская атмосфера</div>
+<div class="tl-desc">Уличные музыканты, первые веранды сезона, прогулка без длинных заходов. Если хочешь — заглянуть на дебаркадер «Скрябин», если уже открыт.</div>
+</div>
+
+<div class="tl-item day-main-card" data-main-card="1">
+<div class="day-main-pill">Основное событие дня</div>
+<div class="tl-dot td-match"></div>
+<div class="tl-time">16:15–17:30</div>
+<div class="tl-title">Выезд на стадион и вход</div>
+<div class="tl-desc">Заложен буфер на дорогу, очередь, навигацию и вход без спешки.</div>
+</div>
+
+<div class="tl-item">
+<div class="tl-dot td-match"></div>
+<div class="tl-time">18:00</div>
+<div class="tl-title">Матч Спартак ⚽</div>
+<div class="tl-desc">Ключевое событие вечера. После матча — поздний ужин или лёгкий бар.</div>
+</div>
+
+<div class="tl-item">
+<div class="tl-dot td-brick"></div>
+<div class="tl-time">20:30+</div>
+<div class="tl-title">Ужин после матча</div>
+<div class="tl-desc">Лучше брать место без жёсткой привязки ко времени, в зависимости от выхода со стадиона.</div>
+</div>
+</div>
+
+<div class="day-custom-note" id="custom-day3">Здесь будут появляться добавленные вручную события.</div>
+</section>
+
+<section class="day-section" id="day4">
+<div class="day-header">
+<div class="day-circle dc-def">2</div>
+<div class="day-title-wrap">
+<div class="day-num-label">Суббота</div>
+<div class="day-title">Городской день + ХОРУС вечером</div>
+<span class="day-badge db-concert">🎸 Концерт</span>
+</div>
+</div>
+
+<div class="concert-banner">
+<div class="cb-row">
+<div class="cb-icon">🎸</div>
+<div>
+<div class="cb-title">ХОРУС инди · вечер 2 мая</div>
+<div class="cb-sub">Вечерняя программа может быть основной точкой дня. Всё остальное лучше строить с запасом по логистике.</div>
+</div>
+</div>
+</div>
+
+<div class="timeline" id="timeline-day4">
+<div class="tl-item">
+<div class="tl-dot td-amber"></div>
+<div class="tl-time">11:00</div>
+<div class="tl-title">Поздний старт и кофе</div>
+<div class="tl-desc">После матча предыдущего дня лучше не ставить ранние активности.</div>
+</div>
+
+<div class="tl-item day-main-card" data-main-card="1">
+<div class="day-main-pill">Основное событие дня</div>
+<div class="tl-dot td-navy"></div>
+<div class="tl-time">13:00–17:30</div>
+<div class="tl-title">Свободный городской слот</div>
+<div class="tl-desc">Здесь удобно поставить вручную ресторан, экскурсию, бар-хоппинг, Бункер Сталина или музей.</div>
+</div>
+
+<div class="tl-item">
+<div class="tl-dot td-concert"></div>
+<div class="tl-time">Вечер</div>
+<div class="tl-title">ХОРУС инди</div>
+<div class="tl-desc">Оставь буфер на дорогу и ужин до или после концерта.</div>
+</div>
+</div>
+
+<div class="day-custom-note" id="custom-day4">Здесь будут появляться добавленные вручную события.</div>
+</section>
+
+<section class="day-section" id="day5">
+<div class="day-header">
+<div class="day-circle dc-def">3</div>
+<div class="day-title-wrap">
+<div class="day-num-label">Воскресенье</div>
+<div class="day-title">Теплоход / Ширяево / Волга</div>
+</div>
+</div>
+
+<div class="timeline" id="timeline-day5">
+<div class="tl-item day-main-card" data-main-card="1">
+<div class="day-main-pill">Основное событие дня</div>
+<div class="tl-dot td-navy"></div>
+<div class="tl-time">День</div>
+<div class="tl-title">Теплоходная прогулка / Ширяево</div>
+<div class="tl-desc">День лучше почти полностью держать под Волгу и логистику к причалу.</div>
+</div>
+</div>
+
+<div class="day-custom-note" id="custom-day5">Здесь будут появляться добавленные вручную события.</div>
+</section>
+
+<section class="day-section" id="day6">
+<div class="day-header">
+<div class="day-circle dc-fly">4</div>
+<div class="day-title-wrap">
+<div class="day-num-label">Понедельник</div>
+<div class="day-title">Вылет</div>
+<span class="day-badge db-fly">✈ 13:55</span>
+</div>
+</div>
+
+<div class="timeline" id="timeline-day6">
+<div class="tl-item day-main-card" data-main-card="1">
+<div class="day-main-pill">Основное событие дня</div>
+<div class="tl-dot td-navy"></div>
+<div class="tl-time">Утро</div>
+<div class="tl-title">Сборы и выезд в аэропорт</div>
+<div class="tl-desc">Не ставь плотных активностей. Только короткий завтрак / кофе рядом.</div>
+</div>
+</div>
+
+<div class="day-custom-note" id="custom-day6">Здесь будут появляться добавленные вручную события.</div>
+</section>
+
+<section class="guide-section" id="coffee">
+<div class="section-title">Кофе</div>
+<div class="section-sub">Кофейни, которые удобно встраивать в дни. У карточек можно сразу выбрать день.</div>
+<div class="guide-grid">
+
+<div class="guide-card gc-must" data-item-title="White Cup" data-item-desc="Сильная локальная кофейная точка. Хорошо на утро 30 апреля или перед прогулкой.">
+<div class="gc-top"><div class="gc-name">White Cup</div><div class="gc-tags"><span class="gc-tag gct-must">must</span></div></div>
+<div class="gc-desc">Один из самых безопасных и понятных вариантов под кофе-маршрут.</div>
+<div class="card-actions">
+<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+</div>
+<div class="day-picker">
+<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
+<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
+</div>
+</div>
+
+<div class="guide-card" data-item-title="Корж" data-item-desc="Кофе + десерт, можно встроить в центр или вечерний маршрут.">
+<div class="gc-top"><div class="gc-name">Корж</div></div>
+<div class="gc-desc">Удобный формат на городской день и несложную посадку.</div>
+<div class="card-actions">
+<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+</div>
+<div class="day-picker">
+<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
+<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="guide-section" id="restaurants">
+<div class="section-title">Кафе и рестораны</div>
+<div class="section-sub">Теперь любой понравившийся вариант можно сразу поставить в конкретный день, и он станет основным событием этого дня.</div>
+<div class="guide-grid">
+
+<div class="guide-card gc-must" data-item-title="Lotte / городской ужин" data-item-desc="Нормальный вечерний вариант для 2 мая или 30 апреля.">
+<div class="gc-top"><div class="gc-name">Lotte / городской ужин</div><div class="gc-tags"><span class="gc-tag gct-must">вечер</span></div></div>
+<div class="gc-desc">Подходит под спокойный ужин или основной гастро-слот.</div>
+<div class="card-actions">
+<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+</div>
+<div class="day-picker">
+<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
+<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
+</div>
+</div>
+
+<div class="guide-card" data-item-title="Локальный ресторан у центра" data-item-desc="Гибкий вариант без жёсткого тайминга.">
+<div class="gc-top"><div class="gc-name">Локальный ресторан у центра</div></div>
+<div class="gc-desc">Подходит как альтернатива, если хочется не привязываться к одному месту заранее.</div>
+<div class="card-actions">
+<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+</div>
+<div class="day-picker">
+<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
+<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="guide-section" id="evening">
+<div class="section-title">Кино, бары и клубы — куда вечером</div>
+<div class="section-sub">Вечерние варианты можно сразу поставить в любой день. При добавлении они автоматически становятся основным событием дня.</div>
+<div class="guide-grid">
+
+<div class="guide-card" data-item-title="Кинотеатр" data-item-desc="Надёжный вечер без сложной логистики.">
+<div class="gc-top"><div class="gc-name">Кинотеатр</div></div>
+<div class="gc-desc">Хорошо на 1 мая после матча или на 2 мая как мягкая альтернатива бару.</div>
+<div class="card-actions">
+<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+</div>
+<div class="day-picker">
+<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
+<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
+</div>
+</div>
+
+<div class="guide-card gc-must" data-item-title="Бункер Сталина" data-item-desc="Сильная самарская точка. Можно ставить как основное событие городского дня.">
+<div class="gc-top"><div class="gc-name">Бункер Сталина</div><div class="gc-tags"><span class="gc-tag gct-must">must</span></div></div>
+<div class="gc-desc">Один из самых выразительных объектов Самары. Лучше закладывать отдельным слотом.</div>
+<div class="card-actions">
+<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+</div>
+<div class="day-picker">
+<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
+<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
+</div>
+</div>
+
+<div class="guide-card" data-item-title="Жигулёвский завод / На дне" data-item-desc="Локальный самарский маршрут вокруг пива, истории и атмосферы Волги.">
+<div class="gc-top"><div class="gc-name">Жигулёвский завод / «На дне»</div></div>
+<div class="gc-desc">Можно ставить и как дневной, и как вечерний блок.</div>
+<div class="card-actions">
+<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+</div>
+<div class="day-picker">
+<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
+<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
+</div>
+</div>
+
+<div class="guide-card" data-item-title="Бары / живая музыка" data-item-desc="Вариант на поздний вечер, если после ужина захочется продолжить.">
+<div class="gc-top"><div class="gc-name">Бары / живая музыка</div></div>
+<div class="gc-desc">Хорошо ставить на 2 мая как главный вечерний слот.</div>
+<div class="card-actions">
+<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+</div>
+<div class="day-picker">
+<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
+<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="guide-section" id="excursions">
+<div class="section-title">Экскурсии и местные маршруты</div>
+<div class="section-sub">Интересные городские точки и экскурсионные идеи, которые реально встраиваются в поездку.</div>
+<div class="guide-grid">
+
+<div class="guide-card gc-must" data-item-title="Военный Куйбышев + Бункер Сталина" data-item-desc="Один из самых сильных локальных сюжетов Самары: запасная столица, военная история и бункер.">
+<div class="gc-top"><div class="gc-name">Военный Куйбышев + Бункер Сталина</div><div class="gc-tags"><span class="gc-tag gct-must">история</span></div></div>
+<div class="gc-desc">Сильный вариант на городской день, особенно 2 мая.</div>
+<div class="card-actions">
+<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+</div>
+<div class="day-picker">
+<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
+<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
+</div>
+</div>
+
+<div class="guide-card" data-item-title="Музей модерна" data-item-desc="Архитектура, атмосфера города и несложная логистика.">
+<div class="gc-top"><div class="gc-name">Музей модерна</div></div>
+<div class="gc-desc">Подходит как полудневный блок без перегруза.</div>
+<div class="card-actions">
+<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+</div>
+<div class="day-picker">
+<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
+<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
+</div>
+</div>
+
+<div class="guide-card" data-item-title="Самара Космическая" data-item-desc="Для отдельного музейного слота, если хочется небанальную тему.">
+<div class="gc-top"><div class="gc-name">Самара Космическая</div></div>
+<div class="gc-desc">Хороший городской музейный блок, если нужен структурный дневной маршрут.</div>
+<div class="card-actions">
+<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+</div>
+<div class="day-picker">
+<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
+<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
+</div>
+</div>
+
+<div class="guide-card" data-item-title="Вертолётка" data-item-desc="Одна из лучших панорамных точек вокруг Самары.">
+<div class="gc-top"><div class="gc-name">Вертолётка</div></div>
+<div class="gc-desc">Лучше ставить как основное событие ближе к закату или на полудневный выезд.</div>
+<div class="card-actions">
+<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+</div>
+<div class="day-picker">
+<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
+<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
+<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
+</div>
+</div>
+
+</div>
+
+<div class="info-note">
+<div><strong>Где смотреть локальные экскурсии и события:</strong></div>
+<div>• Telegram: <a href="https://t.me/samaratravel63" target="_blank">samaratravel63</a></div>
+<div>• Telegram: <a href="https://t.me/gorod_kurort_smr" target="_blank">gorod_kurort_smr</a></div>
+<div>• Telegram: <a href="https://t.me/vekartaSamara" target="_blank">vekartaSamara</a></div>
+</div>
+</section>
+
+<section class="also-section" id="also">
+<div class="section-title">Ещё идеи</div>
+<div class="also-grid">
+<div class="also-card">
+<span class="ac-icon">🚲</span>
+<div class="ac-title">Прокат по набережной</div>
+<div class="ac-desc">Велосипеды и самокаты — хороший быстрый способ сделать прогулку динамичнее.</div>
+<div class="ac-meta"><span class="ac-tag act-green">набережная</span></div>
+</div>
+<div class="also-card">
+<span class="ac-icon">🍺</span>
+<div class="ac-title">Локальный пивной маршрут</div>
+<div class="ac-desc">Подходит как дневная или вечерняя замена обычному ужину.</div>
+<div class="ac-meta"><span class="ac-tag act-amber">локально</span></div>
+</div>
+</div>
+</section>
+
+<section class="booking-section" id="booking">
+<div class="section-title">Брони и напоминания</div>
+<table class="booking-table">
+<thead>
+<tr><th>Что</th><th>Когда</th><th>Статус</th></tr>
+</thead>
+<tbody>
+<tr><td class="bt-name">Отель</td><td class="bt-when">29 апр — 4 мая</td><td class="bt-done">Ок</td></tr>
+<tr><td class="bt-name">Матч</td><td class="bt-when">1 мая · 18:00</td><td class="bt-done">Проверить вход / логистику</td></tr>
+<tr><td class="bt-name">ХОРУС</td><td class="bt-when">2 мая · вечер</td><td class="bt-done">Проверить площадку</td></tr>
+<tr><td class="bt-name">Теплоход / Ширяево</td><td class="bt-when">3 мая</td><td class="bt-done">Уточнить расписание</td></tr>
+</tbody>
+</table>
+</section>
+
+<section class="guide-section" id="planner">
+<div class="section-title">Планер задач</div>
+<div class="section-sub">Что ещё проверить до поездки.</div>
+<div class="guide-grid">
+<div class="guide-card"><div class="gc-name">Проверить билеты на матч</div></div>
+<div class="guide-card"><div class="gc-name">Уточнить теплоход / причал</div></div>
+<div class="guide-card"><div class="gc-name">Проверить график Бункера Сталина</div></div>
+<div class="guide-card"><div class="gc-name">Проверить концерт 2 мая</div></div>
+</div>
+</section>
+
+<section class="guide-section" id="checklist">
+<div class="section-title">Чек-лист вещей</div>
+<div class="guide-grid">
+<div class="guide-card"><div class="gc-name">Документы / билеты</div></div>
+<div class="guide-card"><div class="gc-name">Ветровка</div></div>
+<div class="guide-card"><div class="gc-name">Удобные кроссовки</div></div>
+<div class="guide-card"><div class="gc-name">Очки / зарядки</div></div>
+</div>
+</section>
+
+<section class="guide-section" id="rental">
+<div class="section-title">Прокат</div>
+<div class="guide-grid">
+<div class="guide-card"><div class="gc-name">Велосипеды</div><div class="gc-desc">Хорошо для набережной.</div></div>
+<div class="guide-card"><div class="gc-name">Самокаты</div><div class="gc-desc">Быстрое перемещение по городу.</div></div>
+</div>
+</section>
+
+<section class="links-section">
+<div class="links-grid">
+<a class="link-card" href="https://yandex.ru/maps/51/samara" target="_blank"><span class="lc-icon">🗺</span><div class="lc-title">Яндекс Карты</div><div class="lc-url">maps</div></a>
+<a class="link-card" href="https://yandex.ru/pogoda/samara" target="_blank"><span class="lc-icon">🌤</span><div class="lc-title">Погода</div><div class="lc-url">yandex</div></a>
+<a class="link-card" href="https://t.me/samaratravel63" target="_blank"><span class="lc-icon">📲</span><div class="lc-title">Samara Travel</div><div class="lc-url">telegram</div></a>
+</div>
+</section>
+
+</div>
+
+<div class="mobile-bottom-nav">
+<a class="mbn-link" href="#day1"><span class="mbn-ico">🗓</span><span>Дни</span></a>
+<a class="mbn-link" href="#restaurants"><span class="mbn-ico">🍽</span><span>Еда</span></a>
+<a class="mbn-link" href="#evening"><span class="mbn-ico">🌙</span><span>Вечер</span></a>
+<a class="mbn-link" href="#excursions"><span class="mbn-ico">🧭</span><span>Маршруты</span></a>
+</div>
+
+<div class="page-footer">Самара 2026 · интерактивный маршрут</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+function navTo(id, btn){
+  const target=document.getElementById(id);
+  if(target){target.scrollIntoView({behavior:'smooth',block:'start'});}
+  if(btn && btn.classList.contains('nav-btn')){
+    document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+}
+
+function toggleDayPicker(btn){
+  const card=btn.closest('.guide-card');
+  const picker=card.querySelector('.day-picker');
+  picker.classList.toggle('open');
+}
+
+function buildUserAddedHtml(title, desc){
+  return `
+    <div class="tl-item user-added day-main-card" data-main-card="1">
+      <div class="day-main-pill">Основное событие дня</div>
+      <div class="tl-dot td-green"></div>
+      <div class="tl-time">Добавлено вручную</div>
+      <div class="tl-title">${title}</div>
+      <div class="tl-desc">${desc}</div>
+      <div class="user-added-actions">
+        <button class="user-added-btn" onclick="makeThisMainInDay(this)">Сделать основным в дне ↑</button>
+      </div>
+    </div>
+  `;
+}
+
+function demoteCurrentMain(daySection){
+  const current=daySection.querySelector('[data-main-card="1"]');
+  if(!current) return;
+  current.classList.remove('day-main-card');
+  current.removeAttribute('data-main-card');
+  const pill=current.querySelector('.day-main-pill');
+  if(pill) pill.remove();
+}
+
+function makeThisMainInDay(btn){
+  const card=btn.closest('.tl-item');
+  const daySection=btn.closest('.day-section');
+  if(!card || !daySection) return;
+  demoteCurrentMain(daySection);
+  card.classList.add('day-main-card');
+  card.setAttribute('data-main-card','1');
+  const firstChild=card.firstElementChild;
+  if(!card.querySelector('.day-main-pill')){
+    const pill=document.createElement('div');
+    pill.className='day-main-pill';
+    pill.textContent='Основное событие дня';
+    card.insertBefore(pill, firstChild);
+  }
+}
+
+function addCardToDay(btn, dayId){
+  const card=btn.closest('.guide-card');
+  const title=card.getAttribute('data-item-title') || 'Событие';
+  const desc=card.getAttribute('data-item-desc') || 'Добавлено вручную';
+  const daySection=document.getElementById(dayId);
+  const timeline=daySection.querySelector('.timeline');
+  const customNote=daySection.querySelector('.day-custom-note');
+
+  demoteCurrentMain(daySection);
+
+  const wrapper=document.createElement('div');
+  wrapper.innerHTML=buildUserAddedHtml(title, desc);
+  timeline.appendChild(wrapper.firstElementChild);
+
+  if(customNote){ customNote.style.display='none'; }
+
+  const picker=card.querySelector('.day-picker');
+  if(picker) picker.classList.remove('open');
+
+  let badge=card.querySelector('.added-badge');
+  if(!badge){
+    badge=document.createElement('div');
+    badge.className='added-badge';
+    card.appendChild(badge);
+  }
+  const dayNames={day2:'30 апреля',day3:'1 мая',day4:'2 мая',day5:'3 мая',day6:'4 мая'};
+  badge.textContent='Добавлено в ' + (dayNames[dayId] || 'день');
+}
+
+function updateTodayBar(){
+  const now = new Date();
+  const start = new Date('2026-04-29T00:00:00');
+  const diff = Math.ceil((start - now) / (1000*60*60*24));
+  const main = document.getElementById('todayMain');
+  const sub = document.getElementById('todaySub');
+  if(!main || !sub) return;
+  if(diff > 0){
+    main.textContent = 'До поездки — ' + diff + ' дн.';
+    sub.textContent = 'Самара · даты поездки 29 апреля — 4 мая 2026';
+  } else {
+    main.textContent = 'Поездка уже идёт или завершилась';
+    sub.textContent = 'Проверь программу по дням и вручную скорректируй события';
+  }
+}
+
+function refreshWeather(manual){
+  const weatherStatus = document.getElementById('weatherStatus');
+  if(weatherStatus){
+    weatherStatus.textContent = manual
+      ? 'Обновление недоступно в офлайн-версии. Открой Яндекс Погоду для актуальных данных.'
+      : 'Пока показан базовый плановый прогноз по поездке.';
+  }
+  updateTodayBar();
+}
+updateTodayBar();
+refreshWeather(false);
+
+(function initMaps(){
+  if(typeof L === 'undefined') return;
+  const map = L.map('map-day1').setView([53.1959,50.1008], 12);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution:'&copy; OpenStreetMap'
+  }).addTo(map);
+  L.marker([53.1959,50.1008]).addTo(map).bindPopup('Центр / набережная');
+})();
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./sw.js').catch(function (err) {
+      console.log('SW registration failed:', err);
+    });
+  });
+}
+</script>
+
+</body>
+</html>
