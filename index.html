@@ -159,11 +159,6 @@ a:hover{text-decoration:underline}
 .ai-rub{font-size:10px;color:var(--muted)}
 .ai-cq{font-size:10px;color:#9B6A10}
 .ai-cq-label{font-size:9px;color:var(--muted)}
-.alt-actions{margin-top:8px;display:flex;justify-content:flex-end}
-.alt-choose-btn{display:inline-flex;align-items:center;gap:5px;background:#EEF4FB;color:var(--navy);border:1px solid #C8DDEE;border-radius:16px;padding:6px 10px;font-size:10px;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif}
-.alt-choose-btn:hover{background:#E6F1FB}
-.alt-item.is-selected{border-color:#2E6BB5;background:#EEF4FB}
-.main-choice-pill{display:inline-flex;align-items:center;gap:5px;margin-top:6px;padding:3px 9px;border-radius:10px;background:#EEF4FB;color:var(--navy);font-size:10px;font-weight:600}
 
 /* match banner */
 .match-banner{background:#F0FBF6;border:1px solid #9FE1CB;border-radius:var(--radius);padding:12px 14px;margin-bottom:14px}
@@ -215,23 +210,6 @@ a:hover{text-decoration:underline}
 .gcpl-high{background:#FAECE7;color:var(--brick)}
 .gc-rub{font-size:10px;color:var(--muted)}
 .gc-cq{font-size:10px;color:#9B6A10}
-
-.card-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.card-btn{display:inline-flex;align-items:center;gap:4px;background:#EEF4FB;color:var(--navy);border:1px solid #C8DDEE;border-radius:16px;padding:6px 10px;font-size:10px;font-weight:600;text-decoration:none;cursor:pointer}
-.card-btn:hover{text-decoration:none;background:#E6F1FB}
-.day-picker{display:none;flex-wrap:wrap;gap:6px;margin-top:8px}
-.day-picker.open{display:flex}
-.day-chip{display:inline-flex;align-items:center;gap:4px;background:#FFF3CD;color:#7D5700;border:1px solid #F0D98B;border-radius:16px;padding:5px 9px;font-size:10px;font-weight:600;cursor:pointer}
-.day-chip:hover{background:#FBE9A9}
-.added-badge{display:inline-block;margin-top:6px;font-size:10px;padding:2px 8px;border-radius:8px;background:#E6F1FB;color:var(--navy);font-weight:500}
-.day-custom-note{margin-top:10px;background:#F8FBFF;border-left:3px solid var(--navy-light);border-radius:8px;padding:10px 12px;font-size:11px;color:var(--muted)}
-.tl-item.user-added{border:1px dashed #C8DDEE;border-radius:10px;padding:12px 12px 12px 16px;background:#FBFDFF}
-.tl-item.user-added .tl-dot{top:12px}
-.user-added-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-.user-added-btn{display:inline-flex;align-items:center;gap:4px;background:#EEF4FB;color:var(--navy);border:1px solid #C8DDEE;border-radius:16px;padding:5px 9px;font-size:10px;font-weight:600;cursor:pointer}
-.user-added-btn:hover{background:#E6F1FB}
-.day-main-card{border:1px solid #9FE1CB;background:#F0FBF6;border-radius:10px;padding:12px 12px 12px 16px}
-.day-main-pill{display:inline-flex;align-items:center;gap:4px;background:#E1F5EE;color:var(--green);border:1px solid #9FE1CB;border-radius:14px;padding:3px 8px;font-size:10px;font-weight:700;margin-bottom:6px}
 
 /* ── ALSO VISIT ── */
 .also-section{padding:24px 0}
@@ -305,27 +283,36 @@ a:hover{text-decoration:underline}
 .mbn-ico{font-size:18px;line-height:1}
 body.has-mobile-nav{padding-bottom:82px}
 @media(max-width:700px){.today-bar{flex-direction:column}.today-actions{justify-content:flex-start}}
-</style>
 
-<link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#1B4F8A">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="САМАРА 26">
-<link rel="apple-touch-icon" href="icon-512.png">
+
+/* --- Planner actions --- */
+.pick-actions{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.pick-actions select{border:1px solid var(--border);background:#fff;border-radius:10px;padding:5px 8px;font-size:10px;color:var(--text)}
+.pick-btn{display:inline-flex;align-items:center;gap:4px;border:1px solid #C8DDEE;background:#EEF4FB;color:var(--navy);border-radius:14px;padding:5px 9px;font-size:10px;font-weight:600;cursor:pointer}
+.pick-btn:hover{background:#E6F1FB}
+.pick-btn.pick-main{background:#F0FBF6;border-color:#9FE1CB;color:var(--green)}
+.alt-item.is-picked,.guide-card.is-picked,.also-card.is-picked{border-color:#9FE1CB!important;box-shadow:0 0 0 2px rgba(15,110,86,.08)}
+.day-picks{margin:12px 0 16px;background:#fff;border:1px dashed #C8DDEE;border-radius:10px;padding:10px 12px}
+.day-picks-title{font-size:11px;font-weight:600;color:var(--navy);margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px}
+.day-picks-list{display:flex;flex-direction:column;gap:6px}
+.day-pick-item{display:flex;justify-content:space-between;gap:8px;align-items:center;background:#FAF8F3;border:1px solid var(--border);border-radius:8px;padding:7px 10px;font-size:11px}
+.day-pick-item button{border:none;background:transparent;color:var(--brick);font-size:12px;cursor:pointer}
+</style>
+<link href="manifest.webmanifest" rel="manifest"/>
+<meta content="#1B4F8A" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="САМАРА 26" name="apple-mobile-web-app-title"/>
+<link href="icon-512.png" rel="apple-touch-icon"/>
 </head>
 <body class="has-mobile-nav">
 <!-- HEADER -->
 <div class="page-header">
 <div class="header-label">Маршрут · 2 человека</div>
 <div class="header-title">Самара 2026</div>
-<div class="header-sub">29 апреля — 4 мая  ·  Hampton by Hilton  ·  5 ночей</div>
+<div class="header-sub">29 апреля — 4 мая  ·  Hampton by Hilton  ·  5 ночей</div>
 <div class="header-pills">
-<span class="hpill hpill-link" onclick="navTo('day1',this)">✈ 29 апр · Прилёт</span>
-<span class="hpill hpill-link" onclick="navTo('day3',this)">🎉 1 мая · Первомай</span>
-<span class="hpill hpill-link" onclick="navTo('day3',this)">⚽ Матч Спартак</span>
-<span class="hpill hpill-link" onclick="navTo('day3',this)">🎬 Кинотеатр</span>
-<span class="hpill hpill-link" onclick="navTo('day3',this)">🍺 Жигулёвский завод</span>
+<span class="hpill hpill-link" onclick="navTo('day1',this)">✈ 29 апр · Прилёт</span><span class="hpill hpill-link" onclick="navTo('day3',this)">🎉 1 мая · Матч Спартак</span>
 <span class="hpill hpill-link" onclick="navTo('day4',this)">🎸 ХОРУС инди · 2 мая</span>
 <span class="hpill hpill-link" onclick="navTo('day5',this)">🚢 Теплоход Ширяево · 3 мая</span>
 <span class="hpill hpill-link" onclick="navTo('day6',this)">✈ 4 мая · Вылет 13:55</span>
@@ -346,7 +333,6 @@ body.has-mobile-nav{padding-bottom:82px}
 <button class="nav-btn" onclick="navTo('brands',this)">🧵 Бренды</button>
 <button class="nav-btn" onclick="navTo('restaurants',this)">🍽 Рестораны</button>
 <button class="nav-btn" onclick="navTo('evening',this)">🏙 Вечером</button>
-<button class="nav-btn" onclick="navTo('excursions',this)">🧭 Экскурсии</button>
 <button class="nav-btn" onclick="navTo('also',this)">✨ Ещё</button>
 <button class="nav-btn" onclick="navTo('booking',this)">📌 Брони</button>
 <button class="nav-btn" onclick="navTo('planner',this)">🗓 Планер</button>
@@ -391,7 +377,7 @@ body.has-mobile-nav{padding-bottom:82px}
 <div class="wd-date">2 мая · Сб</div>
 <span class="wd-icon">☀️</span>
 <div class="wd-hi">+17°C</div><div class="wd-lo">+8°C</div>
-<div class="wd-note">Городской день и вечерняя программа</div>
+<div class="wd-note">🎸 ХОРУС и прогулки по городу</div>
 </div>
 <div class="wday">
 <div class="wd-date">3 мая · Вс</div>
@@ -413,672 +399,2476 @@ body.has-mobile-nav{padding-bottom:82px}
 <div class="section-label">Что надеть</div>
 <div class="clothing-grid">
 <div class="ccloth">
-<div class="cc-day">29–30 апреля</div>
-<div class="cc-text">Лёгкая куртка, футболка/лонгслив, джинсы. На вечер — дополнительный слой.</div>
+<div class="cc-day">👕 Базовый комплект</div>
+<div class="cc-text">Футболка + лёгкий свитер/худи. Поверх — ветровка или лёгкая куртка. По набережной ветер с Волги — даже +16°C ощущается прохладно. Удобные кроссовки.</div>
 </div>
 <div class="ccloth">
-<div class="cc-day">1 мая</div>
-<div class="cc-text">Удобные кроссовки, ветровка, слой на вечер. На матч — выезд заранее.</div>
+<div class="cc-day">⚽ День матча (1 мая)</div>
+<div class="cc-text">Спортивный или casual стиль. Атрибутика Крыльев или нейтральная одежда. Куртка — стадион ночью холодает. Удобная обувь.</div>
 </div>
 <div class="ccloth">
-<div class="cc-day">2–4 мая</div>
-<div class="cc-text">Городской casual, ветровка для Волги и теплохода. Солнцезащита и очки.</div>
+<div class="cc-day">🚢 Теплоход (3 мая)</div>
+<div class="cc-text">Ветровка обязательна — на воде минус 3–5°C к ощущению. Слои: футболка + флис + ветровка. Закрытая обувь. Рюкзак с водой.</div>
 </div>
 </div>
 </div>
-
-<section class="day-section" id="day1">
+<!-- RATING LEGEND -->
+<div class="rating-legend">
+<div class="rl-title">🔑 Как читать оценки в этом плане</div>
+<div class="rl-grid">
+<div class="rl-item"><span class="rl-pill rlp-low">Низкая цена</span> до ~2 500 ₽/чел (ресторан) · до 600 ₽/блюдо</div>
+<div class="rl-item"><span class="rl-pill rlp-mid">Средняя цена</span> 2 500–5 000 ₽/чел · 600–1 500 ₽/блюдо</div>
+<div class="rl-item"><span class="rl-pill rlp-high">Высокая цена</span> 5 000+ ₽/чел · 1 500+ ₽/блюдо</div>
+<div class="rl-item">★★★★★ Ц/К = соотношение цена/качество (5★ = превосходное, 1★ = не стоит денег)</div>
+</div>
+</div>
+<!-- ═══════════════ DAY 1 ═══════════════ -->
+<div class="day-section" id="day1">
 <div class="day-header">
-<div class="day-circle dc-fly">29</div>
+<div class="day-circle dc-fly">1</div>
 <div class="day-title-wrap">
-<div class="day-num-label">Среда</div>
-<div class="day-title">Прилёт и мягкий старт</div>
-<span class="day-badge db-fly">✈ Перелёт</span>
+<div class="day-num-label">Среда · 29 апреля · Рабочий день</div>
+<div class="day-title">Прилёт, первое знакомство и вечер в городе</div>
+<span class="day-badge db-fly">✈ День прилёта</span>
+</div>
+</div><div class="map-wrap">
+<div class="map-label">
+<span>📍 Маршрут дня 1 · Набережная → White Cup → Вечер в городе</span>
+<a href="javascript:void(0)" onclick="openMapWithGPS('https://yandex.ru/maps/?rtext=~50.0978,53.1884~50.1040,53.1910~50.1485,53.1978~50.1430,53.2012&amp;rtt=pd')" style="color:var(--navy)">🧭 Построить маршрут с GPS ↗</a>
+<a class="route-btn" href="https://yandex.ru/maps/?rtext=53.218505,50.168218~53.195341,50.101783~53.195790,50.100202~53.201792,50.111544&amp;rtt=auto" target="_blank">🧭 Маршрут в Яндекс</a></div>
+<div class="leaflet-map-container" id="mapDay1"></div>
+<div class="map-legend">
+<div class="ml-item"><div class="ml-dot" style="background:#e63939"></div><a href="https://yandex.ru/maps/51/samara/search/Волжский%20проспект%2C%2045/" target="_blank">Пряный Барашек (обед) ↗</a></div>
+<div class="ml-item"><div class="ml-dot" style="background:#27ae60"></div><a href="https://yandex.ru/maps/51/samara/search/Красноармейская%2C%2015/" target="_blank">White Cup (кофе) ↗</a></div>
+<div class="ml-item"><div class="ml-dot" style="background:#2980b9"></div><a href="https://yandex.ru/maps/51/samara/search/бар%20ХВАТ%20Самара/" target="_blank">Бар «ХВАТ» (вечер) ↗</a></div>
 </div>
 </div>
-
+<div class="day-picks" id="day1-picks">
+<div class="day-picks-title">Мои варианты на этот день</div>
+<div class="day-picks-list"></div>
+</div>
 <div class="flight-pill">
-<div>
-<div class="fp-label">Вылет</div>
-<div class="fp-time">08:40</div>
-<div class="fp-city">Москва</div>
-</div>
+<div><div class="fp-label">Вылет</div><div class="fp-time">11:50</div><div class="fp-city">Аэропорт вылета</div></div>
 <div class="fp-line"></div>
-<div>
-<div class="fp-label">Прилёт</div>
-<div class="fp-time">11:15</div>
-<div class="fp-city">Самара</div>
+<div style="text-align:right"><div class="fp-label">Прилёт · KUF</div><div class="fp-time">12:30</div><div class="fp-city">Курумоч, Самара</div></div>
 </div>
-</div>
-
 <div class="timeline">
 <div class="tl-item">
 <div class="tl-dot td-navy"></div>
-<div class="tl-time">12:30</div>
-<div class="tl-title">Заселение / оставить вещи</div>
-<div class="tl-desc">Hampton by Hilton. Спокойный старт, без плотной программы.</div>
+<div class="tl-time">12:30 → ~13:30</div>
+<div class="tl-title">Прилёт, такси до отеля</div>
+<div class="tl-desc">Такси до центра ~50 мин, ~700–900 ₽. Заселение в <strong>Hampton by Hilton Samara</strong> — заезд от 14:00. Оставить вещи, даже если номер ещё не готов.</div>
 </div>
-
 <div class="tl-item">
 <div class="tl-dot td-amber"></div>
-<div class="tl-time">14:00</div>
-<div class="tl-title">Поздний обед</div>
-<div class="tl-desc">Ориентир — центр / набережная. Выбери что-то без длинной посадки.</div>
+<div class="tl-time">~14:00 · сразу после заселения</div>
+<span class="tl-tag tt-lunch">🍽 Первый обед</span>
+<div class="tl-title">Обед · «Пряный Барашек» на набережной</div>
+<div class="tl-desc">Первые виды на Волгу. Летняя веранда, хинкали, хачапури. Волжский пр., 45. <span class="price-chip">~1 200–1 800 ₽</span></div>
+<details class="alt-block">
+<summary>Альтернативы для первого обеда</summary>
+<div class="alt-list">
+<div class="alt-item is-rec">
+<div class="ai-head"><span class="ai-name">Koza Pasta</span><div class="ai-badges"><span class="aib aib-rec">Рекомендуем</span></div></div>
+<div class="ai-addr">ул. М. Горького, 119 · вид на Волгу</div>
+<div class="ai-desc">Итальянская веранда с Волгой. Мидии, паста, вино. Открывается с 11:00.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~1 000–1 500 ₽</span><span class="ai-cq">★★★★☆</span><span class="ai-cq-label">Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Koza Pasta" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Samara Gastro (набережная)</span></div>
+<div class="ai-addr">Набережная Волги · гастромаркет</div>
+<div class="ai-desc">14+ концепций: хачапури, мидии, блины, пицца, том ям. Прямо у воды. Быстро и атмосферно.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">300–800 ₽ позиция</span><span class="ai-cq">★★★★☆</span><span class="ai-cq-label">Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Samara Gastro (набережная)" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Рибай (набережная)</span></div>
+<div class="ai-addr">ул. М. Горького, 117 · первая линия</div>
+<div class="ai-desc">Стейк-хаус на набережной. Ланч-стейки по будням 12:00–16:00. В день прилёта — хороший старт.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~700–1 200 ₽</span><span class="ai-cq">★★★★☆</span><span class="ai-cq-label">Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Рибай (набережная)" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
 </div>
-
+</details>
+</div>
 <div class="tl-item">
 <div class="tl-dot td-green"></div>
-<div class="tl-time">16:00–18:30</div>
-<div class="tl-title">Набережная Волги и первый обзор города</div>
-<div class="tl-desc">Прогулка без жёсткого маршрута, можно взять кофе и просто пройтись вдоль Волги.</div>
+<div class="tl-time">16:00 – 19:00</div>
+<div class="tl-title">Прогулка по набережной</div>
+<div class="tl-desc">Волжский бульвар, Струковский сад, памятник Бурлакам. 5 км вдоль берега. Первое знакомство с городом.</div>
 </div>
-
+<div class="tl-item">
+<div class="tl-dot td-amber"></div>
+<div class="tl-time">19:00</div>
+<span class="tl-tag tt-coffee">☕ Вечерний кофе</span>
+<div class="tl-title">Кофе · White Cup</div>
+<div class="tl-desc">Specialty-ростерия. Ростер стоит прямо на баре. ул. Красноармейская, 15 (двор музея Модерна). Работает до 23:00.</div>
+<details class="alt-block">
+<summary>Альтернативы для вечернего кофе</summary>
+<div class="alt-list">
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Корж Кофе</span></div>
+<div class="ai-addr">Несколько точек: Льва Толстого 30Б, Самарская 270 и др.</div>
+<div class="ai-desc">Сеть с авторскими напитками. Скандинавский минимализм. Хороший вариант перед вечером.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">250–500 ₽</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Корж Кофе" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Lumos Barista Lab</span><div class="ai-badges"><span class="aib aib-alt">Только Революционная!</span></div></div>
+<div class="ai-addr">ул. Революционная, 3 ⚠️ Точка на Чапаевской закрыта навсегда</div>
+<div class="ai-desc">Specialty-лаборатория. Авторские напитки. Светлый лаконичный интерьер.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">300–550 ₽</span><span class="ai-cq">★★★★★</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Lumos Barista Lab" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+</div>
+</details>
+</div>
 <div class="tl-item">
 <div class="tl-dot td-brick"></div>
 <div class="tl-time">20:00</div>
-<div class="tl-title">Спокойный ужин</div>
-<div class="tl-desc">Первый вечер лучше оставить без перегруза — адаптация после дороги.</div>
+<span class="tl-tag tt-evening">🌆 Вечер в городе</span>
+<div class="tl-title">Первый вечер — выбери своё</div>
+<div class="tl-desc">29 апреля — среда, рабочий день: город живёт в обычном ритме, заведения не переполнены. Хороший вечер для знакомства с Самарой.</div>
+<details class="alt-block" open="">
+<summary>Варианты проведения вечера 29 апреля</summary>
+<div class="alt-list">
+<div class="alt-item is-rec">
+<div class="ai-head"><span class="ai-name">🎸 Бар «ХВАТ» — главная площадка</span><div class="ai-badges"><span class="aib aib-rec">Живая музыка</span></div></div>
+<div class="ai-addr">ул. Галактионовская, 40 · t.me/hvathvathvat</div>
+<div class="ai-desc">Главная независимая площадка Самары. Инди, рок, альтернатива. По средам нередко открытые вечеринки или живые выступления. Летник + зал внутри. Проверить афишу в ВКонтакте за пару дней до приезда.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">вход ~300–700 ₽ или бесплатно</span><span class="ai-cq">★★★★★</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="🎸 Бар «ХВАТ» — главная площадка" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">🎬 Киномакс IMAX · ТЦ МегаСити</span></div>
+<div class="ai-addr">Дыбенко, 30 · единственный IMAX в Самаре</div>
+<div class="ai-desc">Расслабленный первый вечер в кино. 30 апреля выходит «Дьявол носит Prada 2» — взять билеты на IMAX-премьеру заранее. VIP-зал с подножками и обслуживанием по меню. Также зал D-BOX (динамические кресла).</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">стандарт ~400 ₽ · VIP ~900–1 200 ₽</span><span class="ai-cq">★★★★★</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="🎬 Киномакс IMAX · ТЦ МегаСити" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">🎬 Кинотеатр в ТЦ «Вертикаль»</span></div>
+<div class="ai-addr">Московское шоссе, 17 · тот же ТЦ, где Volga Mama</div>
+<div class="ai-desc">Расслабленный первый вечер в кино — хорошо после перелёта. Заодно можно разведать ТЦ перед шопингом 2 мая: Volga Mama, магазин единоборств. Билеты онлайн: afisha.yandex.ru/samara.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая–средняя</span><span class="ai-rub">~300–500 ₽</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="🎬 Кинотеатр в ТЦ «Вертикаль»" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">🍺 Вечерняя набережная + ужин</span></div>
+<div class="ai-addr">Набережная Волги → Рыбалтика, просп. Ленина, 3</div>
+<div class="ai-desc">Спокойный вариант для первого вечера: прогулка по ночной набережной (красиво освещена), потом ужин в Рыбалтике — волжская рыба, раки, морепродукты у воды. Идеальный старт поездки.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~1 200–1 500 ₽/чел</span><span class="ai-cq">★★★★★</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="🍺 Вечерняя набережная + ужин" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+</div>
+</details>
 </div>
 </div>
-
-<div class="map-wrap">
-<div class="map-label"><span>Ключевые точки дня</span><a href="https://yandex.ru/maps/51/samara" target="_blank">Открыть карту</a></div>
-<div id="map-day1" class="leaflet-map-container"></div>
 </div>
-</section>
-
-<section class="day-section" id="day2">
-<div class="day-header">
-<div class="day-circle dc-def">30</div>
-<div class="day-title-wrap">
-<div class="day-num-label">Четверг</div>
-<div class="day-title">Центр, кофе, бренды и город</div>
-</div>
-</div>
-
-<div class="timeline">
-<div class="tl-item">
-<div class="tl-dot td-amber"></div>
-<div class="tl-time">10:30</div>
-<div class="tl-title">Кофе и старт по центру</div>
-<div class="tl-desc">Лучший день для мягкого шопинга, кофеен и архитектурного центра.</div>
-</div>
-
-<div class="tl-item">
-<div class="tl-dot td-navy"></div>
-<div class="tl-time">12:30–16:30</div>
-<div class="tl-title">Прогулка по центру + бренды / магазины</div>
-<div class="tl-desc">Собери маршрут вокруг удобных улиц и не перегружай логистику.</div>
-</div>
-
-<div class="tl-item">
-<div class="tl-dot td-brick"></div>
-<div class="tl-time">19:30</div>
-<div class="tl-title">Ужин / вечер в городе</div>
-<div class="tl-desc">Можно выбрать гастро-вечер или просто оставить день расслабленным.</div>
-</div>
-</div>
-
-<div class="day-custom-note" id="custom-day2">Здесь будут появляться добавленные вручную события.</div>
-</section>
-
-<section class="day-section" id="day3">
-<div class="day-header">
-<div class="day-circle dc-holiday">1</div>
-<div class="day-title-wrap">
-<div class="day-num-label">Пятница</div>
-<div class="day-title">Первомай + матч Спартак</div>
-<span class="day-badge db-holiday">🎉 Праздник</span>
-<span class="day-badge db-match">⚽ Матч</span>
-</div>
-</div>
-
-<div class="holiday-note">Главное изменение: прогулка сокращена, чтобы успеть спокойно выехать на стадион, пройти вход и не срезать время впритык.</div>
-
-<div class="match-banner">
-<div class="mb-title">Матч Спартак — начало в 18:00</div>
-<div class="mb-info">В день матча заложен буфер на дорогу и вход. Основная логика дня теперь построена вокруг стадиона, а не наоборот.</div>
-<div class="mb-chip">Выезд заранее</div>
-</div>
-
-<div class="timeline" id="timeline-day3">
-<div class="tl-item">
-<div class="tl-dot td-green"></div>
-<div class="tl-time">15:00–16:10</div>
-<div class="tl-title">Набережная: первомайская атмосфера</div>
-<div class="tl-desc">Уличные музыканты, первые веранды сезона, прогулка без длинных заходов. Если хочешь — заглянуть на дебаркадер «Скрябин», если уже открыт.</div>
-</div>
-
-<div class="tl-item day-main-card" data-main-card="1">
-<div class="day-main-pill">Основное событие дня</div>
-<div class="tl-dot td-match"></div>
-<div class="tl-time">16:15–17:30</div>
-<div class="tl-title">Выезд на стадион и вход</div>
-<div class="tl-desc">Заложен буфер на дорогу, очередь, навигацию и вход без спешки.</div>
-</div>
-
-<div class="tl-item">
-<div class="tl-dot td-match"></div>
-<div class="tl-time">18:00</div>
-<div class="tl-title">Матч Спартак ⚽</div>
-<div class="tl-desc">Ключевое событие вечера. После матча — поздний ужин или лёгкий бар.</div>
-</div>
-
-<div class="tl-item">
-<div class="tl-dot td-brick"></div>
-<div class="tl-time">20:30+</div>
-<div class="tl-title">Ужин после матча</div>
-<div class="tl-desc">Лучше брать место без жёсткой привязки ко времени, в зависимости от выхода со стадиона.</div>
-</div>
-</div>
-
-<div class="day-custom-note" id="custom-day3">Здесь будут появляться добавленные вручную события.</div>
-</section>
-
-<section class="day-section" id="day4">
+<!-- ═══════════════ DAY 2 ═══════════════ -->
+<div class="day-section" id="day2">
 <div class="day-header">
 <div class="day-circle dc-def">2</div>
 <div class="day-title-wrap">
-<div class="day-num-label">Суббота</div>
-<div class="day-title">Городской день + ХОРУС вечером</div>
-<span class="day-badge db-concert">🎸 Концерт</span>
+<div class="day-num-label">Четверг · 30 апреля · Предпраздничный рабочий день</div>
+<div class="day-title">Исторический центр, Бункер, Станкозавод</div>
+</div>
+</div><div class="map-wrap">
+<div class="map-label">
+<span>📍 Маршрут дня 2 · Центр — Бункер — Станкозавод</span>
+<a href="javascript:void(0)" onclick="openMapWithGPS('https://yandex.ru/maps/?rtext=~50.1070,53.1900~50.1550,53.1932~50.1480,53.1958~50.1485,53.1978&amp;rtt=pd')" style="color:var(--navy)">🧭 Построить маршрут с GPS ↗</a>
+<a class="route-btn" href="https://yandex.ru/maps/?rtext=53.200744,50.108531~53.203284,50.106302~53.208492,50.105594~53.209541,50.110577&amp;rtt=auto" target="_blank">🧭 Маршрут в Яндекс</a></div>
+<div class="leaflet-map-container" id="mapDay2"></div>
+<div class="map-legend">
+<div class="ml-item"><div class="ml-dot" style="background:#e63939"></div><a href="https://yandex.ru/maps/51/samara/search/Ленинградская/" target="_blank">Ленинградская / пл. Куйбышева ↗</a></div>
+<div class="ml-item"><div class="ml-dot" style="background:#2980b9"></div><a href="https://yandex.ru/maps/51/samara/search/Фрунзе%2C%20167/" target="_blank">Бункер Сталина ↗</a></div>
+<div class="ml-item"><div class="ml-dot" style="background:#27ae60"></div><a href="https://yandex.ru/maps/51/samara/search/Куйбышева%2C%20128А/" target="_blank">Станкозавод / Volga Mama ↗</a></div>
+<div class="ml-item"><div class="ml-dot" style="background:#888"></div><a href="https://yandex.ru/maps/51/samara/search/Фрунзе%2C%20113/" target="_blank">Посольство (ужин) ↗</a></div>
 </div>
 </div>
-
-<div class="concert-banner">
+<div class="day-picks" id="day2-picks">
+<div class="day-picks-title">Мои варианты на этот день</div>
+<div class="day-picks-list"></div>
+</div>
+<div class="timeline">
+<div class="tl-item">
+<div class="tl-dot td-navy"></div>
+<div class="tl-time">09:00</div>
+<div class="tl-title">Завтрак в отеле</div>
+<div class="tl-desc">Hampton by Hilton — включённый завтрак-буфет.</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-amber"></div>
+<div class="tl-time">10:00</div>
+<span class="tl-tag tt-coffee">☕ Specialty</span>
+<div class="tl-title">Кофе · White Cup</div>
+<div class="tl-desc">Ростерия с собственной обжаркой — ростер прямо на баре. В будний день можно наблюдать за обжаркой зерна. ул. Красноармейская, 15.</div>
+<details class="alt-block">
+<summary>Альтернативы для утреннего кофе</summary>
+<div class="alt-list">
+<div class="alt-item is-rec">
+<div class="ai-head"><span class="ai-name">Lumos Barista Lab (Революционная)</span><div class="ai-badges"><span class="aib aib-rec">Лучший выбор</span></div></div>
+<div class="ai-addr">ул. Революционная, 3 — ⚠️ НЕ Чапаевская (закрыта!)</div>
+<div class="ai-desc">Specialty-лаборатория, авторские напитки, мастер-классы. Рядом с историческим центром.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">300–550 ₽</span><span class="ai-cq">★★★★★</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Lumos Barista Lab (Революционная)" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">SHU Authentic Coffee</span></div>
+<div class="ai-addr">Ленинградская ул., 28А (Самарский «Арбат»)</div>
+<div class="ai-desc">Кофе из турки с горячего песка. Красное кресло Prada. Камерная арт-атмосфера на Арбате.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">200–400 ₽</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="SHU Authentic Coffee" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+</div>
+</details>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-green"></div>
+<div class="tl-time">10:30 – 12:30</div>
+<div class="tl-title">Ул. Ленинградская + площадь Куйбышева</div>
+<div class="tl-desc">«Самарский Арбат» — купеческие особняки XIX в. Площадь Куйбышева (17,4 га — одна из крупнейших в Европе). Театр оперы и балета. Бункер Сталина записан заранее?</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-amber"></div>
+<div class="tl-time">12:30</div>
+<span class="tl-tag tt-lunch">🍽 Обед (работают бизнес-ланчи!)</span>
+<div class="tl-title">Обед · Osteria Lora</div>
+<div class="tl-desc">Итальянская авторская кухня. Фоккача с ростбифом 330 ₽, болоньезе 370 ₽. Программа лояльности. ул. Садовая, 137 (2 эт.) или ТК ГУДОК. <span class="price-chip">Низкая цена · ★★★★★ Ц/К</span></div>
+<details class="alt-block">
+<summary>Альтернативы для обеда (бизнес-ланч, 12:00–16:00)</summary>
+<div class="alt-list">
+<div class="alt-item is-rec">
+<div class="ai-head"><span class="ai-name">#1 Марико (грузинское бистро)</span><div class="ai-badges"><span class="aib aib-rec">Лучшая цена</span></div></div>
+<div class="ai-addr">ул. Галактионовская, 39</div>
+<div class="ai-desc">Суп + хлеб + чай = 65 ₽ к любому блюду. Основное 245 ₽. Хинкали от 55 ₽/шт.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">~310 ₽ полный обед</span><span class="ai-cq">★★★★★</span><span class="ai-cq-label">Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="#1 Марико (грузинское бистро)" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Ресторан Честных Цен</span></div>
+<div class="ai-addr">4 точки: 22 Партсъезда 45, Куйбышева 128 и др.</div>
+<div class="ai-desc">4 концепции на выбор: азиатский / американский / советский / грузинский ланч. Всё включено.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">490 ₽ фикс</span><span class="ai-cq">★★★★☆</span><span class="ai-cq-label">Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Ресторан Честных Цен" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Harat's Pub</span></div>
+<div class="ai-addr">ул. Красноармейская, 1а · вид на Волгу</div>
+<div class="ai-desc">VIP-комната для переговоров. Цезарь + суп + горячее. Вид на Волгу даже на ланч.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">480–560 ₽ комбо</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Harat's Pub" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+</div>
+</details>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-navy"></div>
+<div class="tl-time">14:00</div>
+<div class="tl-title">Бункер Сталина (Объект ГО-42)</div>
+<div class="tl-desc">Секретное бомбоубежище 1942 г., глубина 37 м. Зал заседаний, личный кабинет Сталина. ул. Фрунзе, 167. <em>Запись обязательна заранее!</em></div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-navy"></div>
+<div class="tl-time">17:00</div>
+<span class="tl-tag tt-shop">🛍 Шопинг</span>
+<div class="tl-title">Арт-кластер Станкозавод + Volga Mama</div>
+<div class="tl-desc">Бывший завод 1873 года. Крыша с видом 360° на Волгу. Volga Mama (2 эт.) — местный стритвир: «Самара — город-курорт», принты о Волге, от 1 200 ₽. Также: галереи, мастерские, Letterhaus. ул. Куйбышева, 128А · до 20:00</div>
+<details class="alt-block">
+<summary>Другие локальные бренды на Станкозаводе</summary>
+<div class="alt-list">
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">smr.local</span></div>
+<div class="ai-addr">Маркеты Станкозавода / @smrlocal</div>
+<div class="ai-desc">«Самара — город-курорт» — самый узнаваемый принт. Коллаборации с Volga Mama. 1 200–2 500 ₽.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-cq">★★★★★</span><span class="ai-cq-label">Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="smr.local" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Подполье (Pokis)</span></div>
+<div class="ai-addr">Маркеты · ВК: podpol_co</div>
+<div class="ai-desc">Мрачный поэтический мерч. Принты от музыканта Мокиса с 2014 г. Культовый среди местной сцены.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">1 300–3 000 ₽</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Подполье (Pokis)" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+</div>
+</details>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-brick"></div>
+<div class="tl-time">20:30 (если без концерта)</div>
+<div class="tl-title">Ужин · Барный особняк «Посольство»</div>
+<div class="tl-desc">Золотая «Пальмовая ветвь» 2025. 7 баров в особняке Чехословацкого посольства (1941–43 гг.). Авторская кухня, коктейли. ул. Фрунзе, 113. <em>Бронировать!</em> <span class="price-chip">~1 500–2 000 ₽</span></div>
+<details class="alt-block">
+<summary>Альтернативы для вечернего ужина</summary>
+<div class="alt-list">
+<div class="alt-item is-lux">
+<div class="ai-head"><span class="ai-name">Nebo (Небо)</span><div class="ai-badges"><span class="aib aib-lux">Люкс</span></div></div>
+<div class="ai-addr">Самарская 110, Lotte Hotel, 15 эт. · до 00:00</div>
+<div class="ai-desc">Панорама 360° на город. Asia &amp; Seafood. RAW-бар. Вид на ночной город — незабываемо.</div>
+<div class="ai-meta"><span class="aipl aipl-high">Высокая</span><span class="ai-rub">~3 000 ₽/чел</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Nebo (Небо)" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Ливингстон</span></div>
+<div class="ai-addr">ул. Ново-Садовая, 106г к1 · до 00:00</div>
+<div class="ai-desc">Ресторан-путешествие. Африка + Ближний Восток. Мясо на хоспере. 5 уровней залов. Первый Chef's Table в Поволжье.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~2 500 ₽/чел</span><span class="ai-cq">★★★★★</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Ливингстон" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Рыбалтика</span></div>
+<div class="ai-addr">просп. Ленина, 3 · до 23:00</div>
+<div class="ai-desc">RAW-бар, устрицы, морские ежи, крабы. «Лучшие морские ежи в Самаре» по отзывам. Бронировать.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~1 200–1 500 ₽/чел</span><span class="ai-cq">★★★★★</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Рыбалтика" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+</div>
+</details>
+</div>
+</div>
+</div>
+<!-- ═══════════════ DAY 3 ═══════════════ -->
+<div class="day-section" id="day3">
+<div class="day-header">
+<div class="day-circle dc-holiday">3</div>
+<div class="day-title-wrap">
+<div class="day-num-label">Пятница · 1 мая · Праздник, стадион и вечер</div>
+<div class="day-title">Первомай, матч со «Спартаком» и вечер после стадиона</div>
+<span class="day-badge db-holiday">Праздник</span>
+<span class="day-badge" style="background:#E1F5EE;color:#0F6E56">🎬 Кинотеатр открывается!</span><span class="day-badge db-match">⚽ Матч Спартак</span>
+</div>
+</div><div class="map-wrap">
+<div class="map-label">
+<span>📍 Маршрут дня 3 · Центр — Завод — Набережная — Самара Арена</span>
+<a href="javascript:void(0)" onclick="openMapWithGPS('https://yandex.ru/maps/?rtext=~50.0963,53.1882~50.0978,53.1884~50.1005,53.1905~50.1040,53.1910&amp;rtt=pd')" style="color:var(--navy)">🧭 Построить маршрут с GPS ↗</a>
+<a class="route-btn" href="https://yandex.ru/maps/?rtext=53.1998,50.1458~53.1876,50.0952~53.1884,50.0978~53.2053,50.2090&amp;rtt=auto" target="_blank">🧭 Маршрут в Яндекс</a></div>
+<div class="leaflet-map-container" id="mapDay3"></div>
+<div class="map-legend">
+<div class="ml-item"><div class="ml-dot" style="background:#e63939"></div><a href="https://yandex.ru/maps/51/samara/search/Волжский%20проспект%2C%204/" target="_blank">Жигулёвский завод ↗</a></div>
+<div class="ml-item"><div class="ml-dot" style="background:#f5a623"></div><a href="https://yandex.ru/maps/51/samara/search/Волжский%20проспект%2C%2045/" target="_blank">Пряный Барашек ↗</a></div>
+<div class="ml-item"><div class="ml-dot" style="background:#27ae60"></div><a href="https://yandex.ru/maps/51/samara/search/Самара%20Арена/" target="_blank">Самара Арена ↗</a></div>
+</div>
+</div>
+<div class="day-picks" id="day3-picks">
+<div class="day-picks-title">Мои варианты на этот день</div>
+<div class="day-picks-list"></div>
+</div>
+<div class="holiday-note">⚠️ 1–3 мая — праздничные выходные. Бизнес-ланчи не работают. До и после матча город заметно оживлён — ужин лучше бронировать заранее.</div>
+<div class="opening-banner">
+<div class="ob-icon">🎬</div>
+<div>
+<div class="ob-text">Открытие летнего сезона кинотеатра «Филин» — именно 1 мая!</div>
+<div class="ob-sub">Набережная, у скульптуры «Ладья» · с наступлением темноты · брать плед!</div>
+</div>
+</div><div class="match-banner"><div class="mb-title">Крылья Советов — Спартак · 1 мая</div><div class="mb-info">Солидарность Самара Арена · Мир РПЛ, 28-й тур · официальное время начала <strong>18:00</strong>. На стадион лучше выезжать из центра не позже 16:45–17:00.</div><span class="mb-chip">🎫 Билеты и схема — pfcks.ru</span></div>
+<div class="timeline">
+<div class="tl-item">
+<div class="tl-dot td-amber"></div>
+<div class="tl-time">09:30</div>
+<span class="tl-tag tt-coffee">☕ Ростерия</span>
+<div class="tl-title">Кофе · White Cup</div>
+<div class="tl-desc">Ростер прямо на баре. В праздничный день работает с 8:00. ул. Красноармейская, 15 (двор музея Модерна). Или точка на Станкозаводе.</div>
+<details class="alt-block">
+<summary>Альтернативы (работают в праздник)</summary>
+<div class="alt-list">
+<div class="alt-item is-rec">
+<div class="ai-head"><span class="ai-name">Алиса в стране чудес</span><div class="ai-badges"><span class="aib aib-rec">Атмосфера!</span></div></div>
+<div class="ai-addr">ул. Куйбышева, 117 (лютеранская церковь)</div>
+<div class="ai-desc">Сказочный интерьер — чашки в воздухе, стулья на потолке. Зерно «Сварщица» и Tasty Coffee. Работает в праздники.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">250–450 ₽</span><span class="ai-cq">★★★★★</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Алиса в стране чудес" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Корж Кофе (7 точек)</span></div>
+<div class="ai-addr">Льва Толстого 30Б, Самарская 270 и др.</div>
+<div class="ai-desc">Всегда работает. Скандинавский минимализм. Авторские сезонные напитки.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">250–500 ₽</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Корж Кофе (7 точек)" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+</div>
+</details>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-navy"></div>
+<div class="tl-time">10:00</div>
+<div class="tl-title">Первомайский митинг (по желанию)</div>
+<div class="tl-desc">У стелы «Город трудовой доблести» (просп. Юных пионеров, 10:00). Торжественный митинг с Героями России и участниками СВО. Народные гуляния на площади Куйбышева.</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-green"></div>
+<div class="tl-time">11:00 – 12:30</div>
+<div class="tl-title">Экскурсия · Жигулёвский пивоваренный завод</div>
+<div class="tl-desc">Завод 1881 года — старейший в России. Дегустация живого Жигулёвского. Бар «На Дне» у ворот. Волжский пр., 4. <em>Записаться на экскурсию заранее!</em></div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-amber"></div>
+<div class="tl-time">13:00</div>
+<span class="tl-tag tt-lunch">🍽 Обед (не ланч — основное меню)</span>
+<div class="tl-title">Обед · «Пряный Барашек» на набережной</div>
+<div class="tl-desc">Летняя веранда с Волгой. Первомайские гуляния рядом. Хинкали, хачапури, аджапсандали. Волжский пр., 45. <span class="price-chip">~1 200–1 800 ₽</span></div>
+<details class="alt-block">
+<summary>Альтернативы (все работают в праздник)</summary>
+<div class="alt-list">
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Samara Gastro</span></div>
+<div class="ai-addr">Набережная Волги · гастромаркет</div>
+<div class="ai-desc">14+ концепций. Идеально в первомай — атмосфера, толпа, стритфуд у Волги. Приди пораньше (до 12:00).</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">300–800 ₽/позиция</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Samara Gastro" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">«Где нас нет»</span><div class="ai-badges"><span class="aib aib-alt">Работает 24/7</span></div></div>
+<div class="ai-addr">ул. Коммунистическая, 90</div>
+<div class="ai-desc">Один из немногих ресторанов, работающих в праздники в полном режиме. Том ям, поке с лососем.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~1 000–1 500 ₽</span><span class="ai-cq">★★★☆☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="«Где нас нет»" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Koza Pasta</span></div>
+<div class="ai-addr">ул. М. Горького, 119</div>
+<div class="ai-desc">Итальянская кухня с верандой и Волгой. Открывается с 11:00. Мидии, паста, вино.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~1 000–1 500 ₽</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Koza Pasta" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+</div>
+</details>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-green"></div>
+<div class="tl-time">14:45 – 16:15</div>
+<div class="tl-title">Набережная: короткая прогулка перед стадионом</div>
+<div class="tl-desc">Небольшой праздничный блок у Волги: прогуляться по набережной, выпить кофе или взять велосипед на короткий круг. Важно не растягивать прогулку — на стадион лучше выезжать заранее.</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-brick"></div>
+<div class="tl-time">16:30 – 17:45</div>
+<div class="tl-title">Выезд на стадион и вход</div>
+<div class="tl-desc">Лучше выйти из центра заранее: дорога, досмотр и поиск сектора займут время. Цель — быть внутри арены не позже 17:45.</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-green"></div>
+<div class="tl-time">18:00</div>
+<span class="tl-tag tt-match">⚽ Матч</span>
+<div class="tl-title">Крылья Советов — Спартак</div>
+<div class="tl-desc">Самара Арена · официальный старт матча <strong>в 18:00</strong>. После финального свистка — спокойно вернуться в центр на ужин или бар.</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-brick"></div>
+<div class="tl-time">После матча (~20:30)</div>
+<span class="tl-tag tt-evening">🏙 Вечер</span>
+<div class="tl-title">Ужин после стадиона · спокойный вариант в центре</div>
+<div class="tl-desc">После игры удобнее вернуться в центр и выбрать один из заранее сохранённых вариантов из разделов «Рестораны» или «Вечером». Это гибче, чем жёстко привязывать ужин до стартового свистка.</div>
+</div></div>
+</div>
+<!-- ═══════════════ DAY 4 ═══════════════ -->
+<div class="day-section" id="day4">
+<div class="day-header">
+<div class="day-circle dc-match">4</div>
+<div class="day-title-wrap">
+<div class="day-num-label">Суббота · 2 мая · Город, шопинг и ХОРУС</div>
+<div class="day-title">Спокойный день в городе, шопинг и ХОРУС вечером</div>
+<span class="day-badge" style="background:#5C3A8A;color:white">🎸 ХОРУС инди-фест</span>
+</div>
+</div><div class="map-wrap">
+<div class="map-label">
+<span>📍 Маршрут дня 4 · Центр → Самара Арена</span>
+<a href="javascript:void(0)" onclick="openMapWithGPS('https://yandex.ru/maps/?rtext=~50.1070,53.1900~50.1050,53.1895~50.2090,53.2053&amp;rtt=pd')" style="color:var(--navy)">🧭 Построить маршрут с GPS ↗</a>
+<a class="route-btn" href="https://yandex.ru/maps/?rtext=53.200744,50.108531~53.211029,50.152221~53.211029,50.152221~53.211029,50.152221&amp;rtt=auto" target="_blank">🧭 Маршрут в Яндекс</a></div>
+<div class="leaflet-map-container" id="mapDay4"></div>
+<div class="map-legend">
+<div class="ml-item"><div class="ml-dot" style="background:#e63939"></div><a href="https://yandex.ru/maps/51/samara/search/Ленинградская/" target="_blank">Центр / шопинг ↗</a></div>
+<div class="ml-item"><div class="ml-dot" style="background:#f5a623"></div><a href="https://yandex.ru/maps/51/samara/search/просп.%20Ленина%2C%203/" target="_blank">Рыбалтика (обед) ↗</a></div>
+<div class="ml-item"><div class="ml-dot" style="background:#27ae60"></div><a href="https://yandex.ru/maps/51/samara/search/Самара%20Арена/" target="_blank">Самара Арена ⚽ ↗</a></div>
+</div>
+</div>
+<div class="day-picks" id="day4-picks">
+<div class="day-picks-title">Мои варианты на этот день</div>
+<div class="day-picks-list"></div>
+</div>
+<div class="holiday-note">⚠️ После матча 1 мая день лучше держать гибким: прогулки, шопинг, ужин и вечерний ХОРУС без жёсткой привязки к стадиону.</div>
+<!-- ХОРУС инди-фест 2 мая -->
+<div class="concert-banner" style="background:linear-gradient(135deg,#2a1a3e 0%,#5C3A8A 100%);border-color:#8B5CF6;margin-bottom:14px">
 <div class="cb-row">
 <div class="cb-icon">🎸</div>
 <div>
-<div class="cb-title">ХОРУС инди · вечер 2 мая</div>
-<div class="cb-sub">Вечерняя программа может быть основной точкой дня. Всё остальное лучше строить с запасом по логистике.</div>
+<div class="cb-title">ХОРУС — инди-фестиваль · 2 мая</div>
+<div class="cb-sub">Бар «ХВАТ» · ул. Галактионовская, 40 · Шугейз, нойз-рок, пост-панк, инди<br/>Летник с 15:00 · Внутри после 22:00 · Вход уточнять у организаторов</div>
+<span class="cb-pill" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3)">🔗 Подробнее: sobaka.ru/smr/entertainment/music/212733</span>
+<a class="cb-link" href="https://www.sobaka.ru/smr/entertainment/music/212733" target="_blank">sobaka.ru → читать анонс ↗</a>
 </div>
 </div>
 </div>
-
-<div class="timeline" id="timeline-day4">
+<div class="timeline">
 <div class="tl-item">
-<div class="tl-dot td-amber"></div>
-<div class="tl-time">11:00</div>
-<div class="tl-title">Поздний старт и кофе</div>
-<div class="tl-desc">После матча предыдущего дня лучше не ставить ранние активности.</div>
-</div>
-
-<div class="tl-item day-main-card" data-main-card="1">
-<div class="day-main-pill">Основное событие дня</div>
 <div class="tl-dot td-navy"></div>
-<div class="tl-time">13:00–17:30</div>
-<div class="tl-title">Свободный городской слот</div>
-<div class="tl-desc">Здесь удобно поставить вручную ресторан, экскурсию, бар-хоппинг, Бункер Сталина или музей.</div>
+<div class="tl-time">09:00</div>
+<div class="tl-title">Завтрак в отеле + неспешное утро</div>
+<div class="tl-desc">Hampton by Hilton. Включённый завтрак-буфет.</div>
 </div>
-
+<div class="tl-item">
+<div class="tl-dot td-green"></div>
+<div class="tl-time">10:30 – 12:30</div>
+<div class="tl-title">Ленинградская + сувениры + шопинг</div>
+<div class="tl-desc">Volga Mama в ТЦ «Вертикаль» (Московское ш., 17). smr.local на маркете Станкозавода. Шоколад «Россия» и Жигулёвское в подарок.<br/><br/>
+<strong>🎒 Thule Weekend Store</strong> — официальный дилер Thule тоже в ТЦ «Вертикаль» (Московское ш., 17, на пересечении с ул. Пролетарской). Рюкзаки, дорожные сумки, органайзеры — всё в наличии. Удобно совмещать с шопингом у Volga Mama. Тел: <a href="tel:+73463240900">twstore.ru</a><br/><br/>
+<strong>🥊 Магазин единоборств</strong> — в ТЦ «Вертикаль» также есть магазин товаров для единоборств и боевых искусств. Перчатки, экипировка, одежда для тренировок. Удобно заглянуть, пока уже будете в ТЦ.<br/><br/>
+<strong>🎬 Кинотеатр в ТЦ «Вертикаль»</strong> — прямо в том же торговом центре, где Volga Mama. Пока будете в ТЦ — можно проверить расписание и билеты на вечер. Удобно: шопинг + кино в одном месте, не нужно никуда ехать отдельно. Хороший запасной вариант на вечер после матча, если не хочется в бар.</div>
+<details class="alt-block">
+<summary>Дополнительные бренды для шопинга</summary>
+<div class="alt-list">
+<div class="alt-item is-rec">
+<div class="ai-head"><span class="ai-name">YANIK ART</span><div class="ai-badges"><span class="aib aib-rec">Победитель премии 2025</span></div></div>
+<div class="ai-addr">yanikart.ru · маркеты</div>
+<div class="ai-desc">Картины художницы Яны Кузнецовой — в одежде. Ограниченные тиражи. Авторские принты. Уникальная вещь.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">3 000–12 000 ₽</span><span class="ai-cq">★★★★★</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="YANIK ART" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">MARI PROHOROVA brand</span></div>
+<div class="ai-addr">ул. Ново-Садовая, 4 · физический бутик</div>
+<div class="ai-desc">Женская одежда самарского дизайнера. Пиджаки, платья, корсеты. Всё шьётся в Самаре.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">4 000–15 000 ₽</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="MARI PROHOROVA brand" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+</div>
+</details>
+</div>
 <div class="tl-item">
 <div class="tl-dot td-concert"></div>
-<div class="tl-time">Вечер</div>
-<div class="tl-title">ХОРУС инди</div>
-<div class="tl-desc">Оставь буфер на дорогу и ужин до или после концерта.</div>
+<div class="tl-time">15:00</div>
+<span class="tl-tag tt-concert" style="background:linear-gradient(90deg,#5C3A8A,#8B5CF6)">🎸 Инди-фест</span>
+<div class="tl-title">ХОРУС — шугейз / нойз-рок / инди · бар «ХВАТ»</div>
+<div class="tl-desc">Летник бара «ХВАТ» (ул. Галактионовская, 40). Организаторы — «Самара Инди Викенд» и шоукейс «Сезон». Идеально: пойти на инди-фест днём, а вечером на футбол. После 22:00 продолжение внутри бара. <a href="https://www.sobaka.ru/smr/entertainment/music/212733" target="_blank">→ читать анонс на Sobaka.ru</a></div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-brick"></div>
+<div class="tl-time">13:00</div>
+<span class="tl-tag tt-lunch">🍽 Обед</span>
+<div class="tl-title">Обед · Рыбалтика</div>
+<div class="tl-desc">Волжская рыба, раки, морепродукты — лучший обед перед матчем. просп. Ленина, 3. <strong>Бронировать заранее</strong> — в праздничный день переполнена. <span class="price-chip">~1 200–1 500 ₽</span></div>
+<details class="alt-block">
+<summary>Альтернативы для обеда в матчевый день</summary>
+<div class="alt-list">
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Хокку (паназиатский)</span></div>
+<div class="ai-addr">Коммунистическая 90/1 · Ново-Садовая 160М (ТРЦ МегаСити)</div>
+<div class="ai-desc">Бенто-ланчи (работают в праздники). Азиатские комбо. Быстро, сытно, доступно.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">от 490 ₽</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Хокку (паназиатский)" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">«Где нас нет»</span></div>
+<div class="ai-addr">ул. Коммунистическая, 90 · работает 24/7</div>
+<div class="ai-desc">Рядом со стадионом. Работает всегда. Разнообразное меню. Хороший вариант до матча.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~1 000–1 500 ₽</span><span class="ai-cq">★★★☆☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="«Где нас нет»" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+</div>
+</details>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-green"></div>
+<div class="tl-time">За 1,5–2 ч до матча</div>
+<span class="tl-tag tt-match">⚽ Матч</span>
+<div class="tl-title">Самара Арена — фан-зона и матч</div>
+<div class="tl-desc">45 000 мест. Один из красивейших стадионов России. Фан-зона, атрибутика. Транспорт в матчевые дни загружен — выехать заранее.</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-brick"></div>
+<div class="tl-time">После матча</div>
+<div class="tl-title">Ужин · «Посольство» или Рыбалтика</div>
+<div class="tl-desc">«Посольство» работает до 01:00. Отпраздновать или «заедить» — оба варианта хороши. Рыбалтика — если хочется сесть у воды. <span class="price-chip">~1 200–2 000 ₽</span></div>
+<details class="alt-block">
+<summary>Альтернативы после матча</summary>
+<div class="alt-list">
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Puri Bistro</span></div>
+<div class="ai-addr">ул. 22 Партсъезда, 227А</div>
+<div class="ai-desc">Грузинская кухня + specialty-кофе. Панорамные окна, живая музыка по выходным. Уютная альтернатива шумному центру.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~1 000–1 500 ₽</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Puri Bistro" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Rusiko</span></div>
+<div class="ai-addr">ул. Дачная 2 к1</div>
+<div class="ai-desc">Русско-грузинская кухня. Мясо по-кахетински, хачапури на шампуре. Открывается с 11:00.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~1 000–1 500 ₽</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Rusiko" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+</div>
+</details>
 </div>
 </div>
-
-<div class="day-custom-note" id="custom-day4">Здесь будут появляться добавленные вручную события.</div>
-</section>
-
-<section class="day-section" id="day5">
+</div>
+<!-- ═══════════════ DAY 5 ═══════════════ -->
+<div class="day-section" id="day5">
 <div class="day-header">
-<div class="day-circle dc-def">3</div>
+<div class="day-circle dc-def">5</div>
 <div class="day-title-wrap">
-<div class="day-num-label">Воскресенье</div>
-<div class="day-title">Теплоход / Ширяево / Волга</div>
+<div class="day-num-label">Воскресенье · 3 мая · Выходной</div>
+<div class="day-title">Теплоход в Ширяево, Самара Космическая и вечер на воде</div>
+</div>
+</div><div class="map-wrap">
+<div class="map-label">
+<span>📍 Маршрут дня 5 · Речной вокзал — Ширяево — Космос — Скрябин</span>
+<a href="javascript:void(0)" onclick="openMapWithGPS('https://yandex.ru/maps/?rtext=~50.0963,53.1882~50.1040,53.1910~50.0978,53.1884&amp;rtt=pd')" style="color:var(--navy)">🧭 Построить маршрут с GPS ↗</a>
+<a class="route-btn" href="https://yandex.ru/maps/?rtext=53.200744,50.108531~53.430810,49.996472~53.425719,50.018480~53.430810,49.996472&amp;rtt=auto" target="_blank">🧭 Маршрут в Яндекс</a></div>
+<div class="leaflet-map-container" id="mapDay5"></div>
+<div class="map-legend">
+<div class="ml-item"><div class="ml-dot" style="background:#e63939"></div><a href="https://yandex.ru/maps/51/samara/search/Речной%20вокзал%20Самара/" target="_blank">Речной вокзал ↗</a></div>
+<div class="ml-item"><div class="ml-dot" style="background:#2980b9"></div><a href="https://yandex.ru/maps/51/samara/search/Самара%20Космическая/" target="_blank">Самара Космическая ↗</a></div>
+<div class="ml-item"><div class="ml-dot" style="background:#f5a623"></div><a href="https://yandex.ru/maps/51/samara/search/Максима%20Горького%2C%20119/" target="_blank">Koza Pasta (ужин) ↗</a></div>
 </div>
 </div>
-
-<div class="timeline" id="timeline-day5">
-<div class="tl-item day-main-card" data-main-card="1">
-<div class="day-main-pill">Основное событие дня</div>
+<div class="day-picks" id="day5-picks">
+<div class="day-picks-title">Мои варианты на этот день</div>
+<div class="day-picks-list"></div>
+</div>
+<div class="timeline">
+<div class="tl-item">
 <div class="tl-dot td-navy"></div>
-<div class="tl-time">День</div>
-<div class="tl-title">Теплоходная прогулка / Ширяево</div>
-<div class="tl-desc">День лучше почти полностью держать под Волгу и логистику к причалу.</div>
+<div class="tl-time">08:45</div>
+<div class="tl-title">Кофе навынос + переезд к Речному вокзалу</div>
+<div class="tl-desc">Лёгкий завтрак в отеле. Кофе навынос из любой точки Корж или White Cup по дороге.</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-green"></div>
+<div class="tl-time">09:00 — отправление</div>
+<div class="tl-title">🚢 Теплоход → Ширяево (Жигулёвские горы)</div>
+<div class="tl-desc">Самый живописный маршрут. «Попова гора» — Волга и Самарская Лука. Репин писал «Бурлаков» здесь. ~4–5 ч туда-обратно. Бронировать: <a href="https://www.sputnik-germes.ru" target="_blank">sputnik-germes.ru</a></div>
+<details class="alt-block">
+<summary>Альтернатива если нет мест на теплоход</summary>
+<div class="alt-list">
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Речная прогулка на катере</span></div>
+<div class="ai-addr">Речной вокзал · на 1–2 часа</div>
+<div class="ai-desc">Короткая прогулка по Волге на катере. Виды на город с воды. Бронировать у причала или заранее.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">500–1 000 ₽/чел</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Речная прогулка на катере" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Самарская Лука (автомобилем)</span></div>
+<div class="ai-addr">~1 ч от Самары · Жигулёвск, Тольятти</div>
+<div class="ai-desc">Нацпарк. Стрельная гора — лучшая смотровая. Дубравы и меловые скалы. Аренда авто или такси.</div>
+<div class="ai-meta"><span class="aipl aipl-low">Низкая</span><span class="ai-rub">бесплатно (транспорт отдельно)</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Самарская Лука (автомобилем)" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+</div>
+</details>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-amber"></div>
+<div class="tl-time">~14:00</div>
+<span class="tl-tag tt-lunch">🍽 Обед на борту / Ширяево</span>
+<div class="tl-title">Обед · На борту или в кафе Ширяево</div>
+<div class="tl-desc">На т/х «Москва» — бар. В Ширяево — кафе с волжской кухней: раки, рыба, Жигулёвское разливное.</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-navy"></div>
+<div class="tl-time">~17:00 · Возвращение</div>
+<div class="tl-title">🚀 Музей «Самара Космическая»</div>
+<div class="tl-desc">Единственная в Европе вертикально установленная ракета «Союз» (68 м!). VR-экскурсия по МКС. Просп. Ленина, 21. <em>Вс 11:00–15:00.</em> <span class="price-chip">250 ₽</span></div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-pink"></div>
+<div class="tl-time">19:00</div>
+<div class="tl-title">Закат на набережной</div>
+<div class="tl-desc">Смотровая «Вертолётка» — лучший вид на город и закат (бесплатно, круглосуточно). Или прогулка по нижней набережной.</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-green"></div>
+<div class="tl-time">~20:00</div>
+<span class="tl-tag tt-evening">🚢 Если открыт</span>
+<div class="tl-title">Скрябин (дебаркадер) — вечер над водой</div>
+<div class="tl-desc">Бывшая плавучая мастерская — теперь бар прямо над Волгой. Живая музыка. Коктейли 350–600 ₽. Уточнить что открыт (открывается в мае). Набережная у «Кинапа».</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-brick"></div>
+<div class="tl-time">20:30</div>
+<div class="tl-title">Прощальный ужин · Koza Pasta на набережной</div>
+<div class="tl-desc">Итальянская кухня, вино, ночная Волга. Финальный вечер в Самаре. ул. М. Горького, 119. <span class="price-chip">~1 500–2 000 ₽</span></div>
+<details class="alt-block">
+<summary>Альтернативы для прощального ужина</summary>
+<div class="alt-list">
+<div class="alt-item is-lux">
+<div class="ai-head"><span class="ai-name">Ливингстон — финальный аккорд</span><div class="ai-badges"><span class="aib aib-lux">★ Выбор вечера</span></div></div>
+<div class="ai-addr">Ново-Садовая 106г к1 · до 00:00</div>
+<div class="ai-desc">Лучшее «впечатление/рубль» в Самаре. В воскресенье — живая музыка. 5 залов, хоспер. Незабываемый финал.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~2 500 ₽/чел</span><span class="ai-cq">★★★★★</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Ливингстон — финальный аккорд" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Nebo</span></div>
+<div class="ai-addr">Самарская 110, 15 эт. · вс до 00:00</div>
+<div class="ai-desc">Ночная панорама Самары с высоты 15 этажа. Asia &amp; Seafood. Идеально — последний вечер с видом.</div>
+<div class="ai-meta"><span class="aipl aipl-high">Высокая</span><span class="ai-rub">~3 000 ₽/чел</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Nebo" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">Рыбалтика</span></div>
+<div class="ai-addr">просп. Ленина, 3 · вс до 24:00</div>
+<div class="ai-desc">Волжская рыба и морепродукты. Последний шанс попробовать раков и морских ежей.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~1 200–1 500 ₽/чел</span><span class="ai-cq">★★★★★</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Рыбалтика" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+</div>
+</details>
 </div>
 </div>
-
-<div class="day-custom-note" id="custom-day5">Здесь будут появляться добавленные вручную события.</div>
-</section>
-
-<section class="day-section" id="day6">
+</div>
+<!-- ═══════════════ DAY 6 ═══════════════ -->
+<div class="day-section" id="day6">
 <div class="day-header">
-<div class="day-circle dc-fly">4</div>
+<div class="day-circle dc-fly">6</div>
 <div class="day-title-wrap">
-<div class="day-num-label">Понедельник</div>
-<div class="day-title">Вылет</div>
-<span class="day-badge db-fly">✈ 13:55</span>
+<div class="day-num-label">Понедельник · 4 мая · Рабочий день</div>
+<div class="day-title">Последнее утро и вылет домой</div>
+<span class="day-badge db-fly">✈ Вылет 13:55</span>
 </div>
 </div>
-
-<div class="timeline" id="timeline-day6">
-<div class="tl-item day-main-card" data-main-card="1">
-<div class="day-main-pill">Основное событие дня</div>
+<div class="day-picks" id="day6-picks">
+<div class="day-picks-title">Мои варианты на этот день</div>
+<div class="day-picks-list"></div>
+</div>
+<div class="timeline">
+<div class="tl-item">
 <div class="tl-dot td-navy"></div>
-<div class="tl-time">Утро</div>
-<div class="tl-title">Сборы и выезд в аэропорт</div>
-<div class="tl-desc">Не ставь плотных активностей. Только короткий завтрак / кофе рядом.</div>
+<div class="tl-time">08:00</div>
+<div class="tl-title">Завтрак в отеле + упаковка</div>
+<div class="tl-desc">Поздний завтрак. Сдача номера до 12:00. Вещи на хранение на ресепшн.</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-amber"></div>
+<div class="tl-time">09:30</div>
+<span class="tl-tag tt-coffee">☕ Последний кофе</span>
+<div class="tl-title">Кофе · White Cup или Корж</div>
+<div class="tl-desc">Финальная чашка самарского specialty. Взять что-то с собой: дрипы White Cup, зерно от обжарщика. Красноармейская, 15 или любая точка Корж.</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-green"></div>
+<div class="tl-time">10:00 – 11:15</div>
+<div class="tl-title">Последняя прогулка · ул. Ленинградская</div>
+<div class="tl-desc">1,5 часа — последний шанс: шоколад «Россия», Жигулёвское в подарок, сувениры. Бизнес-ланчи уже работают — можно взять что-то на перекус.</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-amber"></div>
+<div class="tl-time">11:15 – 11:55</div>
+<span class="tl-tag tt-lunch">🍽 Последний обед (ланчи работают!)</span>
+<div class="tl-title">Обед · Osteria Lora или Марико</div>
+<div class="tl-desc">Оба открываются с 12:00. <strong>Выйти строго в 12:00!</strong> Лёгкий обед ~40 мин.</div>
+<details class="alt-block">
+<summary>Альтернативы для последнего обеда</summary>
+<div class="alt-list">
+<div class="alt-item is-rec">
+<div class="ai-head"><span class="ai-name">Puri Bistro</span><div class="ai-badges"><span class="aib aib-rec">Открывается раньше</span></div></div>
+<div class="ai-addr">ул. 22 Партсъезда, 227А</div>
+<div class="ai-desc">Открывается с 11:00! Круассаны, завтраки, кофе. Успеешь перед выездом без спешки.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~600–900 ₽</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Puri Bistro" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="alt-item">
+<div class="ai-head"><span class="ai-name">«Пряный Барашек»</span></div>
+<div class="ai-addr">Волжский пр., 45</div>
+<div class="ai-desc">Открывается с 11:00. Если хочется последний раз посмотреть на Волгу перед вылетом.</div>
+<div class="ai-meta"><span class="aipl aipl-mid">Средняя</span><span class="ai-rub">~1 200–1 800 ₽</span><span class="ai-cq">★★★★☆</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="«Пряный Барашек»" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+</div>
+</details>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-navy"></div>
+<div class="tl-time">12:00 ⚠️ Строго</div>
+<div class="tl-title">Выезд в аэропорт Курумоч</div>
+<div class="tl-desc">Такси ~50 мин, ~700–900 ₽. Прибытие ~12:50. До вылета ~1 час.</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot td-pink"></div>
+<div class="tl-time">13:00 – 13:45</div>
+<div class="tl-title">Регистрация, посадка, кофе в аэропорту</div>
 </div>
 </div>
-
-<div class="day-custom-note" id="custom-day6">Здесь будут появляться добавленные вручную события.</div>
-</section>
-
-<section class="guide-section" id="coffee">
-<div class="section-title">Кофе</div>
-<div class="section-sub">Кофейни, которые удобно встраивать в дни. У карточек можно сразу выбрать день.</div>
+<div class="flight-pill" style="margin-top:16px">
+<div><div class="fp-label">Вылет · Курумоч (KUF)</div><div class="fp-time">13:55</div></div>
+<div class="fp-line"></div>
+<div style="text-align:right"><div class="fp-label">Прилёт · домой</div><div class="fp-time">16:30</div></div>
+</div>
+</div>
+<!-- ═══════════════ SPECIALTY COFFEE ═══════════════ -->
+<div class="guide-section" id="coffee">
+<div class="volga-stripe"><div class="vs-line"></div><div class="vs-text">Specialty кофе</div><div class="vs-line" style="background:linear-gradient(90deg,transparent,var(--navy))"></div></div>
+<div class="section-title">Лучшие specialty-кофейни Самары</div>
+<div class="section-sub">Все заведения ниже работают в период 29 апр – 4 мая. ⚠️ Lumos на Чапаевской закрылась насовсем (март 2026) — только Революционная.</div>
 <div class="guide-grid">
-
-<div class="guide-card gc-must" data-item-title="White Cup" data-item-desc="Сильная локальная кофейная точка. Хорошо на утро 30 апреля или перед прогулкой.">
-<div class="gc-top"><div class="gc-name">White Cup</div><div class="gc-tags"><span class="gc-tag gct-must">must</span></div></div>
-<div class="gc-desc">Один из самых безопасных и понятных вариантов под кофе-маршрут.</div>
-<div class="card-actions">
-<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+<div class="guide-card gc-must">
+<div class="gc-top"><span class="gc-name">White Cup ☕</span><div class="gc-tags"><span class="gc-tag gct-must">★ Must</span><span class="gc-tag gct-roast">Своя обжарка</span></div></div>
+<div class="gc-addr">Красноармейская, 15 (двор муз. Модерна) · 08:00–23:00</div>
+<div class="gc-desc">Ростер стоит прямо на баре — в будни смотришь как обжаривают. Specialty-зерно, авторские сиропы. Выставочное пространство, джаз по пятницам. Также точка на Станкозаводе.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">200–450 ₽</span><span class="gc-cq">★★★★★ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="White Cup ☕" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card gc-must">
+<div class="gc-top"><span class="gc-name">Lumos Barista Lab</span><div class="gc-tags"><span class="gc-tag gct-must">★ Must</span></div></div>
+<div class="gc-addr">ул. Революционная, 3 · ⛔ Чапаевская закрыта!</div>
+<div class="gc-desc">Specialty-лаборатория. Авторские напитки — новый рецепт каждый месяц. Светлый лаконичный интерьер. Мастер-классы и каппинги. Большое просторное помещение.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">300–550 ₽</span><span class="gc-cq">★★★★★ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Lumos Barista Lab" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Алиса в стране чудес</span><div class="gc-tags"><span class="gc-tag gct-city">Атмосфера</span></div></div>
+<div class="gc-addr">ул. Куйбышева, 117 (лютеранская церковь)</div>
+<div class="gc-desc">Чашки парят в воздухе, стулья на потолке. Зерно «Сварщица» и Tasty Coffee. Десерты собственного производства. Шоколад Amazing Cacao на витрине.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">250–450 ₽</span><span class="gc-cq">★★★★★ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Алиса в стране чудес" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Корж Кофе (сеть)</span></div>
+<div class="gc-addr">7 точек: Льва Толстого 30Б, Самарская 270, 9 просека и др.</div>
+<div class="gc-desc">Всегда работает. Скандинавский минимализм. KK школа бариста. Сезонные авторские напитки. Активное комьюнити гостей. Лучший выбор, если нужна точка по пути.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">250–500 ₽</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Корж Кофе (сеть)" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">SHU Authentic Coffee</span></div>
+<div class="gc-addr">Ленинградская ул., 28А (Самарский «Арбат»)</div>
+<div class="gc-desc">Кофе из турки с горячего песка. Красное кресло Prada. Арт-атмосфера: концерты, выставки. Камерное комьюнити. На «Арбате» — удобно во время прогулки по центру.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">200–400 ₽</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="SHU Authentic Coffee" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Питер Пен</span><div class="gc-tags"><span class="gc-tag gct-new">Сезонный</span></div></div>
+<div class="gc-addr">ул. Осетинская, 4В · Волгарь, парк Ерика</div>
+<div class="gc-desc">Кофейня в морском контейнере. Specialty-зерно. Веранда с видом на озеро. Уникальный формат — 20 мест внутри + терраса. Немного далеко от центра, но атмосфера уникальна.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">200–400 ₽</span><span class="gc-cq">★★★★★ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Питер Пен" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
 </div>
-<div class="day-picker">
-<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
-<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
 </div>
-</div>
-
-<div class="guide-card" data-item-title="Корж" data-item-desc="Кофе + десерт, можно встроить в центр или вечерний маршрут.">
-<div class="gc-top"><div class="gc-name">Корж</div></div>
-<div class="gc-desc">Удобный формат на городской день и несложную посадку.</div>
-<div class="card-actions">
-<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
-</div>
-<div class="day-picker">
-<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
-<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
-</div>
-</div>
-
-</div>
-</section>
-
-<section class="guide-section" id="restaurants">
-<div class="section-title">Кафе и рестораны</div>
-<div class="section-sub">Теперь любой понравившийся вариант можно сразу поставить в конкретный день, и он станет основным событием этого дня.</div>
+<!-- ═══════════════ LOCAL BRANDS ═══════════════ -->
+<div class="guide-section" id="brands">
+<div class="volga-stripe"><div class="vs-line"></div><div class="vs-text">Локальные бренды</div><div class="vs-line" style="background:linear-gradient(90deg,transparent,var(--navy))"></div></div>
+<div class="section-title">Самарские марки: одежда и аксессуары</div>
+<div class="section-sub">Всё что можно потрогать вживую или найти на маркетах Станкозавода (1–3 мая — активные выходные!).</div>
 <div class="guide-grid">
-
-<div class="guide-card gc-must" data-item-title="Lotte / городской ужин" data-item-desc="Нормальный вечерний вариант для 2 мая или 30 апреля.">
-<div class="gc-top"><div class="gc-name">Lotte / городской ужин</div><div class="gc-tags"><span class="gc-tag gct-must">вечер</span></div></div>
-<div class="gc-desc">Подходит под спокойный ужин или основной гастро-слот.</div>
-<div class="card-actions">
-<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+<div class="guide-card gc-must">
+<div class="gc-top"><span class="gc-name">Volga Mama</span><div class="gc-tags"><span class="gc-tag gct-must">★ Must</span><span class="gc-tag gct-city">Самара-тема</span></div></div>
+<div class="gc-addr">ТЦ Вертикаль, Московское шоссе 17 · volgamama.com</div>
+<div class="gc-desc">Главный самарский streetwear. «Самара — город-курорт», «Жигуlinness», принты о Волге. 9+ лет. 100% хлопок. Коллаборации с smr.local. Доставка по всему миру.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">1 500–4 000 ₽</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Volga Mama" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">smr.local</span><div class="gc-tags"><span class="gc-tag gct-city">Лимитированный</span></div></div>
+<div class="gc-addr">@smrlocal · маркеты Станкозавода и Волгафест</div>
+<div class="gc-desc">«Самара — город-курорт» — самый узнаваемый принт города. Лимит. серии с Volga Mama. Футболки, худи, шопперы. Брать при виде — разлетаются быстро.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">1 200–2 500 ₽</span><span class="gc-cq">★★★★★ Ц/К</span></div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="smr.local" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="guide-card gc-must">
+<div class="gc-top"><span class="gc-name">YANIK ART</span><div class="gc-tags"><span class="gc-tag gct-must">Победитель 2025</span></div></div>
+<div class="gc-addr">yanikart.ru · маркеты · победитель Народной премии 63.RU 2025</div>
+<div class="gc-desc">Картины художницы Яны Кузнецовой превращены в одежду. Ограниченные тиражи. Авторские принты на лёгких тканях. «Вещи, несущие красоту и смысл». Женственно и интеллектуально.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-mid">Средняя</span><span class="gc-rub">3 000–12 000 ₽</span><span class="gc-cq">★★★★★ Ц/К</span></div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="YANIK ART" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">MARI PROHOROVA brand</span></div>
+<div class="gc-addr">ул. Ново-Садовая, 4 · физический бутик</div>
+<div class="gc-desc">Женская одежда: пиджаки, платья, юбки, корсеты, шляпы. Всё шьётся в Самаре. Внимание деталям. Девиз «живи, люби, путешествуй».</div>
+<div class="gc-meta"><span class="gc-pl gcpl-mid">Средняя</span><span class="gc-rub">4 000–15 000 ₽</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="MARI PROHOROVA brand" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Подполье (Pokis)</span><div class="gc-tags"><span class="gc-tag gct-city">Муз. мерч</span></div></div>
+<div class="gc-addr">ВКонтакте: podpol_co · маркеты Станкозавода</div>
+<div class="gc-desc">Мрачный поэтический мерч музыканта Мокиса (WLVS) с 2014 г. Принты на собственном станке. «Жизнеутверждающий посыл». Культовый в самарской музыкальной среде.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">1 300–3 000 ₽</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Подполье (Pokis)" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Dead poets</span></div>
+<div class="gc-addr">ВКонтакте: alexeytilly · маркеты (редко)</div>
+<div class="gc-desc">«Самый литературный мерч». Майки с цитатами Тарковского, Башлачева, Бориса Рыжего. 1 300 ₽. Артефакт самарской арт-сцены. Если встретишь — бери.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">1 300 ₽</span><span class="gc-cq">★★★★★ Ц/К</span></div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Dead poets" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
 </div>
-<div class="day-picker">
-<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
-<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
 </div>
-</div>
-
-<div class="guide-card" data-item-title="Локальный ресторан у центра" data-item-desc="Гибкий вариант без жёсткого тайминга.">
-<div class="gc-top"><div class="gc-name">Локальный ресторан у центра</div></div>
-<div class="gc-desc">Подходит как альтернатива, если хочется не привязываться к одному месту заранее.</div>
-<div class="card-actions">
-<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
-</div>
-<div class="day-picker">
-<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
-<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
-</div>
-</div>
-
-</div>
-</section>
-
-<section class="guide-section" id="evening">
-<div class="section-title">Кино, бары и клубы — куда вечером</div>
-<div class="section-sub">Вечерние варианты можно сразу поставить в любой день. При добавлении они автоматически становятся основным событием дня.</div>
+<!-- ═══════════════ RESTAURANTS GUIDE ═══════════════ -->
+<div class="guide-section" id="restaurants">
+<div class="volga-stripe"><div class="vs-line"></div><div class="vs-text">Полный гид по ресторанам</div><div class="vs-line" style="background:linear-gradient(90deg,transparent,var(--navy))"></div></div>
+<div class="section-title">Рестораны с оценкой цены и качества</div>
+<div class="section-sub">⚠️ Бизнес-ланчи (пн–пт 12:00–16:00) работают только 29–30 апр и 4 мая. В праздники 1–3 мая — только основное меню.</div>
+<div class="section-label" style="margin-top:12px">Бизнес-ланчи · только 29–30 апр и 4 мая</div>
 <div class="guide-grid">
-
-<div class="guide-card" data-item-title="Кинотеатр" data-item-desc="Надёжный вечер без сложной логистики.">
-<div class="gc-top"><div class="gc-name">Кинотеатр</div></div>
-<div class="gc-desc">Хорошо на 1 мая после матча или на 2 мая как мягкая альтернатива бару.</div>
-<div class="card-actions">
-<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+<div class="guide-card gc-must">
+<div class="gc-top"><span class="gc-name">#1 Марико (грузинское бистро)</span><div class="gc-tags"><span class="gc-tag gct-must">Лучшая цена</span></div></div>
+<div class="gc-addr">ул. Галактионовская, 39 · 12:00–16:00</div>
+<div class="gc-desc">Суп + хлеб + чай = 65 ₽ к любому блюду. Основное блюдо 245 ₽. Хинкали от 55 ₽/шт. Самый дешёвый полноценный обед в центре.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">~310 ₽ полный</span><span class="gc-cq">★★★★★ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="#1 Марико (грузинское бистро)" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card gc-must">
+<div class="gc-top"><span class="gc-name">#2 Osteria Lora</span><div class="gc-tags"><span class="gc-tag gct-must">Лучшее качество</span></div></div>
+<div class="gc-addr">Садовая 137 (2 эт.) · ТК ГУДОК · 12:00–17:00</div>
+<div class="gc-desc">Итальянская авторская кухня. Фоккача с ростбифом 330 ₽, болоньезе 370 ₽. Программа лояльности: 5 ланчей → 1 бесплатно.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">330–390 ₽ блюдо</span><span class="gc-cq">★★★★★ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="#2 Osteria Lora" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Ресторан Честных Цен</span></div>
+<div class="gc-addr">4 точки · 12:00–16:00</div>
+<div class="gc-desc">Фиксированная цена. 4 концепции: азиатский / американский / советский / грузинский. Нет сюрпризов при счёте.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">490 ₽ фикс</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Ресторан Честных Цен" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Harat's Pub</span></div>
+<div class="gc-addr">Красноармейская, 1а · вид на Волгу · 12:00–16:00</div>
+<div class="gc-desc">VIP-комната для переговоров. Цезарь + суп + горячее. Вид на Волгу даже в обед.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">480–560 ₽ комбо</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Harat's Pub" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Рибай (стейк-хаус)</span></div>
+<div class="gc-addr">ул. М. Горького, 117 · набережная · 12:00–16:00</div>
+<div class="gc-desc">Ланч-стейки — фишка заведения. Конструктор: берёшь только то, что нужно.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-mid">Средняя</span><span class="gc-rub">~700–1 200 ₽</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Рибай (стейк-хаус)" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">«Где нас нет»</span></div>
+<div class="gc-addr">Коммунистическая, 90 · 24/7</div>
+<div class="gc-desc">Работает в праздники! Том ям, поке с лососем, мусака с бараниной. Высокий чек, но работает всегда.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-mid">Средняя</span><span class="gc-rub">~1 000–1 500 ₽</span><span class="gc-cq">★★★☆☆ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="«Где нас нет»" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
 </div>
-<div class="day-picker">
-<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
-<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
-</div>
-</div>
-
-<div class="guide-card gc-must" data-item-title="Бункер Сталина" data-item-desc="Сильная самарская точка. Можно ставить как основное событие городского дня.">
-<div class="gc-top"><div class="gc-name">Бункер Сталина</div><div class="gc-tags"><span class="gc-tag gct-must">must</span></div></div>
-<div class="gc-desc">Один из самых выразительных объектов Самары. Лучше закладывать отдельным слотом.</div>
-<div class="card-actions">
-<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
-</div>
-<div class="day-picker">
-<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
-<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
-</div>
-</div>
-
-<div class="guide-card" data-item-title="Жигулёвский завод / На дне" data-item-desc="Локальный самарский маршрут вокруг пива, истории и атмосферы Волги.">
-<div class="gc-top"><div class="gc-name">Жигулёвский завод / «На дне»</div></div>
-<div class="gc-desc">Можно ставить и как дневной, и как вечерний блок.</div>
-<div class="card-actions">
-<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
-</div>
-<div class="day-picker">
-<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
-<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
-</div>
-</div>
-
-<div class="guide-card" data-item-title="Бары / живая музыка" data-item-desc="Вариант на поздний вечер, если после ужина захочется продолжить.">
-<div class="gc-top"><div class="gc-name">Бары / живая музыка</div></div>
-<div class="gc-desc">Хорошо ставить на 2 мая как главный вечерний слот.</div>
-<div class="card-actions">
-<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
-</div>
-<div class="day-picker">
-<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
-<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
-</div>
-</div>
-
-</div>
-</section>
-
-<section class="guide-section" id="excursions">
-<div class="section-title">Экскурсии и местные маршруты</div>
-<div class="section-sub">Интересные городские точки и экскурсионные идеи, которые реально встраиваются в поездку.</div>
+<div class="section-label" style="margin-top:20px">Ужин · работают все дни</div>
 <div class="guide-grid">
-
-<div class="guide-card gc-must" data-item-title="Военный Куйбышев + Бункер Сталина" data-item-desc="Один из самых сильных локальных сюжетов Самары: запасная столица, военная история и бункер.">
-<div class="gc-top"><div class="gc-name">Военный Куйбышев + Бункер Сталина</div><div class="gc-tags"><span class="gc-tag gct-must">история</span></div></div>
-<div class="gc-desc">Сильный вариант на городской день, особенно 2 мая.</div>
-<div class="card-actions">
-<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+<div class="guide-card gc-must">
+<div class="gc-top"><span class="gc-name">Рыбалтика ★</span><div class="gc-tags"><span class="gc-tag gct-must">Лучшее Ц/К</span></div></div>
+<div class="gc-addr">просп. Ленина, 3 · до 23:00 (пн–чт) / до 24:00 (пт–вс)</div>
+<div class="gc-desc">RAW-бар: устрицы, морские ежи, крабы. «Лучшие морские ежи Самары». Живые морепродукты. Элегантный морской интерьер. Бронировать в праздники!</div>
+<div class="gc-meta"><span class="gc-pl gcpl-mid">Средняя</span><span class="gc-rub">~1 200–1 500 ₽/чел</span><span class="gc-cq">★★★★★ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Рыбалтика ★" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card gc-must">
+<div class="gc-top"><span class="gc-name">Ливингстон ★</span><div class="gc-tags"><span class="gc-tag gct-must">Лучший опыт</span></div></div>
+<div class="gc-addr">Ново-Садовая 106г к1 · ежедневно 12:00–00:00</div>
+<div class="gc-desc">Ресторан-путешествие. Африка + Ближний Восток. 5 уровней залов. Мясо на хоспере. Chef's Table. Первый в Поволжье. Живая музыка по выходным.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-mid">Средняя</span><span class="gc-rub">~2 500 ₽/чел</span><span class="gc-cq">★★★★★ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Ливингстон ★" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Nebo (Небо)</span><div class="gc-tags"><span class="gc-tag gct-must">Панорама 360°</span></div></div>
+<div class="gc-addr">Самарская 110, Lotte Hotel, 15 эт. · пт–сб до 02:00</div>
+<div class="gc-desc">Единственный панорамный ресторан 360°. Asia &amp; Seafood. RAW-бар. Пт–сб: диджей. Терраса на крыше — уточнить открыта ли в мае.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-high">Высокая</span><span class="gc-rub">~3 000 ₽/чел</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Nebo (Небо)" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Посольство (барный особняк)</span></div>
+<div class="gc-addr">ул. Фрунзе, 113 · до 01:00 (вс–чт)</div>
+<div class="gc-desc">«Пальмовая ветвь» 2025. 7 баров в особняке чехословацкого посольства 1941–43 гг. Авторская кухня и коктейли. Бронировать!</div>
+<div class="gc-meta"><span class="gc-pl gcpl-mid">Средняя</span><span class="gc-rub">~1 500–2 000 ₽/чел</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Посольство (барный особняк)" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Пряный Барашек</span></div>
+<div class="gc-addr">Волжский пр., 45 · веранда с Волгой</div>
+<div class="gc-desc">Грузинская кухня. Летняя веранда над Волгой. Бурата, хинкали, грузинские вина. Сыры с собственной сыроварни.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-mid">Средняя</span><span class="gc-rub">~1 200–1 800 ₽/чел</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Пряный Барашек" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Koza Pasta</span></div>
+<div class="gc-addr">ул. М. Горького, 119 · kozafamily.ru</div>
+<div class="gc-desc">Итальянская кухня с верандой и видом на Волгу. Мидии, паста, вино. Уютный семейный ресторан. Хороший вариант для нескольких вечеров подряд.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-mid">Средняя</span><span class="gc-rub">~1 000–1 500 ₽/чел</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Koza Pasta" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
 </div>
-<div class="day-picker">
-<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
-<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
 </div>
+<!-- ═══════════════ ВЕЧЕРНИЕ ПЛОЩАДКИ ═══════════════ -->
+<div class="guide-section" id="evening">
+<div class="volga-stripe"><div class="vs-line"></div><div class="vs-text">Вечерние места</div><div class="vs-line" style="background:linear-gradient(90deg,transparent,var(--navy))"></div></div>
+<div class="section-title">🏙 Кино, бары и клубы — куда вечером</div>
+<div class="section-sub">Местные площадки для неспешного вечера. Без билетов на большой концерт.</div>
+<div class="section-label" style="margin-bottom:10px">🎬 Кинотеатры Самары — где лучше смотреть</div>
+<div class="guide-grid">
+<div class="guide-card gc-must">
+<div class="gc-top"><span class="gc-name">🎬 Кинотеатр ТЦ «Вертикаль»</span><div class="gc-tags"><span class="gc-tag gct-must">В ТЦ с Volga Mama</span></div></div>
+<div class="gc-addr">Московское шоссе, 17 · тот же ТЦ, где Volga Mama и магазин единоборств</div>
+<div class="gc-desc">Кинотеатр прямо в ТЦ «Вертикаль» — удобно совместить с шопингом 2 мая: зашли к Volga Mama, заглянули в магазин единоборств, и тут же купили билеты на вечер. Хороший запасной вариант после матча, если не хочется в бар.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая–средняя</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="🎬 Кинотеатр ТЦ «Вертикаль»" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">★ Киномакс</span><div class="gc-tags"><span class="gc-tag gct-must">IMAX · VIP</span><span class="gc-tag gct-roast">Лучший звук</span></div></div>
+<div class="gc-addr">ТЦ МегаСити, Дыбенко 30 · kinomax.ru/samara</div>
+<div class="gc-desc">Единственный в Самаре IMAX-зал. 9 комфортабельных залов на 1535 мест. Акустические системы последнего поколения — лучший звук в городе. VIP-зал: кресла с регулировкой спинки, подножки и сидения, индивидуальное обслуживание по меню. Зал D-BOX — динамические кресла, синхронизированные с экраном. Для романтики или серьёзного фильма — сюда.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-mid">Средняя</span><span class="gc-rub">стандарт ~400 ₽ · VIP ~900–1 200 ₽</span><span class="gc-cq">★★★★★ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="★ Киномакс" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Синема Парк</span><div class="gc-tags"><span class="gc-tag gct-city">Ближе к центру</span></div></div>
+<div class="gc-addr">ТЦ Парк Хаус, Московское шоссе 81Б · spbkino.ru</div>
+<div class="gc-desc">8 залов, 949 мест. Dolby Digital 3D. Хороший выбор для стандартного вечера в кино. Нет IMAX, но качество проекции достойное.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая–средняя</span><span class="gc-rub">~300–500 ₽</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Синема Парк" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card" style="grid-column:1/-1;border-color:#E8A000;border-left:3px solid #E8A000">
+<div class="gc-top"><span class="gc-name">🎬 Что посмотреть 29 апр – 4 мая</span></div>
+<div class="gc-desc" style="font-size:12px;line-height:1.7">
+<strong>«Дьявол носит Prada 2»</strong> — мировая премьера <strong>30 апреля</strong>. Продолжение культовой комедии с Мерил Стрип. Идеально для вечера 30 апр или 1 мая. Билеты брать заранее — первые выходные всегда аншлаг.<br/>
+<strong>«Вот это драма!»</strong> (A24) — Зендая и Роберт Паттинсон. Камерная мелодрама, в прокате с 16 апреля, ещё идёт. Очень хвалят критики.<br/>
+<strong>«Проект Конец Света»</strong> — Райан Гослинг, фантастика-боевик. Лидер проката несколько недель подряд.<br/>
+<em style="color:var(--muted)">Расписание: afisha.yandex.ru/samara/cinema · Билеты онлайн на сайте кинотеатра.</em>
 </div>
-
-<div class="guide-card" data-item-title="Музей модерна" data-item-desc="Архитектура, атмосфера города и несложная логистика.">
-<div class="gc-top"><div class="gc-name">Музей модерна</div></div>
-<div class="gc-desc">Подходит как полудневный блок без перегруза.</div>
-<div class="card-actions">
-<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="🎬 Что посмотреть 29 апр – 4 мая" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
 </div>
-<div class="day-picker">
-<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
-<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
+<div class="section-label" style="margin:18px 0 10px">🍺 Местные бары и клубы — без билетов</div>
+<div class="guide-grid">
+<div class="guide-card gc-must">
+<div class="gc-top"><span class="gc-name">Бар «ХВАТ»</span><div class="gc-tags"><span class="gc-tag gct-must">★ Главная площадка</span><span class="gc-tag gct-roast">Живая музыка</span></div></div>
+<div class="gc-addr">ул. Галактионовская, 40 · ВКонтакте: t.me/hvathvathvat</div>
+<div class="gc-desc">Главная независимая площадка Самары. Инди, рок, альтернатива. Здесь же 2 мая — фестиваль ХОРУС. Летник во дворе + зал внутри. По четвергам и пятницам (30 апр, 1 мая) почти всегда живые выступления или вечеринка — это предпраздничные дни. Проверить афишу в ВК за неделю до поездки.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">вход ~300–700 ₽ или бесплатно</span><span class="gc-cq">★★★★★ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Бар «ХВАТ»" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Бар «Без Названия»</span><div class="gc-tags"><span class="gc-tag gct-city">Альтернатива · рок</span></div></div>
+<div class="gc-addr">Сайт и афиша: nonamebar.ru · Яндекс Афиша</div>
+<div class="gc-desc">Регулярные концерты небольших групп — инди, рок, альтернатива. Cold Carti там играл в апреле. Формат камерный: небольшой зал, близко к сцене. Хорошее место если хочется живой музыки без толпы.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">билет ~1 500–2 600 ₽</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Бар «Без Названия»" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Бар «Евгенич»</span><div class="gc-tags"><span class="gc-tag gct-city">Стенд-ап · камерно</span></div></div>
+<div class="gc-addr">Афиша: afisha.yandex.ru/samara/concert/places/evgenich-samara</div>
+<div class="gc-desc">Камерный бар со стенд-ап шоу в разные даты. «Stand-Up по-женски» и другие форматы. Уютная атмосфера, небольшой зал. Проверить афишу в ВК — анонсируют за 7–10 дней.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">билет ~800–1 200 ₽</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Бар «Евгенич»" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
+<div class="guide-card">
+<div class="gc-top"><span class="gc-name">Клуб «Studio 57»</span><div class="gc-tags"><span class="gc-tag gct-city">Стенд-ап</span></div></div>
+<div class="gc-addr">Самара · ВКонтакте: поиск «Studio 57 Самара»</div>
+<div class="gc-desc">Стенд-ап площадка. Регулярные шоу «Stand-Up по-женски» и другие форматы. Небольшой, камерный. Афиша появляется в ВКонтакте за 5–10 дней до даты.</div>
+<div class="gc-meta"><span class="gc-pl gcpl-low">Низкая</span><span class="gc-rub">билет ~800–1 200 ₽</span><span class="gc-cq">★★★★☆ Ц/К</span></div>
+<div class="pick-actions">
+<select class="pick-day">
+<option value="day1">29 апр</option>
+<option value="day2">30 апр</option>
+<option value="day3">1 мая</option>
+<option value="day4">2 мая</option>
+<option value="day5">3 мая</option>
+<option value="day6">4 мая</option>
+</select>
+<button class="pick-btn" data-title="Клуб «Studio 57»" type="button">➕ Добавить в день</button>
+<button class="pick-btn pick-main" type="button">⬆ Сделать основным</button>
+</div></div>
 </div>
+<div style="margin-top:12px;background:#EEF4FB;border-radius:8px;padding:10px 14px;font-size:11px;color:var(--muted);border-left:3px solid var(--navy-light)">
+    💡 <strong>Совет:</strong> клубные события в Самаре анонсируются за 5–10 дней. Проверять афишу удобнее по прямым ссылкам: <a href="https://t.me/hvathvathvat" target="_blank">ХВАТ</a>, <a href="https://nonamebar.ru/" target="_blank">Без Названия</a>, <a href="https://afisha.yandex.ru/samara/concert/places/evgenich-samara" target="_blank">Евгенич</a>. На длинные выходные, особенно 30 апреля и 1–2 мая, афиша обычно плотная.
+  </div>
 </div>
-
-<div class="guide-card" data-item-title="Самара Космическая" data-item-desc="Для отдельного музейного слота, если хочется небанальную тему.">
-<div class="gc-top"><div class="gc-name">Самара Космическая</div></div>
-<div class="gc-desc">Хороший городской музейный блок, если нужен структурный дневной маршрут.</div>
-<div class="card-actions">
-<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+<!-- ═══════════════ ALSO VISIT ═══════════════ -->
+<div class="also-section" id="also">
+<div class="volga-stripe"><div class="vs-line"></div><div class="vs-text">Дополнительно</div><div class="vs-line" style="background:linear-gradient(90deg,transparent,var(--navy))"></div></div>
+<div class="section-title">✨ Куда ещё стоит сходить</div>
+<div class="section-sub">Места не в основной программе. Если будет время — стоит зайти. Отмечены рекомендации по дням поездки.</div>
+<div class="also-grid"><div class="also-card" style="border-color:#E2C073;border-left:3px solid #E2C073"><span class="ac-icon">🍫</span><div class="ac-title">Шоколад: куда идти вместо экскурсии на фабрику</div><div class="ac-desc">Для поездки надёжнее ориентироваться не на действующую фабрику «Россия», а на самарский <strong>Музей шоколада</strong>: там есть экскурсии, дегустации, мастер-классы и возможность купить шоколад на месте. Фирменный шоколад «Россия» проще искать в городских магазинах и сувенирных точках.</div><div class="ac-meta"><span class="ac-tag act-amber">Экскурсии и дегустации</span><span class="ac-tag act-green">Покупка шоколада на месте</span></div><div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Шоколад: куда идти вместо экскурсии на фабрику" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="also-card" style="border-color:#5C3A8A;border-left:3px solid #5C3A8A">
+<span class="ac-icon">🎸</span>
+<div class="ac-title">ХОРУС — инди-фестиваль (2 мая)</div>
+<div class="ac-desc">Шугейз, нойз-рок, пост-панк и независимая музыка от организаторов «Самара Инди Викенд» и шоукейса «Сезон». Летник бара «ХВАТ» с 15:00, после 22:00 — внутри. Прямо в день матча — идеально совместить. Анонс и детали программы на Sobaka.ru.</div>
+<div class="ac-meta">
+<span class="ac-tag" style="background:#EEEDFE;color:#3C3489">2 мая · 15:00</span>
+<span class="ac-tag act-amber">Летник + клуб</span>
+<span class="book-chip">📍 Галактионовская, 40 · бар «ХВАТ»</span>
 </div>
-<div class="day-picker">
-<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
-<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
+<div style="margin-top:8px;font-size:11px">
+<a href="https://www.sobaka.ru/smr/entertainment/music/212733" style="color:#5C3A8A;font-weight:500" target="_blank">→ Читать анонс: sobaka.ru/smr/entertainment/music/212733 ↗</a>
 </div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="ХОРУС — инди-фестиваль (2 мая)" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="also-card" style="border-color:#B5451B;border-left:3px solid #B5451B">
+<span class="ac-icon">🎵</span>
+<div class="ac-title">Roof Live — концерты на крыше</div>
+<div class="ac-desc">Летние концерты на крыше Аврора Молл. В афише — инди и психоделика: Сироткин («инди-мечтатель, превращающий концерт в тёплое кино»), Найк Борзов («психоделика, инди, гипноз»), МакSим. Сезон 2026 открывается — уточнять конкретные даты на сайте. Вид на город, коктейли, VIP-ложа.</div>
+<div class="ac-meta">
+<span class="ac-tag act-brick">Май–сентябрь</span>
+<span class="ac-tag act-amber">Крыша · вид на город</span>
+<span class="book-chip">📍 Аэродромная, 47А · Аврора Молл</span>
 </div>
-
-<div class="guide-card" data-item-title="Вертолётка" data-item-desc="Одна из лучших панорамных точек вокруг Самары.">
-<div class="gc-top"><div class="gc-name">Вертолётка</div></div>
-<div class="gc-desc">Лучше ставить как основное событие ближе к закату или на полудневный выезд.</div>
-<div class="card-actions">
-<button class="card-btn" onclick="toggleDayPicker(this)">+ Добавить в день</button>
+<div style="margin-top:8px;font-size:11px">
+<a href="https://rooflive.ru/samara" style="color:#B5451B;font-weight:500" target="_blank">→ Афиша и билеты: rooflive.ru/samara ↗</a>
 </div>
-<div class="day-picker">
-<button class="day-chip" onclick="addCardToDay(this,'day2')">30 апр</button>
-<button class="day-chip" onclick="addCardToDay(this,'day3')">1 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day4')">2 мая</button>
-<button class="day-chip" onclick="addCardToDay(this,'day5')">3 мая</button>
-</div>
-</div>
-
-</div>
-
-<div class="info-note">
-<div><strong>Где смотреть локальные экскурсии и события:</strong></div>
-<div>• Telegram: <a href="https://t.me/samaratravel63" target="_blank">samaratravel63</a></div>
-<div>• Telegram: <a href="https://t.me/gorod_kurort_smr" target="_blank">gorod_kurort_smr</a></div>
-<div>• Telegram: <a href="https://t.me/vekartaSamara" target="_blank">vekartaSamara</a></div>
-</div>
-</section>
-
-<section class="also-section" id="also">
-<div class="section-title">Ещё идеи</div>
-<div class="also-grid">
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Roof Live — концерты на крыше" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
 <div class="also-card">
-<span class="ac-icon">🚲</span>
-<div class="ac-title">Прокат по набережной</div>
-<div class="ac-desc">Велосипеды и самокаты — хороший быстрый способ сделать прогулку динамичнее.</div>
-<div class="ac-meta"><span class="ac-tag act-green">набережная</span></div>
+<span class="ac-icon">🏭</span>
+<div class="ac-title">Станкозавод — крыша и маркеты</div>
+<div class="ac-desc">Лучший бесплатный вид на Волгу в городе. В праздники 1–3 мая: эстетические маркеты, шоурумы, Letterhaus (музей высокой печати), кофейни, концерты. Провести 2–3 часа легко. Рядом со Струковским садом.</div>
+<div class="ac-meta">
+<span class="ac-tag act-green">Бесплатно</span>
+<span class="ac-tag act-amber">⏱ 1–3 ч</span>
+<span class="book-chip">📍 Куйбышева, 128А</span>
 </div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Станкозавод — крыша и маркеты" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
 <div class="also-card">
-<span class="ac-icon">🍺</span>
-<div class="ac-title">Локальный пивной маршрут</div>
-<div class="ac-desc">Подходит как дневная или вечерняя замена обычному ужину.</div>
-<div class="ac-meta"><span class="ac-tag act-amber">локально</span></div>
+<span class="ac-icon">🎬</span>
+<div class="ac-title">Летний кинотеатр «Филин»</div>
+<div class="ac-desc">Открывается именно 1 мая! Набережная у «Ладьи». Кино под открытым небом с видом на Волгу. Берите плед — у воды прохладно. Приходите за 30 минут до темноты. Расписание: группа ВКонтакте.</div>
+<div class="ac-meta">
+<span class="ac-tag act-green">С 1 мая</span>
+<span class="ac-tag act-amber">Вечернее</span>
+<span class="book-chip">📍 Набережная у «Ладьи»</span>
+</div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Летний кинотеатр «Филин»" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="also-card">
+<span class="ac-icon">🚢</span>
+<div class="ac-title">Скрябин — бар на воде</div>
+<div class="ac-desc">Бывшая плавучая судоремонтная мастерская — теперь стационарный дебаркадер-бар прямо на Волге. Живая музыка, коктейли 350–600 ₽. Открывается в мае — уточнить в соцсетях. Набережная у «Кинапа».</div>
+<div class="ac-meta">
+<span class="ac-tag act-green">С мая</span>
+<span class="ac-tag act-navy">Вечер у воды</span>
+<span class="book-chip">📍 Набережная, у Кинапа</span>
+</div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Скрябин — бар на воде" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="also-card">
+<span class="ac-icon">🗺</span>
+<div class="ac-title">ЗИМ Галерея</div>
+<div class="ac-desc">Бесплатный культурный центр при жилом комплексе. Выставки современного искусства, лекции, архитектурные дискуссии. Программа обновляется ежемесячно — проверить актуальное на @zimgallery в Telegram. Ново-Садовая.</div>
+<div class="ac-meta">
+<span class="ac-tag act-green">Бесплатно</span>
+<span class="ac-tag act-purple">⏱ 30–60 мин</span>
+<span class="book-chip">📍 ЖК ЗИМ, Ново-Садовая</span>
+</div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="ЗИМ Галерея" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="also-card">
+<span class="ac-icon">🛸</span>
+<div class="ac-title">Музей авиации им. Королёва</div>
+<div class="ac-desc">Второй космический музей. При СГАУ. Модели «Востока», «Спутника», стенды о Гагарине. Менее туристичен, чем «Самара Космическая» — зато атмосфернее. Без записи.</div>
+<div class="ac-meta">
+<span class="ac-tag act-navy">⏱ 30–60 мин</span>
+<span class="ac-tag act-amber">Запись не нужна</span>
+<span class="book-chip">📍 Молодогвардейская, 151</span>
+</div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Музей авиации им. Королёва" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="also-card">
+<span class="ac-icon">🏔</span>
+<div class="ac-title">Смотровая «Вертолётка»</div>
+<div class="ac-desc">Лучшая видовая точка Самары. Панорама города и Волги — особенно красиво на закате. Бесплатно, круглосуточно. Без освещения — берите фонарик вечером. Такси от центра ~15 мин.</div>
+<div class="ac-meta">
+<span class="ac-tag act-green">Бесплатно</span>
+<span class="ac-tag act-brick">Лучший закат</span>
+<span class="book-chip">Такси ~15 мин от центра</span>
+</div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Смотровая «Вертолётка»" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="also-card">
+<span class="ac-icon">🎬</span>
+<div class="ac-title">Музей-усадьба Эльдара Рязанова</div>
+<div class="ac-desc">«Ирония судьбы», «Служебный роман» — Рязанов родился в Самаре. Дом-музей 2018 г. в особняке начала XX века. Личные вещи, рукописи, костюмы из фильмов. Маленький и очень уютный.</div>
+<div class="ac-meta">
+<span class="ac-tag act-purple">⏱ 45–60 мин</span>
+<span class="ac-tag act-amber">Запись желательна</span>
+<span class="book-chip">📍 ул. Фрунзе, 120</span>
+</div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Музей-усадьба Эльдара Рязанова" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="also-card">
+<span class="ac-icon">🏗</span>
+<div class="ac-title">Музей РКЦ «Прогресс»</div>
+<div class="ac-desc">На действующем заводе, где собирают ракеты «Союз-2» прямо сейчас. Макеты «Востока», «Союза», «Энергии». Самое «настоящее» космическое место Самары. Официальный запрос за 2–4 нед.</div>
+<div class="ac-meta">
+<span class="ac-tag act-navy">⏱ 1–1.5 ч</span>
+<span class="book-chip">⏳ Бронировать заранее</span>
+<span class="ac-tag act-brick">Завод действующий!</span>
+</div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Музей РКЦ «Прогресс»" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="also-card">
+<span class="ac-icon">🚂</span>
+<div class="ac-title">Ж/д вокзал — смотровая</div>
+<div class="ac-desc">Самый высокий ж/д вокзал в Европе — 101 метр! Смотровая на верхних этажах с панорамой центра. Советский модернизм — сам по себе артобъект. Вход свободный. Особенно красиво в сумерках.</div>
+<div class="ac-meta">
+<span class="ac-tag act-green">Бесплатно</span>
+<span class="ac-tag act-amber">⏱ 20–30 мин</span>
+<span class="ac-tag act-navy">Рекорд Европы</span>
+</div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Ж/д вокзал — смотровая" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="also-card">
+<span class="ac-icon">🍫</span>
+<div class="ac-title">Самарские сувениры</div>
+<div class="ac-desc">Шоколад «Россия» в самарской упаковке. Жигулёвское пиво в любую тару — у завода. Дрипы и зерно White Cup — отличный подарок для кофеманов. Volga Mama — лучший мерч о городе. Бюджет от 500 ₽.</div>
+<div class="ac-meta">
+<span class="ac-tag act-amber">Сувениры</span>
+<span class="ac-tag act-green">Ленинградская ул.</span>
+<span class="ac-tag act-navy">Станкозавод</span>
+</div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Самарские сувениры" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="also-card">
+<span class="ac-icon">🌿</span>
+<div class="ac-title">Струковский сад</div>
+<div class="ac-desc">Старейший парк Самары. Вековые дубы, ретрофонари, грот с козой. Начало мая — цветение и первая зелень. Вход бесплатный, 24/7. Примыкает к Станкозаводу — удобно совмещать.</div>
+<div class="ac-meta">
+<span class="ac-tag act-green">Бесплатно</span>
+<span class="ac-tag act-amber">Весна в расцвете</span>
+<span class="book-chip">📍 Исторический центр</span>
+</div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Струковский сад" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="also-card">
+<span class="ac-icon">🏛</span>
+<div class="ac-title">Краеведческий музей</div>
+<div class="ac-desc">История Поволжья с доисторических времён. Природа Жигулей, купеческий быт, Самара как «запасная столица» 1941–43 гг. Хорош если интересна глубокая история города.</div>
+<div class="ac-meta">
+<span class="ac-tag act-navy">⏱ 1–1.5 ч</span>
+<span class="ac-tag act-amber">Запись не нужна</span>
+<span class="book-chip">📍 Ленинская, 142</span>
+</div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="Краеведческий музей" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
 </div>
 </div>
-</section>
-
-<section class="booking-section" id="booking">
-<div class="section-title">Брони и напоминания</div>
+<!-- ═══════════════ BOOKING TABLE ═══════════════ -->
+<div class="booking-section" id="booking">
+<div class="section-title">📌 Что и когда бронировать</div>
+<div class="section-sub" style="margin-bottom:14px">Рекомендуемые сроки. В праздники спрос высокий — лучше раньше.  →  <a href="javascript:void(0)" onclick="navTo('planner',null)" style="color:var(--brick);font-weight:600">📋 Перейти к планеру со списком дел ↓</a>  |  <a href="javascript:void(0)" onclick="navTo('checklist',null)" style="color:var(--navy);font-weight:600">🧳 Чек-лист вещей ↓</a></div>
 <table class="booking-table">
 <thead>
-<tr><th>Что</th><th>Когда</th><th>Статус</th></tr>
+<tr><th>Объект / мероприятие</th><th>Срок</th><th>Где бронировать</th></tr>
 </thead>
 <tbody>
-<tr><td class="bt-name">Отель</td><td class="bt-when">29 апр — 4 мая</td><td class="bt-done">Ок</td></tr>
-<tr><td class="bt-name">Матч</td><td class="bt-when">1 мая · 18:00</td><td class="bt-done">Проверить вход / логистику</td></tr>
-<tr><td class="bt-name">ХОРУС</td><td class="bt-when">2 мая · вечер</td><td class="bt-done">Проверить площадку</td></tr>
-<tr><td class="bt-name">Теплоход / Ширяево</td><td class="bt-when">3 мая</td><td class="bt-done">Уточнить расписание</td></tr>
+<tr>
+<td><div class="bt-name">⚽ Билеты Крылья Советов — Спартак (1 мая)</div>Дерби РПЛ, билеты быстро расходятся</td>
+<td><span class="bt-when">Сейчас!</span></td>
+<td><a href="https://pfcks.ru/tickets/" target="_blank">pfcks.ru/tickets</a></td>
+</tr>
+<tr>
+<td><div class="bt-name">🍸 Барный особняк «Посольство»</div>Пятница/суббота праздников — очереди</td>
+<td><span class="bt-when">За 3–7 дней</span></td>
+<td><a href="https://milimon-family.ru" target="_blank">milimon-family.ru</a></td>
+</tr>
+<tr>
+<td><div class="bt-name">🐟 Рыбалтика (1–3 мая)</div>В праздники переполнен, особенно вечером</td>
+<td><span class="bt-when">За 2–3 дня</span></td>
+<td>Телефон: +7 (927) 262-63-48</td>
+</tr>
+<tr>
+<td><div class="bt-name">✨ Ливингстон (выходные)</div>Chef's Table — отдельное бронирование</td>
+<td><span class="bt-when">За 1–2 недели</span></td>
+<td><a href="https://milimon-family.ru" target="_blank">milimon-family.ru</a> · +7 (846) 205-65-00</td>
+</tr>
+<tr>
+<td><div class="bt-name">🍳 Nebo (Lotte Hotel, 15 эт.)</div>Лучшие столики у окна с видом</td>
+<td><span class="bt-when">За 2–5 дней</span></td>
+<td><a href="https://neborest.com" target="_blank">neborest.com</a> · +7 (846) 211-55-21</td>
+</tr>
+<tr>
+<td><div class="bt-name">🚢 Теплоход в Ширяево (3 мая)</div>Майские — высокий сезон, места ограничены</td>
+<td><span class="bt-when">За 1–2 недели</span></td>
+<td><a href="https://www.sputnik-germes.ru" target="_blank">sputnik-germes.ru</a> / касса Речного вокзала</td>
+</tr>
+<tr>
+<td><div class="bt-name">🕳 Бункер Сталина</div>Ограниченные временные слоты</td>
+<td><span class="bt-when">За 1–2 недели</span></td>
+<td>ул. Фрунзе, 167 · телефон экскурсионной службы</td>
+</tr>
+<tr>
+<td><div class="bt-name">🍺 Экскурсия на Жигулёвский завод</div>Группы расписаны заранее</td>
+<td><span class="bt-when">За 1–2 недели</span></td>
+<td><a href="https://zhigulevskoepivo.ru" target="_blank">zhigulevskoepivo.ru</a></td>
+</tr>
+<tr>
+<td><div class="bt-name">🎭 Театр оперы и балета (по желанию)</div>Фестиваль «Волжские театральные сезоны» в мае</td>
+<td><span class="bt-when">За 1–4 недели</span></td>
+<td><a href="https://opera-samara.ru/afisha/" target="_blank">opera-samara.ru</a></td>
+</tr>
 </tbody>
 </table>
-</section>
-
-<section class="guide-section" id="planner">
-<div class="section-title">Планер задач</div>
-<div class="section-sub">Что ещё проверить до поездки.</div>
+</div>
+<!-- ═══════════════ USEFUL LINKS ═══════════════ -->
+<div class="links-section">
+<div class="section-title">Полезные ссылки</div>
+<div class="links-grid" style="margin-top:14px">
+<div class="link-card">
+<span class="lc-icon">⚽</span>
+<div class="lc-title">Билеты на матч</div>
+<div class="lc-url"><a href="https://pfcks.ru/tickets/" target="_blank">pfcks.ru/tickets</a></div>
+</div>
+<div class="link-card">
+<span class="lc-icon">🚢</span>
+<div class="lc-title">Речные прогулки</div>
+<div class="lc-url"><a href="https://www.sputnik-germes.ru" target="_blank">sputnik-germes.ru</a></div>
+</div>
+<div class="link-card">
+<span class="lc-icon">☕</span>
+<div class="lc-title">White Cup</div>
+<div class="lc-url"><a href="https://vk.com/white_cup" target="_blank">vk.com/white_cup</a></div>
+</div>
+<div class="link-card">
+<span class="lc-icon">🌊</span>
+<div class="lc-title">Volga Mama</div>
+<div class="lc-url"><a href="https://volgamama.su" target="_blank">volgamama.su</a></div>
+</div>
+<div class="link-card">
+<span class="lc-icon">🏭</span>
+<div class="lc-title">Станкозавод (афиша)</div>
+<div class="lc-url"><a href="https://t.me/stzv_afisha" target="_blank">t.me/stzv_afisha</a></div>
+</div>
+<div class="link-card">
+<span class="lc-icon">🚀</span>
+<div class="lc-title">Самара Космическая</div>
+<div class="lc-url"><a href="https://samara-kosmos.ru" target="_blank">samara-kosmos.ru</a></div>
+</div>
+<div class="link-card">
+<span class="lc-icon">🎭</span>
+<div class="lc-title">Театр оперы и балета</div>
+<div class="lc-url"><a href="https://opera-samara.ru" target="_blank">opera-samara.ru</a></div>
+</div>
+<div class="link-card">
+<span class="lc-icon">🍝</span>
+<div class="lc-title">Koza Family</div>
+<div class="lc-url"><a href="https://kozafamily.ru" target="_blank">kozafamily.ru</a></div>
+</div>
+<div class="link-card">
+<span class="lc-icon">✨</span>
+<div class="lc-title">Ливингстон</div>
+<div class="lc-url"><a href="https://livingstone.rest" target="_blank">livingstone.rest</a></div>
+</div>
+<div class="link-card">
+<span class="lc-icon">🎵</span>
+<div class="lc-title">Афиша концертов</div>
+<div class="lc-url"><a href="https://afisha.yandex.ru/samara" target="_blank">afisha.yandex.ru/samara</a></div>
+</div>
+<div class="link-card">
+<span class="lc-icon">🌤</span>
+<div class="lc-title">Погода Самара</div>
+<div class="lc-url"><a href="https://yandex.ru/pogoda/samara" target="_blank">yandex.ru/pogoda/samara</a></div>
+</div>
+</div>
+</div>
+</div><!-- /main -->
+<!-- ═══════════════ RENTAL SECTION ═══════════════ -->
+<div class="main" style="max-width:860px;margin:0 auto;padding:0 24px">
+<div class="guide-section" id="rental">
+<div class="section-title">🚲 Прокат велосипедов и самокатов</div>
+<div class="section-sub">Кататься по набережной и паркам — один из лучших способов провести время в Самаре. Работают с апреля по октябрь, каждый день с 10:00 до 22:00.</div>
+<!-- Thule store banner -->
+<div style="background:#EEF4FB;border:1px solid #C8DDEE;border-radius:10px;padding:14px 16px;margin-bottom:18px">
+<div style="font-size:12px;font-weight:700;color:#1B4F8A;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px">🎒 Thule Weekend Store — официальный магазин рюкзаков Thule</div>
+<div style="font-size:13px;color:#1A1613;margin-bottom:4px"><strong>Адрес:</strong> ул. Московское шоссе, 17 · ТЦ «Вертикаль» (на пересечении с ул. Пролетарской)</div>
+<div style="font-size:12px;color:#6B6459;margin-bottom:6px">В наличии: рюкзаки, дорожные сумки, органайзеры, велоприцепы, детские коляски Thule. Гарантия 5 лет на всё. Официальный дилер с 2013 года. Тел: <a href="tel:+78462000000" style="color:#1B4F8A">twstore.ru</a></div>
+<div style="font-size:11px;color:#0F6E56;font-weight:600">✅ Идеально совмещать с шопингом у Volga Mama — оба магазина в одном ТЦ «Вертикаль». День 4 (2 мая, шопинг утром) — идеальный момент для визита.</div>
+</div>
 <div class="guide-grid">
-<div class="guide-card"><div class="gc-name">Проверить билеты на матч</div></div>
-<div class="guide-card"><div class="gc-name">Уточнить теплоход / причал</div></div>
-<div class="guide-card"><div class="gc-name">Проверить график Бункера Сталина</div></div>
-<div class="guide-card"><div class="gc-name">Проверить концерт 2 мая</div></div>
+<div class="guide-card gc-must">
+<div class="gc-top">
+<div class="gc-name">🚲 Прокат №1 · Набережная</div>
+<div class="gc-tags"><span class="gc-tag gct-must">На воде</span></div>
 </div>
-</section>
-
-<section class="guide-section" id="checklist">
-<div class="section-title">Чек-лист вещей</div>
-<div class="guide-grid">
-<div class="guide-card"><div class="gc-name">Документы / билеты</div></div>
-<div class="guide-card"><div class="gc-name">Ветровка</div></div>
-<div class="guide-card"><div class="gc-name">Удобные кроссовки</div></div>
-<div class="guide-card"><div class="gc-name">Очки / зарядки</div></div>
+<div class="gc-addr">Маяковский, Первомайский и Красноармейский спуски к набережной</div>
+<div class="gc-desc">Три точки прямо у воды вдоль всей набережной. Велосипеды, самокаты, ролики, электросамокаты, гироскутеры. Работают каждый день 10:00–22:00.</div>
+<div class="gc-meta">
+<span class="gc-pl gcpl-low">Велосипед: 250 ₽/ч</span>
+<span class="gc-pl gcpl-mid">Электросамокат: 500 ₽/ч</span>
 </div>
-</section>
-
-<section class="guide-section" id="rental">
-<div class="section-title">Прокат</div>
-<div class="guide-grid">
-<div class="guide-card"><div class="gc-name">Велосипеды</div><div class="gc-desc">Хорошо для набережной.</div></div>
-<div class="guide-card"><div class="gc-name">Самокаты</div><div class="gc-desc">Быстрое перемещение по городу.</div></div>
+<div style="font-size:11px;color:#6B6459;margin-top:5px">Лучший вариант для прогулки вдоль Волги · Без предбронирования</div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="🚲 Прокат №1 · Набережная" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="guide-card">
+<div class="gc-top">
+<div class="gc-name">🛴 SportStuff63 · Потапова</div>
+<div class="gc-tags"><span class="gc-tag gct-city">Парк</span></div>
 </div>
-</section>
-
-<section class="links-section">
-<div class="links-grid">
-<a class="link-card" href="https://yandex.ru/maps/51/samara" target="_blank"><span class="lc-icon">🗺</span><div class="lc-title">Яндекс Карты</div><div class="lc-url">maps</div></a>
-<a class="link-card" href="https://yandex.ru/pogoda/samara" target="_blank"><span class="lc-icon">🌤</span><div class="lc-title">Погода</div><div class="lc-url">yandex</div></a>
-<a class="link-card" href="https://t.me/samaratravel63" target="_blank"><span class="lc-icon">📲</span><div class="lc-title">Samara Travel</div><div class="lc-url">telegram</div></a>
+<div class="gc-addr">ул. Потапова, 2 · у Загородного парка и лодочной переправы</div>
+<div class="gc-desc">Велосипеды, электросамокаты, САП-борды. Рядом велодорожки и переправа в Рождествено — можно на лодке переправиться на остров и кататься там!</div>
+<div class="gc-meta">
+<span class="gc-pl gcpl-low">от 200 ₽/ч</span>
+<span class="gc-cq">+7 987 155 2000</span>
 </div>
-</section>
-
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="🛴 SportStuff63 · Потапова" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="guide-card">
+<div class="gc-top">
+<div class="gc-name">🛴 Кикшеринг · Urent / Whoosh</div>
+<div class="gc-tags"><span class="gc-tag gct-new">Приложение</span></div>
 </div>
-
-<div class="mobile-bottom-nav">
-<a class="mbn-link" href="#day1"><span class="mbn-ico">🗓</span><span>Дни</span></a>
-<a class="mbn-link" href="#restaurants"><span class="mbn-ico">🍽</span><span>Еда</span></a>
-<a class="mbn-link" href="#evening"><span class="mbn-ico">🌙</span><span>Вечер</span></a>
-<a class="mbn-link" href="#excursions"><span class="mbn-ico">🧭</span><span>Маршруты</span></a>
+<div class="gc-addr">По всему городу — найти ближайший через приложение</div>
+<div class="gc-desc">Электросамокаты без залога документов. Разблокировка через QR-код на руле. Оплата с карты. Рекомендуем скачать приложение ДО поездки и привязать карту.</div>
+<div class="gc-meta">
+<span class="gc-pl gcpl-low">от 1 ₽/мин</span>
 </div>
+<div style="font-size:11px;color:#6B6459;margin-top:5px">📱 Скачать: Urent или Whoosh в App Store / Google Play</div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="🛴 Кикшеринг · Urent / Whoosh" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="guide-card">
+<div class="gc-top">
+<div class="gc-name">🚲 Парк Гагарина · Велопрокат</div>
+<div class="gc-tags"><span class="gc-tag gct-city">Парк</span></div>
+</div>
+<div class="gc-addr">Парк культуры и отдыха им. Гагарина · внутри парка</div>
+<div class="gc-desc">Прокат велосипедов, роликов, самокатов, гироскутеров — прямо внутри парка. Отличные дорожки. Хороший вариант для спокойной семейной прогулки.</div>
+<div class="gc-meta">
+<span class="gc-pl gcpl-low">от 200 ₽/ч</span>
+</div>
+<div style="font-size:11px;color:#6B6459;margin-top:5px">🗓 Лучше всего: 1 мая (Первомай) — атмосфера праздника + гуляния по парку</div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="🚲 Парк Гагарина · Велопрокат" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+<div class="guide-card">
+<div class="gc-top">
+<div class="gc-name">🚲 Ширяево · Прокат</div>
+<div class="gc-tags"><span class="gc-tag gct-new">3 мая</span></div>
+</div>
+<div class="gc-addr">Набережная, 16Б, с. Ширяево · Жигулёвск</div>
+<div class="gc-desc">На теплоходе прибываете в Ширяево — там тоже есть прокат велосипедов и электросамокатов прямо у набережной. Можно покататься по горным дорожкам Жигулей пока ждёте обратный рейс.</div>
+<div class="gc-meta">
+<span class="gc-pl gcpl-low">от 200 ₽/ч</span>
+</div>
+<div class="pick-actions"><select class="pick-day"><option value="day1">29 апр</option><option value="day2">30 апр</option><option value="day3">1 мая</option><option value="day4">2 мая</option><option value="day5">3 мая</option><option value="day6">4 мая</option></select><button class="pick-btn" data-title="🚲 Ширяево · Прокат" type="button">➕ Добавить в день</button><button class="pick-btn pick-main" type="button">⬆ Сделать основным</button></div></div>
+</div>
+</div>
+</div>
+<!-- ═══════════════ PLANNER ═══════════════ -->
+<div class="main" style="max-width:860px;margin:0 auto;padding:0 24px">
+<div id="planner" style="padding:24px 0;border-top:1px solid var(--border)">
+<div class="section-title">🗓 Планер задач по датам</div>
+<div class="section-sub">Что нужно сделать и когда. Ставьте галочку по мере выполнения.</div>
+<style>
+  .planner-group{margin-bottom:22px}
+  .pg-header{background:var(--navy);color:#fff;border-radius:8px 8px 0 0;padding:8px 14px;font-size:12px;font-weight:600;letter-spacing:0.3px}
+  .pg-items{background:var(--white);border:0.5px solid var(--border);border-top:none;border-radius:0 0 8px 8px;overflow:hidden}
+  .pi-item{display:flex;align-items:flex-start;gap:12px;padding:10px 14px;border-bottom:0.5px solid var(--border)}
+  .pi-item:last-child{border-bottom:none}
+  .pi-item input[type=checkbox]{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--green);cursor:pointer}
+  .pi-item label{font-size:12px;line-height:1.55;cursor:pointer;flex:1;color:var(--text)}
+  .pi-item label .pi-link{color:var(--navy);font-size:11px;display:block;margin-top:2px}
+  .pi-done label{text-decoration:line-through;opacity:0.5}
+  .pi-urgent{background:#FFF8F7;border-left:3px solid var(--brick)}
+  .pi-warn{background:#FAEEDA}
+  
+/* ── TODAY BAR ── */
+.today-bar{margin:16px 0 8px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.today-title{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.today-main{font-size:15px;font-weight:500;color:var(--text)}
+.today-sub{font-size:12px;color:var(--muted);margin-top:3px}
+.today-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.tbtn{display:inline-flex;align-items:center;gap:5px;background:#EEF4FB;color:var(--navy);border:1px solid #C8DDEE;border-radius:18px;padding:7px 12px;font-size:11px;font-weight:500;text-decoration:none;cursor:pointer}
+.tbtn:hover{text-decoration:none;background:#E6F1FB}
+.weather-tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.weather-status{font-size:11px;color:var(--muted)}
+.route-btn{display:inline-flex;align-items:center;gap:4px;background:#FFF3CD;color:#7D5700;border:1px solid #F0D98B;border-radius:16px;padding:5px 10px;font-size:10px;font-weight:600;text-decoration:none}
+.route-btn:hover{text-decoration:none;background:#FBE9A9}
+.info-note{margin-top:12px;background:#EEF4FB;border-left:3px solid var(--navy-light);border-radius:8px;padding:10px 14px;font-size:11px;color:var(--muted)}
+.mobile-bottom-nav{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--border);display:flex;justify-content:space-around;padding:8px 4px calc(8px + env(safe-area-inset-bottom));z-index:999}
+.mbn-link{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--muted);text-decoration:none;font-size:10px;font-weight:500;min-width:56px}
+.mbn-link:hover{text-decoration:none;color:var(--navy)}
+.mbn-ico{font-size:18px;line-height:1}
+body.has-mobile-nav{padding-bottom:82px}
+@media(max-width:700px){.today-bar{flex-direction:column}.today-actions{justify-content:flex-start}}
 
-<div class="page-footer">Самара 2026 · интерактивный маршрут</div>
+</style>
+<div class="planner-group">
+<div class="pg-header">🔴 СРОЧНО — до 15 апреля (если ещё не сделано)</div>
+<div class="pg-items">
+<div class="pi-item pi-urgent" id="pi2">
+<input id="cb2" onchange="document.getElementById('pi2').classList.toggle('pi-done',this.checked)" type="checkbox"/>
+<label for="cb2"><strong>⚽ Билеты на матч Крылья Советов — Спартак (1 мая)</strong> — дерби, популярный матч<span class="pi-link">→ pfcks.ru/tickets</span></label>
+</div>
+</div>
+</div>
+<div class="planner-group">
+<div class="pg-header">🟡 До 20 апреля</div>
+<div class="pg-items">
+<div class="pi-item pi-warn" id="pi3">
+<input id="cb3" onchange="document.getElementById('pi3').classList.toggle('pi-done',this.checked)" type="checkbox"/>
+<label for="cb3"><strong>🕳 Забронировать экскурсию в Бункер Сталина (30 апр)</strong> — строгое расписание, малые группы<span class="pi-link">→ ул. Фрунзе, 167 · по телефону экскурсионной службы</span></label>
+</div>
+<div class="pi-item pi-warn" id="pi4">
+<input id="cb4" onchange="document.getElementById('pi4').classList.toggle('pi-done',this.checked)" type="checkbox"/>
+<label for="cb4"><strong>🚢 Забронировать теплоход в Ширяево (3 мая, 09:00)</strong> — майские праздники, мест мало<span class="pi-link">→ sputnik-germes.ru или касса Речного вокзала</span></label>
+</div>
+<div class="pi-item pi-warn" id="pi5">
+<input id="cb5" onchange="document.getElementById('pi5').classList.toggle('pi-done',this.checked)" type="checkbox"/>
+<label for="cb5"><strong>✨ Забронировать Ливингстон (ужин, желательно 30 апр или 3 мая)</strong> — Chef's Table отдельное бронирование<span class="pi-link">→ milimon-family.ru · +7 (846) 205-65-00</span></label>
+</div>
+<div class="pi-item" id="pi6">
+<input id="cb6" onchange="document.getElementById('pi6').classList.toggle('pi-done',this.checked)" type="checkbox"/>
+<label for="cb6"><strong>🍺 Экскурсия на Жигулёвский пивзавод (1 мая)</strong> — расписание групп заранее<span class="pi-link">→ zhigulevskoepivo.ru</span></label>
+</div>
+<div class="pi-item" id="pi7">
+<input id="cb7" onchange="document.getElementById('pi7').classList.toggle('pi-done',this.checked)" type="checkbox"/>
+<label for="cb7"><strong>🎒 Посетить Thule Weekend Store до поездки</strong> (или совместить с Днём 4 в ТЦ «Вертикаль», Московское ш. 17)<span class="pi-link">→ twstore.ru · рюкзаки, сумки, аксессуары</span></label>
+</div>
+</div>
+</div>
+<div class="planner-group">
+<div class="pg-header">🟢 За 3–7 дней до поездки (22–26 апреля)</div>
+<div class="pg-items">
+<div class="pi-item" id="pi8">
+<input id="cb8" onchange="document.getElementById('pi8').classList.toggle('pi-done',this.checked)" type="checkbox"/>
+<label for="cb8"><strong>🍸 Забронировать «Посольство» (вечер после матча, 1 мая)</strong><span class="pi-link">→ milimon-family.ru</span></label>
+</div>
+<div class="pi-item" id="pi9">
+<input id="cb9" onchange="document.getElementById('pi9').classList.toggle('pi-done',this.checked)" type="checkbox"/>
+<label for="cb9"><strong>🐟 Забронировать Рыбалтику</strong> (2 мая, обед, 13:00)<span class="pi-link">→ +7 (927) 262-63-48 · просп. Ленина, 3</span></label>
+</div>
+<div class="pi-item" id="pi10">
+<input id="cb10" onchange="document.getElementById('pi10').classList.toggle('pi-done',this.checked)" type="checkbox"/>
+<label for="cb10"><strong>🎬 Проверить расписание кинотеатра «Филин»</strong> — открытие сезона 1 мая<span class="pi-link">→ filinkino.ru или 2ГИС «Кинотеатр Филин Самара»</span></label>
+</div>
+<div class="pi-item" id="pi10b">
+<input id="cb10b" onchange="document.getElementById('pi10b').classList.toggle('pi-done',this.checked)" type="checkbox"/>
+<label for="cb10b"><strong>🎬 Кинотеатр в ТЦ «Вертикаль» (2 мая)</strong> — проверить расписание на вечер 2 мая, если захочется кино вместо бара<span class="pi-link">→ ТЦ «Вертикаль», Московское шоссе, 17</span></label>
+</div>
+<div class="pi-item" id="pi11">
+<input id="cb11" onchange="document.getElementById('pi11').classList.toggle('pi-done',this.checked)" type="checkbox"/>
+<label for="cb11"><strong>🚢 Проверить открытие бара «Скрябин»</strong> (дебаркадер, набережная у Кинапа) — открывается в мае, уточнить даты</label>
+</div>
+<div class="pi-item" id="pi12">
+<input id="cb12" onchange="document.getElementById('pi12').classList.toggle('pi-done',this.checked)" type="checkbox"/>
+<label for="cb12"><strong>🌤 Проверить актуальный прогноз погоды</strong> и скорректировать одежду при необходимости<span class="pi-link">→ yandex.ru/pogoda/samara</span></label>
+</div>
+</div>
+</div>
+<div class="planner-group">
+<div class="pg-header">📱 Приложения — установить заранее</div>
+<div class="pg-items">
+<div class="pi-item" id="pi13">
+<input id="cb13" onchange="document.getElementById('pi13').classList.toggle('pi-done',this.checked)" type="checkbox"/>
+<label for="cb13"><strong>📱 Скачать Urent или Whoosh</strong> — кикшеринг электросамокатов, привязать карту</label>
+</div>
+<div class="pi-item" id="pi14">
+<input id="cb14" onchange="document.getElementById('pi14').classList.toggle('pi-done',this.checked)" type="checkbox"/>
+<label for="cb14"><strong>🗺 Скачать офлайн-карту Самары в MAPS.ME или Яндекс Карты</strong></label>
+</div>
+<div class="pi-item" id="pi15">
+<input id="cb15" onchange="document.getElementById('pi15').classList.toggle('pi-done',this.checked)" type="checkbox"/>
+<label for="cb15"><strong>🚕 Установить Яндекс Такси / Uber</strong> — привязать карту для такси из аэропорта</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ═══════════════ PACKING CHECKLIST ═══════════════ -->
+<div class="main" style="max-width:860px;margin:0 auto;padding:0 24px 32px">
+<div id="checklist" style="padding:24px 0;border-top:1px solid var(--border)">
+<div class="section-title">📋 Список вещей в дорогу</div>
+<div class="section-sub">Ставьте галочку когда положили в сумку. Поездка: 29 апр — 4 мая · ожидаемая погода +13…+17°С, ветер на Волге.</div>
+<style>
+  .cl-group{margin-bottom:18px}
+  .cl-header{display:flex;align-items:center;gap:8px;background:var(--cream);border:0.5px solid var(--border);border-radius:8px 8px 0 0;padding:8px 14px;font-size:12px;font-weight:600;color:var(--navy)}
+  .cl-items{display:grid;grid-template-columns:1fr 1fr;background:var(--white);border:0.5px solid var(--border);border-top:none;border-radius:0 0 8px 8px;overflow:hidden}
+  .cl-item{display:flex;align-items:flex-start;gap:10px;padding:8px 12px;border-bottom:0.5px solid var(--border);border-right:0.5px solid var(--border)}
+  .cl-item:nth-child(even){border-right:none}
+  .cl-item input[type=checkbox]{width:15px;height:15px;flex-shrink:0;margin-top:2px;accent-color:var(--green);cursor:pointer}
+  .cl-item label{font-size:12px;line-height:1.45;cursor:pointer;color:var(--text)}
+  .cl-done label{text-decoration:line-through;color:var(--muted);opacity:0.6}
+  @media(max-width:500px){.cl-items{grid-template-columns:1fr}.cl-item{border-right:none}}
+  
+/* ── TODAY BAR ── */
+.today-bar{margin:16px 0 8px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.today-title{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.today-main{font-size:15px;font-weight:500;color:var(--text)}
+.today-sub{font-size:12px;color:var(--muted);margin-top:3px}
+.today-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.tbtn{display:inline-flex;align-items:center;gap:5px;background:#EEF4FB;color:var(--navy);border:1px solid #C8DDEE;border-radius:18px;padding:7px 12px;font-size:11px;font-weight:500;text-decoration:none;cursor:pointer}
+.tbtn:hover{text-decoration:none;background:#E6F1FB}
+.weather-tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.weather-status{font-size:11px;color:var(--muted)}
+.route-btn{display:inline-flex;align-items:center;gap:4px;background:#FFF3CD;color:#7D5700;border:1px solid #F0D98B;border-radius:16px;padding:5px 10px;font-size:10px;font-weight:600;text-decoration:none}
+.route-btn:hover{text-decoration:none;background:#FBE9A9}
+.info-note{margin-top:12px;background:#EEF4FB;border-left:3px solid var(--navy-light);border-radius:8px;padding:10px 14px;font-size:11px;color:var(--muted)}
+.mobile-bottom-nav{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--border);display:flex;justify-content:space-around;padding:8px 4px calc(8px + env(safe-area-inset-bottom));z-index:999}
+.mbn-link{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--muted);text-decoration:none;font-size:10px;font-weight:500;min-width:56px}
+.mbn-link:hover{text-decoration:none;color:var(--navy)}
+.mbn-ico{font-size:18px;line-height:1}
+body.has-mobile-nav{padding-bottom:82px}
+@media(max-width:700px){.today-bar{flex-direction:column}.today-actions{justify-content:flex-start}}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+</style>
+<!-- ОДЕЖДА -->
+<div class="cl-group">
+<div class="cl-header">👕 Одежда</div>
+<div class="cl-items">
+<div class="cl-item" id="cl1"><input id="cc1" onchange="document.getElementById('cl1').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc1">Футболки (3–4 шт.)</label></div>
+<div class="cl-item" id="cl2"><input id="cc2" onchange="document.getElementById('cl2').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc2">Лёгкий свитер / худи</label></div>
+<div class="cl-item" id="cl3"><input id="cc3" onchange="document.getElementById('cl3').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc3">Ветровка / лёгкая куртка ⚠️ обязательно</label></div>
+<div class="cl-item" id="cl4"><input id="cc4" onchange="document.getElementById('cl4').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc4">Джинсы, брюки, спортивные штаны (Кракатау или Lonsdale)</label></div>
+<div class="cl-item" id="cl5"><input id="cc5" onchange="document.getElementById('cl5').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc5">Шорты (на тёплые дни)</label></div>
+<div class="cl-item" id="cl6"><input id="cc6" onchange="document.getElementById('cl6').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc6">Носки (5–6 пар)</label></div>
+<div class="cl-item" id="cl7"><input id="cc7" onchange="document.getElementById('cl7').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc7">Нижнее бельё</label></div>
+<div class="cl-item" id="cl8"><input id="cc8" onchange="document.getElementById('cl8').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc8">Пижама</label></div>
+<div class="cl-item" id="cl9"><input id="cc9" onchange="document.getElementById('cl9').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc9">Рубашка / одежда на вечер</label></div>
+<div class="cl-item" id="cl10"><input id="cc10" onchange="document.getElementById('cl10').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc10">Флисовая кофта (для теплохода)</label></div>
+<div class="cl-item" id="cl12"><input id="cc12" onchange="document.getElementById('cl12').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc12">Кепка / лёгкая шапка</label></div>
+</div>
+</div>
+<!-- ОБУВЬ -->
+<div class="cl-group">
+<div class="cl-header">👟 Обувь</div>
+<div class="cl-items">
+<div class="cl-item" id="cl13"><input id="cc13" onchange="document.getElementById('cl13').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc13">Удобные кроссовки (основные)</label></div>
+</div>
+</div>
+<!-- АКСЕССУАРЫ -->
+<div class="cl-group">
+<div class="cl-header">😎 Аксессуары</div>
+<div class="cl-items">
+<div class="cl-item" id="cl16"><input id="cc16" onchange="document.getElementById('cl16').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc16">Солнцезащитные очки ☀️</label></div>
+<div class="cl-item" id="cl17"><input id="cc17" onchange="document.getElementById('cl17').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc17">Зонт компактный (переменная облачность)</label></div>
+<div class="cl-item" id="cl18"><input id="cc18" onchange="document.getElementById('cl18').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc18">Наушники / AirPods</label></div>
+<div class="cl-item" id="cl19"><input id="cc19" onchange="document.getElementById('cl19').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc19">Power bank (заряженный)</label></div>
+<div class="cl-item" id="cl20"><input id="cc20" onchange="document.getElementById('cl20').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc20">Зарядник для телефона</label></div>
+<div class="cl-item" id="cl21"><input id="cc21" onchange="document.getElementById('cl21').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc21">Сумка / рюкзак для прогулок</label></div>
+<div class="cl-item" id="cl22"><input id="cc22" onchange="document.getElementById('cl22').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc22">Бутылка для воды</label></div>
+</div>
+</div>
+<!-- УМЫВАЛЬНЫЕ ПРИНАДЛЕЖНОСТИ -->
+<div class="cl-group">
+<div class="cl-header">🧴 Умывальные принадлежности</div>
+<div class="cl-items">
+<div class="cl-item" id="cl24"><input id="cc24" onchange="document.getElementById('cl24').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc24">Зубная щётка</label></div>
+<div class="cl-item" id="cl25"><input id="cc25" onchange="document.getElementById('cl25').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc25">Зубная паста</label></div>
+<div class="cl-item" id="cl26"><input id="cc26" onchange="document.getElementById('cl26').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc26">Шампунь / гель для душа</label></div>
+<div class="cl-item" id="cl27"><input id="cc27" onchange="document.getElementById('cl27').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc27">Дезодорант</label></div>
+<div class="cl-item" id="cl28"><input id="cc28" onchange="document.getElementById('cl28').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc28">Бритва / триммер</label></div>
+<div class="cl-item" id="cl29"><input id="cc29" onchange="document.getElementById('cl29').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc29">Крем для лица</label></div>
+<div class="cl-item" id="cl30"><input id="cc30" onchange="document.getElementById('cl30').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc30">Солнцезащитный крем (SPF 30+) ☀️</label></div>
+<div class="cl-item" id="cl31"><input id="cc31" onchange="document.getElementById('cl31').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc31">Расчёска</label></div>
+</div>
+</div>
+<!-- ДОКУМЕНТЫ И ДЕНЬГИ -->
+<div class="cl-group">
+<div class="cl-header">📄 Документы и деньги</div>
+<div class="cl-items">
+<div class="cl-item" id="cl32"><input id="cc32" onchange="document.getElementById('cl32').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc32">Паспорт 🪪</label></div>
+<div class="cl-item" id="cl33"><input id="cc33" onchange="document.getElementById('cl33').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc33">Авиабилеты (распечатать или сохранить в телефоне)</label></div>
+<div class="cl-item" id="cl35"><input id="cc35" onchange="document.getElementById('cl35').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc35">Банковские карты (2 шт. минимум)</label></div>
+<div class="cl-item" id="cl36"><input id="cc36" onchange="document.getElementById('cl36').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc36">Наличные рубли (для рынков, прокатов)</label></div>
+<div class="cl-item" id="cl37"><input id="cc37" onchange="document.getElementById('cl37').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc37">Электронные билеты (матч) — скрин на телефоне</label></div>
+</div>
+</div>
+<!-- МЕДИЦИНА -->
+<div class="cl-group">
+<div class="cl-header">💊 Аптечка</div>
+<div class="cl-items">
+<div class="cl-item" id="cl38"><input id="cc38" onchange="document.getElementById('cl38').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc38">Ибупрофен / нурофен (от головной боли)</label></div>
+<div class="cl-item" id="cl39"><input id="cc39" onchange="document.getElementById('cl39').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc39">Пластырь</label></div>
+<div class="cl-item" id="cl40"><input id="cc40" onchange="document.getElementById('cl40').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc40">Антигистаминные (весна, поллиноз)</label></div>
+<div class="cl-item" id="cl41"><input id="cc41" onchange="document.getElementById('cl41').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc41">Капли для носа</label></div>
+<div class="cl-item" id="cl42"><input id="cc42" onchange="document.getElementById('cl42').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc42">Средство от расстройства желудка</label></div>
+<div class="cl-item" id="cl43"><input id="cc43" onchange="document.getElementById('cl43').classList.toggle('cl-done',this.checked)" type="checkbox"/><label for="cc43">Личные лекарства</label></div>
+</div>
+</div>
+<!-- НАВИГАЦИЯ: ссылка вверх -->
+<div style="margin-top:18px;text-align:center">
+<a href="javascript:void(0)" onclick="navTo('planner',null)" style="display:inline-block;background:var(--navy);color:#fff;padding:8px 20px;border-radius:20px;font-size:12px;font-weight:500;text-decoration:none">↑ К планеру задач</a>
+     
+    <a href="javascript:void(0)" onclick="navTo('booking',null)" style="display:inline-block;background:var(--navy-light);color:#fff;padding:8px 20px;border-radius:20px;font-size:12px;font-weight:500;text-decoration:none">↑ К таблице бронирования</a>
+</div>
+</div>
+</div>
+<div class="page-footer">
+  Самара · 29 апреля — 4 мая 2026  ·  2 человека  ·  Hampton by Hilton  ·  обновлено в ChatGPT · апрель 2026
+</div>
 <script>
+/* navTo: scroll to section by ID and mark active nav button */
 function navTo(id, btn){
-  const target=document.getElementById(id);
-  if(target){target.scrollIntoView({behavior:'smooth',block:'start'});}
-  if(btn && btn.classList.contains('nav-btn')){
-    document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  var el = document.getElementById(id);
+  if(!el) return;
+  // offset for sticky nav bar (~48px)
+  var y = el.getBoundingClientRect().top + window.pageYOffset - 50;
+  window.scrollTo({top: y, behavior: 'smooth'});
+  // highlight active nav btn if triggered from nav
+  if(btn){
+    document.querySelectorAll('.nav-btn').forEach(function(b){b.classList.remove('active');});
     btn.classList.add('active');
   }
 }
 
-function toggleDayPicker(btn){
-  const card=btn.closest('.guide-card');
-  const picker=card.querySelector('.day-picker');
-  picker.classList.toggle('open');
-}
-
-function buildUserAddedHtml(title, desc){
-  return `
-    <div class="tl-item user-added day-main-card" data-main-card="1">
-      <div class="day-main-pill">Основное событие дня</div>
-      <div class="tl-dot td-green"></div>
-      <div class="tl-time">Добавлено вручную</div>
-      <div class="tl-title">${title}</div>
-      <div class="tl-desc">${desc}</div>
-      <div class="user-added-actions">
-        <button class="user-added-btn" onclick="makeThisMainInDay(this)">Сделать основным в дне ↑</button>
-      </div>
-    </div>
-  `;
-}
-
-function demoteCurrentMain(daySection){
-  const current=daySection.querySelector('[data-main-card="1"]');
-  if(!current) return;
-  current.classList.remove('day-main-card');
-  current.removeAttribute('data-main-card');
-  const pill=current.querySelector('.day-main-pill');
-  if(pill) pill.remove();
-}
-
-function makeThisMainInDay(btn){
-  const card=btn.closest('.tl-item');
-  const daySection=btn.closest('.day-section');
-  if(!card || !daySection) return;
-  demoteCurrentMain(daySection);
-  card.classList.add('day-main-card');
-  card.setAttribute('data-main-card','1');
-  const firstChild=card.firstElementChild;
-  if(!card.querySelector('.day-main-pill')){
-    const pill=document.createElement('div');
-    pill.className='day-main-pill';
-    pill.textContent='Основное событие дня';
-    card.insertBefore(pill, firstChild);
+/* GPS routing: inject current position as start point */
+function openMapWithGPS(url){
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(
+      function(pos){
+        var lat = pos.coords.latitude.toFixed(5);
+        var lon = pos.coords.longitude.toFixed(5);
+        var finalUrl = url.replace('rtext=~', 'rtext=' + lat + ',' + lon + '~');
+        window.open(finalUrl, '_blank');
+      },
+      function(){ window.open(url, '_blank'); }
+    );
+  } else {
+    window.open(url, '_blank');
   }
 }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function(){
+  /* ─── Tile layer ─── */
+  var OSM = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+  var ATTR = '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a>';
 
-function addCardToDay(btn, dayId){
-  const card=btn.closest('.guide-card');
-  const title=card.getAttribute('data-item-title') || 'Событие';
-  const desc=card.getAttribute('data-item-desc') || 'Добавлено вручную';
-  const daySection=document.getElementById(dayId);
-  const timeline=daySection.querySelector('.timeline');
-  const customNote=daySection.querySelector('.day-custom-note');
-
-  demoteCurrentMain(daySection);
-
-  const wrapper=document.createElement('div');
-  wrapper.innerHTML=buildUserAddedHtml(title, desc);
-  timeline.appendChild(wrapper.firstElementChild);
-
-  if(customNote){ customNote.style.display='none'; }
-
-  const picker=card.querySelector('.day-picker');
-  if(picker) picker.classList.remove('open');
-
-  let badge=card.querySelector('.added-badge');
-  if(!badge){
-    badge=document.createElement('div');
-    badge.className='added-badge';
-    card.appendChild(badge);
+  /* ─── Numbered circle marker ─── */
+  function pin(n, color){
+    color = color || '#1B4F8A';
+    return L.divIcon({
+      className:'',
+      html:'<div style="background:'+color+';color:#fff;border-radius:50%;width:30px;height:30px;'+
+           'line-height:27px;text-align:center;font-size:13px;font-weight:700;'+
+           'border:2.5px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.4)">'+n+'</div>',
+      iconSize:[30,30], iconAnchor:[15,15], popupAnchor:[0,-18]
+    });
   }
-  const dayNames={day2:'30 апреля',day3:'1 мая',day4:'2 мая',day5:'3 мая',day6:'4 мая'};
-  badge.textContent='Добавлено в ' + (dayNames[dayId] || 'день');
-}
 
+  /* ─── Build one day map ─── */
+  function dayMap(id, center, zoom, pts){
+    var el = document.getElementById(id);
+    if(!el) return;
+    var map = L.map(id,{center:center, zoom:zoom, scrollWheelZoom:false, tap:true});
+    L.tileLayer(OSM,{attribution:ATTR, maxZoom:18}).addTo(map);
+
+    /* dashed polyline showing order */
+    var lls = pts.map(function(p){return [p[0],p[1]];});
+    L.polyline(lls,{color:'#1B4F8A',weight:4,opacity:0.85}).addTo(map);
+
+    /* numbered markers */
+    pts.forEach(function(p,i){
+      var m = L.marker([p[0],p[1]],{icon:pin(i+1)}).addTo(map);
+      m.bindPopup('<div style="font-size:12px;font-weight:500">'+p[2]+'</div>');
+    });
+  }
+
+  /* ════════ DAY 1 · 29 апреля ════════
+     Прилёт → Обед → Набережная → Вечер в городе */
+  dayMap('mapDay1',[53.196,50.123],13,[
+    [53.1884,50.0978,'1 · Пряный Барашек — первый обед'],
+    [53.1910,50.1040,'2 · Набережная / Струковский сад'],
+    [53.1998,50.1458,'3 · White Cup (вечерний кофе)'],
+    [53.2095,50.1433,'4 · Вечер · бар ХВАТ или кино']
+  ]);
+
+  /* ════════ DAY 2 · 30 апреля ════════
+     Завтрак → Lumos → Ленинградская → Бункер → Станкозавод → Посольство */
+  dayMap('mapDay2',[53.194,50.134],14,[
+    [53.1938,50.1502,'1 · Lumos Barista Lab (кофе, Революционная 3)'],
+    [53.1924,50.1067,'2 · Ленинградская / пл. Куйбышева'],
+    [53.1896,50.1541,'3 · Бункер Сталина (Фрунзе 167)'],
+    [53.1957,50.1482,'4 · Станкозавод — Volga Mama, галереи'],
+    [53.1975,50.1484,'5 · Посольство или Ливингстон (ужин)']
+  ]);
+
+  /* ════════ DAY 3 · 1 мая ════════
+     White Cup → Жигулёвский завод → Пряный Барашек → Набережная → Кинотеатр */
+  dayMap('mapDay3',[53.192,50.113],14,[
+    [53.1998,50.1458,'1 · White Cup (кофе, Красноармейская 15)'],
+    [53.1876,50.0952,'2 · Жигулёвский завод (экскурсия, Волжский пр 4)'],
+    [53.1884,50.0978,'3 · Пряный Барашек (обед, Волжский пр 45)'],
+    [53.1910,50.1040,'4 · Набережная — гуляния, Первомай'],
+    [53.1918,50.1075,'5 · Кинотеатр «Филин» — открытие сезона!']
+  ]);
+
+  /* ════════ DAY 4 · 2 мая ════════
+     Центр / шопинг → обед → Самара Арена */
+  dayMap('mapDay4',[53.196,50.152],12,[
+    [53.1924,50.1067,'1 · Ленинградская — шопинг, сувениры'],
+    [53.1938,50.1107,'2 · Рыбалтика (обед перед матчем)'],
+    [53.2053,50.2090,'3 · Самара Арена ⚽ Крылья — Спартак']
+  ]);
+
+  /* ════════ DAY 5 · 3 мая ════════
+     Речной вокзал → Ширяево → Самара Космическая → Набережная → Скрябин */
+  dayMap('mapDay5',[53.196,50.126],13,[
+    [53.1876,50.0960,'1 · Речной вокзал — отправление в Ширяево'],
+    [53.2125,50.1700,'2 · Самара Космическая (просп. Ленина 21)'],
+    [53.1908,50.1038,'3 · Набережная — закат / Скрябин (бар на воде)'],
+    [53.1905,50.1040,'4 · Koza Pasta — прощальный ужин']
+  ]);
+
+})();
+</script>
+<div class="mobile-bottom-nav"><a class="mbn-link" href="javascript:void(0)" onclick="navTo('day1',null)"><span class="mbn-ico">🏠</span><span>Сегодня</span></a><a class="mbn-link" href="javascript:void(0)" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="mbn-ico">🌤</span><span>Погода</span></a><a class="mbn-link" href="javascript:void(0)" onclick="navTo('booking',null)"><span class="mbn-ico">📌</span><span>📌 Брони</span></a><a class="mbn-link" href="javascript:void(0)" onclick="navTo('checklist',null)"><span class="mbn-ico">📋</span><span>Список</span></a><a class="mbn-link" href="javascript:void(0)" onclick="navTo('also',null)"><span class="mbn-ico">✨</span><span>✨ Ещё</span></a></div>
+<script>
+const TRIP_START = new Date('2026-04-29T00:00:00+04:00');
+const TRIP_END = new Date('2026-05-04T23:59:59+04:00');
+const SAMARA_LAT = 53.1959, SAMARA_LON = 50.1008;
+const weatherDays = [
+  {date:'2026-04-29', icon:'⛅', note:'Прилёт. Переменная облачность'},
+  {date:'2026-04-30', icon:'☀️', note:'Солнечно. Хорошо для прогулок'},
+  {date:'2026-05-01', icon:'🌤', note:'Первомай + матч в 18:00'},
+  {date:'2026-05-02', icon:'☀️', note:'🎸 ХОРУС и прогулки'},
+  {date:'2026-05-03', icon:'⛅', note:'Речная прогулка. Ветер на воде'},
+  {date:'2026-05-04', icon:'🌤', note:'Вылет. Утром прохладно'}
+];
 function updateTodayBar(){
   const now = new Date();
-  const start = new Date('2026-04-29T00:00:00');
-  const diff = Math.ceil((start - now) / (1000*60*60*24));
+  const diff = Math.ceil((TRIP_START - now)/(1000*60*60*24));
   const main = document.getElementById('todayMain');
   const sub = document.getElementById('todaySub');
-  if(!main || !sub) return;
-  if(diff > 0){
-    main.textContent = 'До поездки — ' + diff + ' дн.';
-    sub.textContent = 'Самара · даты поездки 29 апреля — 4 мая 2026';
-  } else {
-    main.textContent = 'Поездка уже идёт или завершилась';
-    sub.textContent = 'Проверь программу по дням и вручную скорректируй события';
+  if(!main||!sub) return;
+  if(now < TRIP_START){
+    main.textContent = diff > 0 ? `До поездки — ${diff} дн.` : 'Поездка уже совсем скоро';
+    sub.textContent = 'Ближе к дате поездки автоматически подтянется более точный прогноз по дням.';
+  }else if(now <= TRIP_END){
+    const day = Math.min(6, Math.max(1, Math.ceil((now - TRIP_START)/(1000*60*60*24))+1));
+    main.textContent = `Сейчас идёт поездка · день ${day}`;
+    sub.textContent = 'Открой нужный день ниже или обнови погоду по Самаре.';
+  }else{
+    main.textContent = 'Поездка уже завершилась';
+    sub.textContent = 'Чек-листы и план можно использовать как архив маршрута.';
   }
 }
-
-function refreshWeather(manual){
-  const weatherStatus = document.getElementById('weatherStatus');
-  if(weatherStatus){
-    weatherStatus.textContent = manual
-      ? 'Обновление недоступно в офлайн-версии. Открой Яндекс Погоду для актуальных данных.'
-      : 'Пока показан базовый плановый прогноз по поездке.';
+async function refreshWeather(manual){
+  const status = document.getElementById('weatherStatus');
+  try{
+    if(status) status.textContent = 'Обновляю погоду по Самаре…';
+    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${SAMARA_LAT}&longitude=${SAMARA_LON}&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&timezone=Europe/Samara&forecast_days=16`);
+    const data = await res.json();
+    if(!data || !data.daily || !data.daily.time) throw new Error('weather');
+    const times = data.daily.time;
+    const maxs = data.daily.temperature_2m_max || [];
+    const mins = data.daily.temperature_2m_min || [];
+    const cards = document.querySelectorAll('.weather-grid .wday');
+    let matched = 0;
+    weatherDays.forEach((d, idx) => {
+      const i = times.indexOf(d.date);
+      if(i >= 0 && cards[idx]){
+        const hi = cards[idx].querySelector('.wd-hi');
+        const lo = cards[idx].querySelector('.wd-lo');
+        if(hi) hi.textContent = `${Math.round(maxs[i])>0?'+':''}${Math.round(maxs[i])}°C`;
+        if(lo) lo.textContent = `${Math.round(mins[i])>0?'+':''}${Math.round(mins[i])}°C`;
+        matched++;
+      }
+    });
+    const now = new Date();
+    if(status){
+      if(matched){
+        status.textContent = `Обновлено ${now.toLocaleString('ru-RU')} · точный прогноз доступен для ${matched} дн. поездки.`;
+      }else{
+        const cur = data.current_weather;
+        status.textContent = `Обновлено ${now.toLocaleString('ru-RU')} · до поездки ещё далеко, поэтому показываю общий плановый прогноз. Сейчас в Самаре ${Math.round(cur.temperature)}°C.`;
+      }
+    }
+  }catch(e){
+    if(status) status.textContent = 'Не удалось обновить погоду. Оставлен базовый плановый прогноз по поездке.';
   }
   updateTodayBar();
 }
 updateTodayBar();
 refreshWeather(false);
-
-(function initMaps(){
-  if(typeof L === 'undefined') return;
-  const map = L.map('map-day1').setView([53.1959,50.1008], 12);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution:'&copy; OpenStreetMap'
-  }).addTo(map);
-  L.marker([53.1959,50.1008]).addTo(map).bindPopup('Центр / набережная');
-})();
 </script>
-
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
@@ -1088,6 +2878,79 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+<script>
+(function(){
+  const DAY_LABELS = {day1:'29 апреля',day2:'30 апреля',day3:'1 мая',day4:'2 мая',day5:'3 мая',day6:'4 мая'};
+  function storageKey(day){ return 'samara_day_picks_'+day; }
 
+  function renderDayPicks(day){
+    const box = document.querySelector('#'+day+'-picks .day-picks-list');
+    if(!box) return;
+    let items = [];
+    try{ items = JSON.parse(localStorage.getItem(storageKey(day))||'[]'); }catch(e){}
+    box.innerHTML = '';
+    if(!items.length){
+      box.innerHTML = '<div class="day-pick-item"><span>Пока ничего не добавлено. Выбирай варианты ниже из альтернатив, кафе и вечернего раздела.</span></div>';
+      return;
+    }
+    items.forEach((txt, idx) => {
+      const row = document.createElement('div');
+      row.className = 'day-pick-item';
+      row.innerHTML = '<span>'+txt+'</span><button type="button" aria-label="Удалить">✕</button>';
+      row.querySelector('button').addEventListener('click', function(){
+        items.splice(idx,1);
+        localStorage.setItem(storageKey(day), JSON.stringify(items));
+        renderDayPicks(day);
+      });
+      box.appendChild(row);
+    });
+  }
+
+  function addToDay(day, title){
+    let items = [];
+    try{ items = JSON.parse(localStorage.getItem(storageKey(day))||'[]'); }catch(e){}
+    if(!items.includes(title)) items.push(title);
+    localStorage.setItem(storageKey(day), JSON.stringify(items));
+    renderDayPicks(day);
+    navTo(day,null);
+  }
+
+  document.querySelectorAll('.pick-actions .pick-btn:not(.pick-main)').forEach(btn => {
+    btn.addEventListener('click', function(){
+      const wrap = btn.closest('.pick-actions');
+      const day = wrap.querySelector('.pick-day').value;
+      const card = btn.closest('.alt-item, .guide-card, .also-card');
+      const t = btn.getAttribute('data-title') || (card.querySelector('.ai-name,.gc-name,.ac-title') ? card.querySelector('.ai-name,.gc-name,.ac-title').innerText.trim() : 'Выбранный вариант');
+      card.classList.add('is-picked');
+      addToDay(day, t);
+      btn.textContent = '✓ Добавлено';
+      setTimeout(()=>btn.textContent='➕ Добавить в день', 1200);
+    });
+  });
+
+  document.querySelectorAll('.pick-actions .pick-main').forEach(btn => {
+    btn.addEventListener('click', function(){
+      const card = btn.closest('.alt-item, .guide-card, .also-card');
+      const parent = card.parentElement;
+      if(parent){
+        parent.insertBefore(card, parent.firstElementChild);
+        card.classList.add('is-picked');
+        if(card.classList.contains('alt-item')){
+          parent.querySelectorAll('.alt-item').forEach(el => el.classList.remove('is-rec'));
+          card.classList.add('is-rec');
+        }
+        if(card.classList.contains('guide-card')){
+          parent.querySelectorAll('.guide-card').forEach(el => el.classList.remove('gc-must'));
+          card.classList.add('gc-must');
+        }
+      }
+      btn.textContent = '✓ Основной';
+      setTimeout(()=>btn.textContent='⬆ Сделать основным', 1200);
+    });
+  });
+
+  ['day1','day2','day3','day4','day5','day6'].forEach(renderDayPicks);
+})();
+</script>
 </body>
 </html>
